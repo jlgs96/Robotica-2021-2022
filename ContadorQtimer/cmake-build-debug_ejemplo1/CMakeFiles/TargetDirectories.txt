@@ -1,0 +1,7 @@
+/home/josel/Documentos/Curso_21_22/Robotica/Practica-1/ejemplo1/cmake-build-debug_ejemplo1/CMakeFiles/install/strip.dir
+/home/josel/Documentos/Curso_21_22/Robotica/Practica-1/ejemplo1/cmake-build-debug_ejemplo1/CMakeFiles/install/local.dir
+/home/josel/Documentos/Curso_21_22/Robotica/Practica-1/ejemplo1/cmake-build-debug_ejemplo1/CMakeFiles/ejemplo1.dir
+/home/josel/Documentos/Curso_21_22/Robotica/Practica-1/ejemplo1/cmake-build-debug_ejemplo1/CMakeFiles/rebuild_cache.dir
+/home/josel/Documentos/Curso_21_22/Robotica/Practica-1/ejemplo1/cmake-build-debug_ejemplo1/CMakeFiles/edit_cache.dir
+/home/josel/Documentos/Curso_21_22/Robotica/Practica-1/ejemplo1/cmake-build-debug_ejemplo1/CMakeFiles/install.dir
+/home/josel/Documentos/Curso_21_22/Robotica/Practica-1/ejemplo1/cmake-build-debug_ejemplo1/CMakeFiles/list_install_components.dir
