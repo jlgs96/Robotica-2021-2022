@@ -16,14 +16,18 @@ Q_OBJECT
     
     public slots:
 	void doButton();
+    void doSlide();
+
         
     private:
         Timer mytimer, mytimerLong;
+        Timer TimereTime;
         int cont = 0;
-		
+		int value_h = 0;
+
 		// dos callbacks con diferente número de parámetros
         void cuenta();
-		
+        void elapsedTime();
 		int trick = 5;
 };
 

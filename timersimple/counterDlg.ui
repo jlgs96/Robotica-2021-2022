@@ -16,10 +16,10 @@
   <widget class="QPushButton" name="button">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>180</y>
-     <width>251</width>
-     <height>71</height>
+     <x>130</x>
+     <y>140</y>
+     <width>131</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
@@ -46,13 +46,23 @@
     </rect>
    </property>
   </widget>
+  <widget class="QLCDNumber" name="lcdNumberPeriod">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>220</y>
+     <width>301</width>
+     <height>91</height>
+    </rect>
+   </property>
+  </widget>
   <widget class="QSlider" name="horizontalSlider">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>300</y>
-     <width>160</width>
-     <height>21</height>
+     <x>100</x>
+     <y>320</y>
+     <width>181</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="orientation">
@@ -62,14 +72,14 @@
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>450</x>
+     <x>440</x>
      <y>140</y>
      <width>151</width>
      <height>27</height>
     </rect>
    </property>
    <property name="text">
-    <string>Tiempo Ejecutando</string>
+    <string>Elapsed Time</string>
    </property>
   </widget>
  </widget>
