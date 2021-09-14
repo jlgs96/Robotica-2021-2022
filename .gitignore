@@ -6,7 +6,6 @@ ejemplo1/Makefile
 ejemplo1/moc_ejemplo1.cpp
 ejemplo1/moc_ejemplo1.cpp_parameters
 ejemplo1/ui_counterDlg.h
-timersimple/.vscode
 timersimple/CMakeFiles
 timersimple/cmake_install.cmake
 timersimple/CMakeCache.txt
