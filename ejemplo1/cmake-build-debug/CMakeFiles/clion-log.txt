@@ -1,4 +1,4 @@
-/opt/clion-2021.2.1/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/josel/Documentos/Curso_21_22/Robotica/Practica-1/ejemplo1
+/snap/clion/163/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/josel/Documentos/Curso_21_22/Robotica/Robotica-2021-2022/ejemplo1
 -- The C compiler identification is GNU 10.3.0
 -- The CXX compiler identification is GNU 10.3.0
 -- Detecting C compiler ABI info
@@ -20,20 +20,7 @@ CMake Deprecation Warning at CMakeLists.txt:2 (cmake_minimum_required):
 
 
 -- COMPILING WITH QT5
-CMake Error at /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake:28 (find_package):
-  Could not find a package configuration file provided by "Qt5XmlPatterns"
-  with any of the following names:
-
-    Qt5XmlPatternsConfig.cmake
-    qt5xmlpatterns-config.cmake
-
-  Add the installation prefix of "Qt5XmlPatterns" to CMAKE_PREFIX_PATH or set
-  "Qt5XmlPatterns_DIR" to a directory containing one of the above files.  If
-  "Qt5XmlPatterns" provides a separate development package or SDK, be sure it
-  has been installed.
-Call Stack (most recent call first):
-  CMakeLists.txt:4 (find_package)
-
-
--- Configuring incomplete, errors occurred!
-See also "/home/josel/Documentos/Curso_21_22/Robotica/Practica-1/ejemplo1/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+-- Generating header file from counterDlg.ui
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/josel/Documentos/Curso_21_22/Robotica/Robotica-2021-2022/ejemplo1/cmake-build-debug

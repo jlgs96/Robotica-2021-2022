@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>700</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,14 +16,14 @@
   <widget class="QPushButton" name="button">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>180</y>
-     <width>251</width>
-     <height>71</height>
+     <x>130</x>
+     <y>140</y>
+     <width>131</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>STOP</string>
+    <string>START / STOP</string>
    </property>
   </widget>
   <widget class="QLCDNumber" name="lcdNumber">
@@ -34,6 +34,52 @@
      <width>301</width>
      <height>91</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="lcdNumbereTime">
+   <property name="geometry">
+    <rect>
+     <x>372</x>
+     <y>40</y>
+     <width>301</width>
+     <height>91</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="lcdNumberPeriod">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>220</y>
+     <width>301</width>
+     <height>91</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSlider" name="horizontalSlider">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>320</y>
+     <width>181</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>140</y>
+     <width>151</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Elapsed Time</string>
    </property>
   </widget>
  </widget>

@@ -12,11 +12,18 @@ class ejemplo1 : public QWidget, public Ui_Counter
 
     public slots:
         void doButton();
+        void doSlide();
+        void elapsedTime();
         void increaseDisplay();
 
     private:
-        QTimer *timer;
-        int cont = 0;
+        QTimer *timer ;
+        QTimer *timerETime;
+    int cont = 0;
+        int contetime =0;
+        int value_h = 0;
+
+
 };
 
 #endif // ejemplo1_H
