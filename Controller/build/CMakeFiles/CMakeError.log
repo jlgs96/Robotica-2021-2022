@@ -1,21 +1,21 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
 Change Dir: /home/alumno/robocomp/components/Controller/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_038fe/fast && /usr/bin/make -f CMakeFiles/cmTC_038fe.dir/build.make CMakeFiles/cmTC_038fe.dir/build
+Run Build Command(s):/usr/bin/make cmTC_b2682/fast && /usr/bin/make -f CMakeFiles/cmTC_b2682.dir/build.make CMakeFiles/cmTC_b2682.dir/build
 make[1]: se entra en el directorio '/home/alumno/robocomp/components/Controller/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_038fe.dir/src.c.o
-/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_038fe.dir/src.c.o   -c /home/alumno/robocomp/components/Controller/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_038fe
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_038fe.dir/link.txt --verbose=1
-/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_038fe.dir/src.c.o  -o cmTC_038fe 
-/usr/bin/ld: CMakeFiles/cmTC_038fe.dir/src.c.o: en la función `main':
+Building C object CMakeFiles/cmTC_b2682.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_b2682.dir/src.c.o   -c /home/alumno/robocomp/components/Controller/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_b2682
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b2682.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_b2682.dir/src.c.o  -o cmTC_b2682 
+/usr/bin/ld: CMakeFiles/cmTC_b2682.dir/src.c.o: en la función `main':
 src.c:(.text+0x46): referencia a `pthread_create' sin definir
 /usr/bin/ld: src.c:(.text+0x52): referencia a `pthread_detach' sin definir
 /usr/bin/ld: src.c:(.text+0x63): referencia a `pthread_join' sin definir
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_038fe.dir/build.make:87: cmTC_038fe] Error 1
+make[1]: *** [CMakeFiles/cmTC_b2682.dir/build.make:87: cmTC_b2682] Error 1
 make[1]: se sale del directorio '/home/alumno/robocomp/components/Controller/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_038fe/fast] Error 2
+make: *** [Makefile:121: cmTC_b2682/fast] Error 2
 
 
 Source file was:
@@ -41,18 +41,18 @@ int main(void)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/alumno/robocomp/components/Controller/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_129c6/fast && /usr/bin/make -f CMakeFiles/cmTC_129c6.dir/build.make CMakeFiles/cmTC_129c6.dir/build
+Run Build Command(s):/usr/bin/make cmTC_21ac3/fast && /usr/bin/make -f CMakeFiles/cmTC_21ac3.dir/build.make CMakeFiles/cmTC_21ac3.dir/build
 make[1]: se entra en el directorio '/home/alumno/robocomp/components/Controller/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_129c6.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_129c6.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_129c6
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_129c6.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_129c6.dir/CheckFunctionExists.c.o  -o cmTC_129c6  -lpthreads 
+Building C object CMakeFiles/cmTC_21ac3.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_21ac3.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_21ac3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_21ac3.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_21ac3.dir/CheckFunctionExists.c.o  -o cmTC_21ac3  -lpthreads 
 /usr/bin/ld: no se puede encontrar -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_129c6.dir/build.make:87: cmTC_129c6] Error 1
+make[1]: *** [CMakeFiles/cmTC_21ac3.dir/build.make:87: cmTC_21ac3] Error 1
 make[1]: se sale del directorio '/home/alumno/robocomp/components/Controller/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_129c6/fast] Error 2
+make: *** [Makefile:121: cmTC_21ac3/fast] Error 2
 
 
 

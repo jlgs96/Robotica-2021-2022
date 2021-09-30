@@ -71,21 +71,22 @@ void SpecificWorker::initialize(int period)
 
 void SpecificWorker::compute()
 {
-  const float threshold = 600; // millimeters
-    float rot = 0.6;  // rads per second
+  const float threshold = 290; // millimeters
+    float rot = 0.2618;  // rads per second
     int tam;
     try
     {
     	// read laser data 
         RoboCompLaser::TLaserData ldata = laser_proxy->getLaserData(); 
-        tam = (ldata.size())/3;
+        tam = (ldata.size())/6;
 	//sort laser data from small to large distances using a lambda function.
         std::sort( ldata.begin()+tam, ldata.end()-tam, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return     a.dist < b.dist; });  
         
 	if( ldata[tam].dist < threshold)
 	{
+        
 		std::cout << ldata.front().dist << std::endl;
- 		differentialrobot_proxy->setSpeedBase(5, rot);
+ 		differentialrobot_proxy->setSpeedBase(10, rot);
 		usleep(rand()%(1500000-100000 + 1) + 100000);  // random wait between 1.5s and 0.1sec
 	}
 	else
