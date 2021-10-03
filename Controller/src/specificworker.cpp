@@ -71,28 +71,56 @@ void SpecificWorker::initialize(int period)
 
 void SpecificWorker::compute()
 {
-  const float threshold = 290; // millimeters
-    float rot = 0.2618;  // rads per second
+  const float threshold = 290;// millimeters
+    //float rot = 0.2618; // rads per second
+    //float neg_rot_45 = -0.785398; 349066
+    //float rot_45 = 0.785398; // 45 degrees angle
     int tam;
+    int turn = 0;
+    float angle = 0;
+    //float previterangle = 0;
+ 
     try
     {
     	// read laser data 
+        
         RoboCompLaser::TLaserData ldata = laser_proxy->getLaserData(); 
-        tam = (ldata.size())/6;
+        tam = (ldata.size())/3;
 	//sort laser data from small to large distances using a lambda function.
         std::sort( ldata.begin()+tam, ldata.end()-tam, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return     a.dist < b.dist; });  
+        //previterangle = angle;
+        angle = ldata[tam].angle;
         
-	if( ldata[tam].dist < threshold)
-	{
+        turn = 1;
+        if(angle > 0){
+            turn = -1;
+        }
         
-		std::cout << ldata.front().dist << std::endl;
- 		differentialrobot_proxy->setSpeedBase(10, rot);
-		usleep(rand()%(1500000-100000 + 1) + 100000);  // random wait between 1.5s and 0.1sec
-	}
-	else
-	{
-		differentialrobot_proxy->setSpeedBase(300, 0); 
-  	}
+        
+        
+        
+        if( ldata[tam].dist < threshold)
+        {
+            std::cout << ldata.front().dist << std::endl;
+            differentialrobot_proxy->setSpeedBase(0, 2 * turn);
+            usleep((rand()%(785398-261800  + 1)+261800)/2);  // random wait between 1.5s and 0.1sec            
+        }    
+        else
+        {
+            
+            if(ldata[tam].dist > 900){
+                differentialrobot_proxy->setSpeedBase(999, 0); 
+            }else if(ldata[tam].dist > 700){
+                differentialrobot_proxy->setSpeedBase(699, 0); 
+            }else if(ldata[tam].dist > 600){
+                differentialrobot_proxy->setSpeedBase(599, 0); 
+            }else if(ldata[tam].dist > 500){
+                differentialrobot_proxy->setSpeedBase(499, 0);
+            }else if(ldata[tam].dist > 300){
+                differentialrobot_proxy->setSpeedBase(200, 0); 
+            }
+            
+        }
     }
     catch(const Ice::Exception &ex)
     {

@@ -4,20 +4,20 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/alumno/robocomp/components/Controller/build/src/CommonBehavior.cpp" "/home/alumno/robocomp/components/Controller/build/src/CMakeFiles/MyFirstComp.dir/CommonBehavior.cpp.o"
-  "/home/alumno/robocomp/components/Controller/build/src/DifferentialRobot.cpp" "/home/alumno/robocomp/components/Controller/build/src/CMakeFiles/MyFirstComp.dir/DifferentialRobot.cpp.o"
-  "/home/alumno/robocomp/components/Controller/build/src/GenericBase.cpp" "/home/alumno/robocomp/components/Controller/build/src/CMakeFiles/MyFirstComp.dir/GenericBase.cpp.o"
-  "/home/alumno/robocomp/components/Controller/build/src/Laser.cpp" "/home/alumno/robocomp/components/Controller/build/src/CMakeFiles/MyFirstComp.dir/Laser.cpp.o"
-  "/home/alumno/robocomp/components/Controller/build/src/MyFirstComp_autogen/mocs_compilation.cpp" "/home/alumno/robocomp/components/Controller/build/src/CMakeFiles/MyFirstComp.dir/MyFirstComp_autogen/mocs_compilation.cpp.o"
-  "/home/alumno/robocomp/components/Controller/src/commonbehaviorI.cpp" "/home/alumno/robocomp/components/Controller/build/src/CMakeFiles/MyFirstComp.dir/commonbehaviorI.cpp.o"
-  "/home/alumno/robocomp/components/Controller/src/genericmonitor.cpp" "/home/alumno/robocomp/components/Controller/build/src/CMakeFiles/MyFirstComp.dir/genericmonitor.cpp.o"
-  "/home/alumno/robocomp/components/Controller/src/genericworker.cpp" "/home/alumno/robocomp/components/Controller/build/src/CMakeFiles/MyFirstComp.dir/genericworker.cpp.o"
-  "/home/alumno/robocomp/classes/qlog/qlog.cpp" "/home/alumno/robocomp/components/Controller/build/src/CMakeFiles/MyFirstComp.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.o"
-  "/home/alumno/robocomp/classes/rapplication/rapplication.cpp" "/home/alumno/robocomp/components/Controller/build/src/CMakeFiles/MyFirstComp.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.o"
-  "/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp" "/home/alumno/robocomp/components/Controller/build/src/CMakeFiles/MyFirstComp.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o"
-  "/home/alumno/robocomp/components/Controller/src/main.cpp" "/home/alumno/robocomp/components/Controller/build/src/CMakeFiles/MyFirstComp.dir/main.cpp.o"
-  "/home/alumno/robocomp/components/Controller/src/specificmonitor.cpp" "/home/alumno/robocomp/components/Controller/build/src/CMakeFiles/MyFirstComp.dir/specificmonitor.cpp.o"
-  "/home/alumno/robocomp/components/Controller/src/specificworker.cpp" "/home/alumno/robocomp/components/Controller/build/src/CMakeFiles/MyFirstComp.dir/specificworker.cpp.o"
+  "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/CommonBehavior.cpp" "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/CMakeFiles/MyFirstComp.dir/CommonBehavior.cpp.o"
+  "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/DifferentialRobot.cpp" "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/CMakeFiles/MyFirstComp.dir/DifferentialRobot.cpp.o"
+  "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/GenericBase.cpp" "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/CMakeFiles/MyFirstComp.dir/GenericBase.cpp.o"
+  "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/Laser.cpp" "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/CMakeFiles/MyFirstComp.dir/Laser.cpp.o"
+  "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/MyFirstComp_autogen/mocs_compilation.cpp" "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/CMakeFiles/MyFirstComp.dir/MyFirstComp_autogen/mocs_compilation.cpp.o"
+  "/home/josel/robocomp/components/beta-robotica-class/Controller/src/commonbehaviorI.cpp" "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/CMakeFiles/MyFirstComp.dir/commonbehaviorI.cpp.o"
+  "/home/josel/robocomp/components/beta-robotica-class/Controller/src/genericmonitor.cpp" "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/CMakeFiles/MyFirstComp.dir/genericmonitor.cpp.o"
+  "/home/josel/robocomp/components/beta-robotica-class/Controller/src/genericworker.cpp" "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/CMakeFiles/MyFirstComp.dir/genericworker.cpp.o"
+  "/home/josel/robocomp/classes/qlog/qlog.cpp" "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/CMakeFiles/MyFirstComp.dir/home/josel/robocomp/classes/qlog/qlog.cpp.o"
+  "/home/josel/robocomp/classes/rapplication/rapplication.cpp" "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/CMakeFiles/MyFirstComp.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.o"
+  "/home/josel/robocomp/classes/sigwatch/sigwatch.cpp" "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/CMakeFiles/MyFirstComp.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o"
+  "/home/josel/robocomp/components/beta-robotica-class/Controller/src/main.cpp" "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/CMakeFiles/MyFirstComp.dir/main.cpp.o"
+  "/home/josel/robocomp/components/beta-robotica-class/Controller/src/specificmonitor.cpp" "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/CMakeFiles/MyFirstComp.dir/specificmonitor.cpp.o"
+  "/home/josel/robocomp/components/beta-robotica-class/Controller/src/specificworker.cpp" "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/CMakeFiles/MyFirstComp.dir/specificworker.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -42,9 +42,9 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/robocomp/include"
   "/classes"
   "."
-  "/home/alumno/robocomp/classes"
-  "/home/alumno/robocomp/libs"
-  "/home/alumno/robocomp/interfaces"
+  "/home/josel/robocomp/classes"
+  "/home/josel/robocomp/libs"
+  "/home/josel/robocomp/interfaces"
   "/include"
   "/usr/include/x86_64-linux-gnu/qt5"
   "/usr/include/x86_64-linux-gnu/qt5/QtGui"
@@ -60,10 +60,10 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Pairs of files generated by the same build rule.
 set(CMAKE_MULTIPLE_OUTPUT_PAIRS
-  "/home/alumno/robocomp/components/Controller/build/src/CommonBehavior.h" "/home/alumno/robocomp/components/Controller/build/src/CommonBehavior.cpp"
-  "/home/alumno/robocomp/components/Controller/build/src/DifferentialRobot.h" "/home/alumno/robocomp/components/Controller/build/src/DifferentialRobot.cpp"
-  "/home/alumno/robocomp/components/Controller/build/src/GenericBase.h" "/home/alumno/robocomp/components/Controller/build/src/GenericBase.cpp"
-  "/home/alumno/robocomp/components/Controller/build/src/Laser.h" "/home/alumno/robocomp/components/Controller/build/src/Laser.cpp"
+  "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/CommonBehavior.h" "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/CommonBehavior.cpp"
+  "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/DifferentialRobot.h" "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/DifferentialRobot.cpp"
+  "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/GenericBase.h" "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/GenericBase.cpp"
+  "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/Laser.h" "/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/Laser.cpp"
   )
 
 

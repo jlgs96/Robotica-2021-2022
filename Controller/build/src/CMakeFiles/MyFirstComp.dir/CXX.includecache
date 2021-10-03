@@ -48,9 +48,9 @@ genericworker.h
 innermodel/innermodel.h
 -
 
-/home/alumno/robocomp/classes/qlog/qlog.h
+/home/josel/robocomp/classes/qlog/qlog.h
 config.h
-/home/alumno/robocomp/classes/qlog/config.h
+/home/josel/robocomp/classes/qlog/config.h
 QtCore
 -
 iostream
@@ -62,7 +62,7 @@ boost/format.hpp
 boost/format.hpp
 -
 
-/home/alumno/robocomp/classes/rapplication/rapplication.h
+/home/josel/robocomp/classes/rapplication/rapplication.h
 Ice/Ice.h
 -
 Ice/Application.h
@@ -72,7 +72,7 @@ IceUtil/IceUtil.h
 QtCore
 -
 
-/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp
+/home/josel/robocomp/classes/sigwatch/sigwatch.cpp
 sys/socket.h
 -
 unistd.h
@@ -86,17 +86,17 @@ QSocketNotifier
 QDebug
 -
 sigwatch.h
-/home/alumno/robocomp/classes/sigwatch/sigwatch.h
+/home/josel/robocomp/classes/sigwatch/sigwatch.h
 moc_sigwatch.cpp
-/home/alumno/robocomp/classes/sigwatch/moc_sigwatch.cpp
+/home/josel/robocomp/classes/sigwatch/moc_sigwatch.cpp
 
-/home/alumno/robocomp/classes/sigwatch/sigwatch.h
+/home/josel/robocomp/classes/sigwatch/sigwatch.h
 QObject
 -
 signal.h
 -
 
-/home/alumno/robocomp/components/Controller/build/src/CommonBehavior.cpp
+/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/CommonBehavior.cpp
 CommonBehavior.h
 -
 IceUtil/PushDisableWarnings.h
@@ -114,7 +114,7 @@ Ice/OutputStream.h
 IceUtil/PopDisableWarnings.h
 -
 
-/home/alumno/robocomp/components/Controller/build/src/DifferentialRobot.cpp
+/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/DifferentialRobot.cpp
 DifferentialRobot.h
 -
 IceUtil/PushDisableWarnings.h
@@ -134,7 +134,7 @@ Ice/LocalException.h
 IceUtil/PopDisableWarnings.h
 -
 
-/home/alumno/robocomp/components/Controller/build/src/GenericBase.cpp
+/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/GenericBase.cpp
 GenericBase.h
 -
 IceUtil/PushDisableWarnings.h
@@ -154,7 +154,7 @@ Ice/LocalException.h
 IceUtil/PopDisableWarnings.h
 -
 
-/home/alumno/robocomp/components/Controller/build/src/Laser.cpp
+/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/Laser.cpp
 Laser.h
 -
 IceUtil/PushDisableWarnings.h
@@ -174,53 +174,53 @@ Ice/LocalException.h
 IceUtil/PopDisableWarnings.h
 -
 
-/home/alumno/robocomp/components/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/moc_genericmonitor.cpp
+/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/moc_genericmonitor.cpp
 genericmonitor.h
-/home/alumno/robocomp/components/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/genericmonitor.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/genericmonitor.h
 QtCore/qbytearray.h
 -
 QtCore/qmetatype.h
 -
 
-/home/alumno/robocomp/components/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/moc_genericworker.cpp
+/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/moc_genericworker.cpp
 genericworker.h
-/home/alumno/robocomp/components/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/genericworker.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/genericworker.h
 QtCore/qbytearray.h
 -
 QtCore/qmetatype.h
 -
 
-/home/alumno/robocomp/components/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/moc_specificmonitor.cpp
+/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/moc_specificmonitor.cpp
 specificmonitor.h
-/home/alumno/robocomp/components/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/specificmonitor.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/specificmonitor.h
 QtCore/qbytearray.h
 -
 QtCore/qmetatype.h
 -
 
-/home/alumno/robocomp/components/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/moc_specificworker.cpp
+/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/moc_specificworker.cpp
 specificworker.h
-/home/alumno/robocomp/components/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/specificworker.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/specificworker.h
 QtCore/qbytearray.h
 -
 QtCore/qmetatype.h
 -
 
-/home/alumno/robocomp/components/Controller/build/src/MyFirstComp_autogen/mocs_compilation.cpp
+/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/MyFirstComp_autogen/mocs_compilation.cpp
 EWIEGA46WW/moc_genericmonitor.cpp
-/home/alumno/robocomp/components/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/moc_genericmonitor.cpp
+/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/moc_genericmonitor.cpp
 EWIEGA46WW/moc_genericworker.cpp
-/home/alumno/robocomp/components/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/moc_genericworker.cpp
+/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/moc_genericworker.cpp
 EWIEGA46WW/moc_specificmonitor.cpp
-/home/alumno/robocomp/components/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/moc_specificmonitor.cpp
+/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/moc_specificmonitor.cpp
 EWIEGA46WW/moc_specificworker.cpp
-/home/alumno/robocomp/components/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/moc_specificworker.cpp
+/home/josel/robocomp/components/beta-robotica-class/Controller/build/src/MyFirstComp_autogen/EWIEGA46WW/moc_specificworker.cpp
 
-/home/alumno/robocomp/components/Controller/src/commonbehaviorI.cpp
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/commonbehaviorI.cpp
 commonbehaviorI.h
-/home/alumno/robocomp/components/Controller/src/commonbehaviorI.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/commonbehaviorI.h
 
-/home/alumno/robocomp/components/Controller/src/commonbehaviorI.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/commonbehaviorI.h
 Ice/Ice.h
 -
 CommonBehavior.h
@@ -228,37 +228,37 @@ CommonBehavior.h
 config.h
 -
 genericworker.h
-/home/alumno/robocomp/components/Controller/src/genericworker.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/genericworker.h
 genericmonitor.h
-/home/alumno/robocomp/components/Controller/src/genericmonitor.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/genericmonitor.h
 
-/home/alumno/robocomp/components/Controller/src/config.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/config.h
 
-/home/alumno/robocomp/components/Controller/src/genericmonitor.cpp
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/genericmonitor.cpp
 genericmonitor.h
-/home/alumno/robocomp/components/Controller/src/genericmonitor.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/genericmonitor.h
 
-/home/alumno/robocomp/components/Controller/src/genericmonitor.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/genericmonitor.h
 Ice/Ice.h
 -
 QtCore
 -
 genericworker.h
-/home/alumno/robocomp/components/Controller/src/genericworker.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/genericworker.h
 config.h
-/home/alumno/robocomp/components/Controller/src/config.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/config.h
 qlog/qlog.h
 -
 CommonBehavior.h
 -
 
-/home/alumno/robocomp/components/Controller/src/genericworker.cpp
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/genericworker.cpp
 genericworker.h
-/home/alumno/robocomp/components/Controller/src/genericworker.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/genericworker.h
 
-/home/alumno/robocomp/components/Controller/src/genericworker.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/genericworker.h
 config.h
-/home/alumno/robocomp/components/Controller/src/config.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/config.h
 stdint.h
 -
 qlog/qlog.h
@@ -272,7 +272,7 @@ GenericBase.h
 Laser.h
 -
 
-/home/alumno/robocomp/components/Controller/src/main.cpp
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/main.cpp
 signal.h
 -
 QtCore
@@ -292,33 +292,33 @@ sigwatch/sigwatch.h
 qlog/qlog.h
 -
 config.h
-/home/alumno/robocomp/components/Controller/src/config.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/config.h
 genericmonitor.h
-/home/alumno/robocomp/components/Controller/src/genericmonitor.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/genericmonitor.h
 genericworker.h
-/home/alumno/robocomp/components/Controller/src/genericworker.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/genericworker.h
 specificworker.h
-/home/alumno/robocomp/components/Controller/src/specificworker.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/specificworker.h
 specificmonitor.h
-/home/alumno/robocomp/components/Controller/src/specificmonitor.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/specificmonitor.h
 commonbehaviorI.h
-/home/alumno/robocomp/components/Controller/src/commonbehaviorI.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/commonbehaviorI.h
 GenericBase.h
 -
 
-/home/alumno/robocomp/components/Controller/src/specificmonitor.cpp
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/specificmonitor.cpp
 specificmonitor.h
-/home/alumno/robocomp/components/Controller/src/specificmonitor.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/specificmonitor.h
 
-/home/alumno/robocomp/components/Controller/src/specificmonitor.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/specificmonitor.h
 genericmonitor.h
-/home/alumno/robocomp/components/Controller/src/genericmonitor.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/genericmonitor.h
 
-/home/alumno/robocomp/components/Controller/src/specificworker.cpp
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/specificworker.cpp
 specificworker.h
-/home/alumno/robocomp/components/Controller/src/specificworker.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/specificworker.h
 
-/home/alumno/robocomp/components/Controller/src/specificworker.h
+/home/josel/robocomp/components/beta-robotica-class/Controller/src/specificworker.h
 genericworker.h
 -
 innermodel/innermodel.h
