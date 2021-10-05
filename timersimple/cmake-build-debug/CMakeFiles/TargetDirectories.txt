@@ -1,7 +1,0 @@
-/home/josel/Escritorio/timersimple/cmake-build-debug/CMakeFiles/install/strip.dir
-/home/josel/Escritorio/timersimple/cmake-build-debug/CMakeFiles/install/local.dir
-/home/josel/Escritorio/timersimple/cmake-build-debug/CMakeFiles/ejemplo1.dir
-/home/josel/Escritorio/timersimple/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/josel/Escritorio/timersimple/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/josel/Escritorio/timersimple/cmake-build-debug/CMakeFiles/install.dir
-/home/josel/Escritorio/timersimple/cmake-build-debug/CMakeFiles/list_install_components.dir
