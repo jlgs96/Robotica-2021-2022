@@ -1,0 +1,15 @@
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Controller/build/CMakeFiles/install/strip.dir
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Controller/build/CMakeFiles/install/local.dir
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Controller/build/CMakeFiles/install.dir
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Controller/build/CMakeFiles/list_install_components.dir
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Controller/build/CMakeFiles/rebuild_cache.dir
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Controller/build/CMakeFiles/edit_cache.dir
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Controller/build/src/CMakeFiles/install/strip.dir
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Controller/build/src/CMakeFiles/install/local.dir
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Controller/build/src/CMakeFiles/install.dir
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Controller/build/src/CMakeFiles/list_install_components.dir
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Controller/build/src/CMakeFiles/rebuild_cache.dir
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Controller/build/src/CMakeFiles/MyFirstComp.dir
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Controller/build/src/CMakeFiles/edit_cache.dir
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Controller/build/src/CMakeFiles/ICES__home_alumno_robocomp_components_g8-M1_Robotica-2021-2022_Controller_src.dir
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Controller/build/src/CMakeFiles/MyFirstComp_autogen.dir
