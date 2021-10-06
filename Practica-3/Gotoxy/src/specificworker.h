@@ -29,7 +29,7 @@
 
 #include <genericworker.h>
 #include <innermodel/innermodel.h>
-
+#include <abstract_graphic_viewer/abstract_graphic_viewer.h>
 class SpecificWorker : public GenericWorker
 {
 Q_OBJECT
@@ -37,13 +37,20 @@ public:
 	SpecificWorker(TuplePrx tprx, bool startup_check);
 	~SpecificWorker();
 	bool setParams(RoboCompCommonBehavior::ParameterList params);
+    AbstractGraphicViewer *viewer;
+    const int ROBOT_LENGTH = 400;
+    QGraphicsPolygonItem *robot_polygon;
+    QGraphicsRectItem *laser_in_robot_polygon;
+    QPointF last_point;
 
+    QPointF point;
 
 
 public slots:
 	void compute();
 	int startup_check();
 	void initialize(int period);
+    void new_target_slot(QPointF point);//TODO: CHECK THAT THE MOUSE IS HERE
 private:
 	std::shared_ptr < InnerModel > innerModel;
 	bool startup_check_flag;

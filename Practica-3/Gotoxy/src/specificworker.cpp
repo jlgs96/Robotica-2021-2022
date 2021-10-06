@@ -66,11 +66,30 @@ void SpecificWorker::initialize(int period)
 	{
 		timer.start(Period);
 	}
+    QRect dimension( -5000, -2500, 10000, 5000);
 
+    viewer = new AbstractGraphicViewer(this , dimension);
+    this->resize(900,450);
+    robot_polygon= viewer->add_robot(ROBOT_LENGTH);
+    laser_in_robot_polygon=new QGraphicsRectItem(-10, 10, 20, 20, robot_polygon);
+    laser_in_robot_polygon->setPos(0, 190);
+    try{
+    
+        RoboCompGenericBase::TBaseState bState;
+        differentialrobot_proxy->getBaseState(bState);
+        last_point=QPointF(bState.x, bState.z);
+    }
+    catch(const Ice::Exception &e){std::cout<<e.what()<<std::endl;}
+    connect(viewer, &AbstractGraphicViewer::new_mouse_coordinates, this, &SpecificWorker::new_target_slot);
+	
 }
 
 void SpecificWorker::compute()
 {
+    RoboCompGenericBase::TBaseState bState;
+    differentialrobot_proxy->getBaseState(bState);
+    robot_polygon->setRotation(bState.alpha*180/M_PI);
+    robot_polygon->setPos(bState.x, bState.z);
 	//computeCODE
 	//QMutexLocker locker(mutex);
 	//try
@@ -86,7 +105,13 @@ void SpecificWorker::compute()
 	
 	
 }
+void SpecificWorker::new_target_slot(QPointF point) {
+    qInfo() << point;
 
+
+
+
+}
 int SpecificWorker::startup_check()
 {
 	std::cout << "Startup check" << std::endl;
