@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_SpecificWorker_t {
-    QByteArrayData data[7];
-    char stringdata0[72];
+    QByteArrayData data[8];
+    char stringdata0[85];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,11 +37,13 @@ QT_MOC_LITERAL(2, 23, 0), // ""
 QT_MOC_LITERAL(3, 24, 13), // "startup_check"
 QT_MOC_LITERAL(4, 38, 10), // "initialize"
 QT_MOC_LITERAL(5, 49, 6), // "period"
-QT_MOC_LITERAL(6, 56, 15) // "new_target_slot"
+QT_MOC_LITERAL(6, 56, 15), // "new_target_slot"
+QT_MOC_LITERAL(7, 72, 12) // "target_point"
 
     },
     "SpecificWorker\0compute\0\0startup_check\0"
-    "initialize\0period\0new_target_slot"
+    "initialize\0period\0new_target_slot\0"
+    "target_point"
 };
 #undef QT_MOC_LITERAL
 
@@ -62,13 +64,13 @@ static const uint qt_meta_data_SpecificWorker[] = {
        1,    0,   34,    2, 0x0a /* Public */,
        3,    0,   35,    2, 0x0a /* Public */,
        4,    1,   36,    2, 0x0a /* Public */,
-       6,    0,   39,    2, 0x0a /* Public */,
+       6,    1,   39,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Int,
     QMetaType::Void, QMetaType::Int,    5,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::QPointF,    7,
 
        0        // eod
 };
@@ -83,7 +85,7 @@ void SpecificWorker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 1: { int _r = _t->startup_check();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = std::move(_r); }  break;
         case 2: _t->initialize((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 3: _t->new_target_slot(); break;
+        case 3: _t->new_target_slot((*reinterpret_cast< QPointF(*)>(_a[1]))); break;
         default: ;
         }
     }

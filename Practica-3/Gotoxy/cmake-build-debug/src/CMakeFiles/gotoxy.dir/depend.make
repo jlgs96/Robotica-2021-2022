@@ -2800,7 +2800,7 @@ src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o: 
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qwineventnotifier.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qxmlstream.h
 src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.o: \
- ../../../../../../../../../opt/robocomp/classes/sigwatch/sigwatch.h \
+ ../../../../../../../opt/robocomp/classes/sigwatch/sigwatch.h \
  /opt/robocomp/classes/sigwatch/sigwatch.cpp \
  /opt/robocomp/classes/sigwatch/sigwatch.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug \
