@@ -67,9 +67,7 @@ void SpecificWorker::initialize(int period)
 		timer.start(Period);
 	}
     QRect dimension( -5000, -2500, 10000, 5000);
-
     viewer = new AbstractGraphicViewer(this , dimension);
-
     this->resize(900,450);
     robot_polygon= viewer->add_robot(ROBOT_LENGTH);
     laser_in_robot_polygon=new QGraphicsRectItem(-10, 10, 20, 20, robot_polygon);
@@ -129,15 +127,19 @@ void SpecificWorker::new_target_slot(QPointF point) {
 void SpecificWorker::draw_laser(const RoboCompLaser::TLaserData &ldata) // robot coordinates
 {
    static QGraphicsItem *laser_polygon = nullptr;
+
    // code to delete any existing laser graphic element
    int cx, cy;
    QPolygonF poly;
-   for (int index = 0 ; index < ldata.size(); index++){
+   viewer->resetCachedContent();
+   viewer->items().clear();
+   for (long unsigned int index = 0 ; index < ldata.size(); index++){
         //transformar base
         //meter en poly
+
         cx=cos(ldata[index].angle)*ldata[index].dist;
         cy=sin(ldata[index].angle)*ldata[index].dist;
-        poly << QPointF(cx,cy);
+        poly << QPointF(cy,cx);
 
    }
    poly.translate(last_point);
