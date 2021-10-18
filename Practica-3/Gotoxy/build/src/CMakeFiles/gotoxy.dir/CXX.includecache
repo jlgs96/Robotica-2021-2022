@@ -55,6 +55,8 @@ innermodel/innermodel.h
 -
 abstract_graphic_viewer/abstract_graphic_viewer.h
 -
+eigen3/Eigen/Eigen
+-
 
 /home/josel/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h
 QWidget
@@ -372,6 +374,8 @@ genericworker.h
 innermodel/innermodel.h
 -
 abstract_graphic_viewer/abstract_graphic_viewer.h
+-
+eigen3/Eigen/Eigen
 -
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug

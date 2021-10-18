@@ -5,7 +5,7 @@
 		<Option title="gotoxy"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\src\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\..\opt\robocomp\;CMake Files\..\..\..\..\..\..\opt\robocomp\cmake\;CMake Files\..\..\..\..\..\..\opt\robocomp\cmake\modules\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Sql\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5OpenGL\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Xml\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5XmlPatterns\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Network\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\src\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\robocomp\;CMake Files\..\..\..\..\robocomp\cmake\;CMake Files\..\..\..\..\robocomp\cmake\modules\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Sql\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5OpenGL\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Xml\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5XmlPatterns\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Network\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug"/>
@@ -109,9 +109,9 @@
 					<Add directory="/opt/robocomp/include"/>
 					<Add directory="/classes"/>
 					<Add directory="/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug"/>
-					<Add directory="/opt/robocomp/classes"/>
-					<Add directory="/opt/robocomp/libs"/>
-					<Add directory="/opt/robocomp/interfaces"/>
+					<Add directory="/home/josel/robocomp/classes"/>
+					<Add directory="/home/josel/robocomp/libs"/>
+					<Add directory="/home/josel/robocomp/interfaces"/>
 					<Add directory="/include"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/qt5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui"/>
@@ -160,9 +160,9 @@
 					<Add directory="/opt/robocomp/include"/>
 					<Add directory="/classes"/>
 					<Add directory="/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug"/>
-					<Add directory="/opt/robocomp/classes"/>
-					<Add directory="/opt/robocomp/libs"/>
-					<Add directory="/opt/robocomp/interfaces"/>
+					<Add directory="/home/josel/robocomp/classes"/>
+					<Add directory="/home/josel/robocomp/libs"/>
+					<Add directory="/home/josel/robocomp/interfaces"/>
 					<Add directory="/include"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/qt5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui"/>
@@ -200,6 +200,27 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/josel/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h">
+			<Option target="gotoxy"/>
+		</Unit>
+		<Unit filename="/home/josel/robocomp/classes/qlog/qlog.cpp">
+			<Option target="gotoxy"/>
+		</Unit>
+		<Unit filename="/home/josel/robocomp/classes/qlog/qlog.h">
+			<Option target="gotoxy"/>
+		</Unit>
+		<Unit filename="/home/josel/robocomp/classes/rapplication/rapplication.cpp">
+			<Option target="gotoxy"/>
+		</Unit>
+		<Unit filename="/home/josel/robocomp/classes/rapplication/rapplication.h">
+			<Option target="gotoxy"/>
+		</Unit>
+		<Unit filename="/home/josel/robocomp/classes/sigwatch/sigwatch.cpp">
+			<Option target="gotoxy"/>
+		</Unit>
+		<Unit filename="/home/josel/robocomp/classes/sigwatch/sigwatch.h">
+			<Option target="gotoxy"/>
+		</Unit>
 		<Unit filename="/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src/CommonBehavior.cpp">
 			<Option target="gotoxy"/>
 		</Unit>
@@ -278,27 +299,6 @@
 		<Unit filename="/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src/specificworker.h">
 			<Option target="gotoxy"/>
 		</Unit>
-		<Unit filename="/opt/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h">
-			<Option target="gotoxy"/>
-		</Unit>
-		<Unit filename="/opt/robocomp/classes/qlog/qlog.cpp">
-			<Option target="gotoxy"/>
-		</Unit>
-		<Unit filename="/opt/robocomp/classes/qlog/qlog.h">
-			<Option target="gotoxy"/>
-		</Unit>
-		<Unit filename="/opt/robocomp/classes/rapplication/rapplication.cpp">
-			<Option target="gotoxy"/>
-		</Unit>
-		<Unit filename="/opt/robocomp/classes/rapplication/rapplication.h">
-			<Option target="gotoxy"/>
-		</Unit>
-		<Unit filename="/opt/robocomp/classes/sigwatch/sigwatch.cpp">
-			<Option target="gotoxy"/>
-		</Unit>
-		<Unit filename="/opt/robocomp/classes/sigwatch/sigwatch.h">
-			<Option target="gotoxy"/>
-		</Unit>
 		<Unit filename="/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
@@ -308,11 +308,11 @@
 		<Unit filename="/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src/CMakeListsSpecific.txt">
 			<Option virtualFolder="CMake Files\src\"/>
 		</Unit>
-		<Unit filename="/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/../../../../../../opt/robocomp/cmake/robocomp.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\..\opt\robocomp\cmake\"/>
+		<Unit filename="/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/../../../../robocomp/cmake/robocomp.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\robocomp\cmake\"/>
 		</Unit>
-		<Unit filename="/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/../../../../../../opt/robocomp/cmake/modules/qt.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\..\opt\robocomp\cmake\modules\"/>
+		<Unit filename="/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/../../../../robocomp/cmake/modules/qt.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\robocomp\cmake\modules\"/>
 		</Unit>
 		<Unit filename="/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\"/>

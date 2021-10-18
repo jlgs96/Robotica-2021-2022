@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_SpecificWorker_t {
     QByteArrayData data[8];
-    char stringdata0[85];
+    char stringdata0[78];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,12 +38,12 @@ QT_MOC_LITERAL(3, 24, 13), // "startup_check"
 QT_MOC_LITERAL(4, 38, 10), // "initialize"
 QT_MOC_LITERAL(5, 49, 6), // "period"
 QT_MOC_LITERAL(6, 56, 15), // "new_target_slot"
-QT_MOC_LITERAL(7, 72, 12) // "target_point"
+QT_MOC_LITERAL(7, 72, 5) // "point"
 
     },
     "SpecificWorker\0compute\0\0startup_check\0"
     "initialize\0period\0new_target_slot\0"
-    "target_point"
+    "point"
 };
 #undef QT_MOC_LITERAL
 

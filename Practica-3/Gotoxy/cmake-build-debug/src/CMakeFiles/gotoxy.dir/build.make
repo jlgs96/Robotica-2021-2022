@@ -44,10 +44,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/164/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/169/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/164/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/169/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -137,44 +137,44 @@ src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/specificmonitor.cpp.s"
 	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src/specificmonitor.cpp -o CMakeFiles/gotoxy.dir/specificmonitor.cpp.s
 
-src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
-src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o: /opt/robocomp/classes/rapplication/rapplication.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o"
-	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o -c /opt/robocomp/classes/rapplication/rapplication.cpp
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.o: /home/josel/robocomp/classes/rapplication/rapplication.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.o"
+	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.o -c /home/josel/robocomp/classes/rapplication/rapplication.cpp
 
-src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/rapplication/rapplication.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/opt/robocomp/classes/rapplication/rapplication.cpp.i"
-	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /opt/robocomp/classes/rapplication/rapplication.cpp > CMakeFiles/gotoxy.dir/opt/robocomp/classes/rapplication/rapplication.cpp.i
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.i"
+	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/josel/robocomp/classes/rapplication/rapplication.cpp > CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.i
 
-src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/rapplication/rapplication.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/opt/robocomp/classes/rapplication/rapplication.cpp.s"
-	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /opt/robocomp/classes/rapplication/rapplication.cpp -o CMakeFiles/gotoxy.dir/opt/robocomp/classes/rapplication/rapplication.cpp.s
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.s"
+	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/josel/robocomp/classes/rapplication/rapplication.cpp -o CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.s
 
-src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
-src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.o: /opt/robocomp/classes/sigwatch/sigwatch.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.o"
-	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.o -c /opt/robocomp/classes/sigwatch/sigwatch.cpp
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o: /home/josel/robocomp/classes/sigwatch/sigwatch.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o"
+	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o -c /home/josel/robocomp/classes/sigwatch/sigwatch.cpp
 
-src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.i"
-	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /opt/robocomp/classes/sigwatch/sigwatch.cpp > CMakeFiles/gotoxy.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.i
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.i"
+	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/josel/robocomp/classes/sigwatch/sigwatch.cpp > CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.i
 
-src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.s"
-	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /opt/robocomp/classes/sigwatch/sigwatch.cpp -o CMakeFiles/gotoxy.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.s
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.s"
+	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/josel/robocomp/classes/sigwatch/sigwatch.cpp -o CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.s
 
-src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/qlog/qlog.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
-src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/qlog/qlog.cpp.o: /opt/robocomp/classes/qlog/qlog.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/qlog/qlog.cpp.o"
-	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/opt/robocomp/classes/qlog/qlog.cpp.o -c /opt/robocomp/classes/qlog/qlog.cpp
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.o: /home/josel/robocomp/classes/qlog/qlog.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.o"
+	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.o -c /home/josel/robocomp/classes/qlog/qlog.cpp
 
-src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/qlog/qlog.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/opt/robocomp/classes/qlog/qlog.cpp.i"
-	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /opt/robocomp/classes/qlog/qlog.cpp > CMakeFiles/gotoxy.dir/opt/robocomp/classes/qlog/qlog.cpp.i
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.i"
+	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/josel/robocomp/classes/qlog/qlog.cpp > CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.i
 
-src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/qlog/qlog.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/opt/robocomp/classes/qlog/qlog.cpp.s"
-	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /opt/robocomp/classes/qlog/qlog.cpp -o CMakeFiles/gotoxy.dir/opt/robocomp/classes/qlog/qlog.cpp.s
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.s"
+	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/josel/robocomp/classes/qlog/qlog.cpp -o CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.s
 
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/main.cpp.o: ../src/main.cpp
@@ -285,9 +285,9 @@ gotoxy_OBJECTS = \
 "CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/gotoxy.dir/specificworker.cpp.o" \
 "CMakeFiles/gotoxy.dir/specificmonitor.cpp.o" \
-"CMakeFiles/gotoxy.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o" \
-"CMakeFiles/gotoxy.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.o" \
-"CMakeFiles/gotoxy.dir/opt/robocomp/classes/qlog/qlog.cpp.o" \
+"CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.o" \
+"CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o" \
+"CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.o" \
 "CMakeFiles/gotoxy.dir/main.cpp.o" \
 "CMakeFiles/gotoxy.dir/genericmonitor.cpp.o" \
 "CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o" \
@@ -303,9 +303,9 @@ gotoxy_EXTERNAL_OBJECTS =
 ../bin/gotoxy: src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o
 ../bin/gotoxy: src/CMakeFiles/gotoxy.dir/specificworker.cpp.o
 ../bin/gotoxy: src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o
-../bin/gotoxy: src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o
-../bin/gotoxy: src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.o
-../bin/gotoxy: src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/qlog/qlog.cpp.o
+../bin/gotoxy: src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.o
+../bin/gotoxy: src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o
+../bin/gotoxy: src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.o
 ../bin/gotoxy: src/CMakeFiles/gotoxy.dir/main.cpp.o
 ../bin/gotoxy: src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o
 ../bin/gotoxy: src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o

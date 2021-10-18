@@ -83,9 +83,13 @@ void SpecificWorker::initialize(int period)
 	
 }
 
+
+
+
+
 void SpecificWorker::compute()
 {
-
+    RoboCompGenericBase::TBaseState bState;
     try {
         RoboCompLaser::TLaserData ldata = laser_proxy->getLaserData();
         draw_laser(ldata);
@@ -96,7 +100,7 @@ void SpecificWorker::compute()
 
 
     try{
-        RoboCompGenericBase::TBaseState bState;
+
         differentialrobot_proxy->getBaseState(bState);
         robot_polygon->setRotation(bState.alpha*180/M_PI);
         robot_polygon->setPos(bState.x, bState.z);
@@ -104,6 +108,40 @@ void SpecificWorker::compute()
     } catch (const Ice::Exception &e) {
         std::cout<<e.what()<<std::endl;
     }
+    if(target.active){
+        Eigen::Vector2f robot_eigen(bState.x, bState.z);
+        Eigen::Vector2f target_eigen(target.destiny.x(), target.destiny.y());
+        if(float distance = (robot_eigen - target_eigen).norm(); distance > 100){
+            QPointF pt = world_to_robot(target, bState);
+
+            float beta = atan2(pt.x(), pt.y());
+            int giro = 1;
+            if (beta > 0)
+            {
+                giro = -1;
+            }
+
+            float adv = MAX_ADV_SPEED * dist_to_target(distance)* rotation_speed(beta);
+            try {
+                differentialrobot_proxy->setSpeedBase(adv,beta*giro);
+            }catch(const Ice::Exception &e){
+                std::cout<<e.what()<<std::endl;
+            }
+        }
+        else{
+            try{
+                differentialrobot_proxy->setSpeedBase(0,0);
+                target.active = false;
+            }
+            catch(const Ice::Exception &e){
+                std::cout<<e.what()<< std::endl;
+
+            }
+        }
+    }
+
+
+
     //computeCODE
     //QMutexLocker locker(mutex);
 	//try
@@ -119,30 +157,95 @@ void SpecificWorker::compute()
 	
 	
 }
+
+
+/*
+ * METODO PARA CALCULAR VELOCIDAD MÁXIMA SEGÚN DISTANCIA AL OBJETO
+ *
+ * V = Vmax * F(dist) * F(angle)
+ *
+ * F(Dist): Si dist > umbral == VMAX
+ * si no: aplicamos: Vmax/umbral * Dist
+ * F(Dist) = V/Vmax(METODO DIST TO TARGET)
+ *
+ *
+ *
+ *
+ * F(angle):lny = e ^ x²/lambda
+ *lambda = -(x²)/lnF(angle) (Rotation_Speed)
+ * lambda = -(0,5²)/ln0.4
+ */
+float SpecificWorker::dist_to_target(float dist){
+    float threshold = 500;
+    float speed;
+    if(dist > threshold){
+        speed = MAX_ADV_SPEED;
+    }else{
+        speed = dist * (MAX_ADV_SPEED/threshold);
+    }
+    return (speed / MAX_ADV_SPEED);
+}
+/*
+ *
+ *
+ */
+float SpecificWorker::rotation_speed(float beta) {
+    float v= 0.0;
+    float e = 2.71828;
+    float lambda= 0.272839167;
+
+
+
+    v = pow(e, -pow(beta,2)/lambda);
+
+return v;
+}
+
+QPointF SpecificWorker::world_to_robot(Target target, RoboCompGenericBase::TBaseState bState)
+{
+    float angle = bState.alpha;
+    Eigen::Vector2f T(bState.x, bState.z), point_in_world(target.destiny.x(), target.destiny.y());
+    Eigen::Matrix2f R;
+
+    R << cos(angle), sin(angle), -sin(angle), cos(angle);
+
+    Eigen::Vector2f point_in_robot = R * point_in_world - T;
+    return QPointF(point_in_robot[0], point_in_world[1]);
+
+
+}
 void SpecificWorker::new_target_slot(QPointF point) {
     target_point = point;
+    target.destiny = point;
+    target.active = true;
     qInfo() << target_point;
 
 }
 void SpecificWorker::draw_laser(const RoboCompLaser::TLaserData &ldata) // robot coordinates
 {
    static QGraphicsItem *laser_polygon = nullptr;
-
+   //delete laser_polygon;
    // code to delete any existing laser graphic element
-   int cx, cy;
+   if(laser_polygon!= nullptr){
+       viewer->scene.removeItem(laser_polygon);
+   }
+
+   float cx, cy;
    QPolygonF poly;
-   viewer->resetCachedContent();
-   viewer->items().clear();
-   for (long unsigned int index = 0 ; index < ldata.size(); index++){
+
+
+
+   poly << QPointF(0,0);
+   for (auto &pointer : ldata){
         //transformar base
         //meter en poly
 
-        cx=cos(ldata[index].angle)*ldata[index].dist;
-        cy=sin(ldata[index].angle)*ldata[index].dist;
+        cx=cos(pointer.angle)*pointer.dist;
+        cy=sin(pointer.angle)*pointer.dist;
         poly << QPointF(cy,cx);
 
    }
-   poly.translate(last_point);
+   //poly.translate(last_point);
    // code to fill poly with the laser polar coordinates (angle, dist) transformed to cartesian coordinates (x,y), all in the robot's  // reference system
    QColor color("LightGreen");
    color.setAlpha(40);

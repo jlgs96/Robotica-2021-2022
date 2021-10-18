@@ -30,14 +30,25 @@
 #include <genericworker.h>
 #include <innermodel/innermodel.h>
 #include <abstract_graphic_viewer/abstract_graphic_viewer.h>
+#include <eigen3/Eigen/Eigen>
 class SpecificWorker : public GenericWorker
 {
 Q_OBJECT
 public:
 	SpecificWorker(TuplePrx tprx, bool startup_check);
 	~SpecificWorker();
-	bool setParams(RoboCompCommonBehavior::ParameterList params);
+    typedef struct{
+        QPointF destiny;
+        bool active;
+    }Target;
+
+    Target target;
+    float MAX_ADV_SPEED = 1000;
+    bool setParams(RoboCompCommonBehavior::ParameterList params);
     void draw_laser(const RoboCompLaser::TLaserData &ldata);
+    QPointF world_to_robot(Target target, RoboCompGenericBase::TBaseState bState);
+    float dist_to_target(float dist);
+    float rotation_speed(float beta);
     AbstractGraphicViewer *viewer;
     const int ROBOT_LENGTH = 400;
     QGraphicsPolygonItem *robot_polygon;

@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/164/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/169/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/164/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/169/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -68,37 +68,37 @@ CMAKE_BINARY_DIR = /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cma
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/snap/clion/164/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/snap/clion/169/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/snap/clion/164/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/snap/clion/169/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/snap/clion/164/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/snap/clion/169/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/snap/clion/164/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/snap/clion/169/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/snap/clion/164/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+	/snap/clion/169/bin/cmake/linux/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/snap/clion/164/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+	/snap/clion/169/bin/cmake/linux/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target list_install_components
@@ -113,7 +113,7 @@ list_install_components/fast: list_install_components
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/164/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/169/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -123,7 +123,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/164/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/169/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -395,6 +395,78 @@ gotoxy_autogen/mocs_compilation.cpp.s:
 	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.s
 .PHONY : gotoxy_autogen/mocs_compilation.cpp.s
 
+home/josel/robocomp/classes/qlog/qlog.o: home/josel/robocomp/classes/qlog/qlog.cpp.o
+.PHONY : home/josel/robocomp/classes/qlog/qlog.o
+
+# target to build an object file
+home/josel/robocomp/classes/qlog/qlog.cpp.o:
+	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.o
+.PHONY : home/josel/robocomp/classes/qlog/qlog.cpp.o
+
+home/josel/robocomp/classes/qlog/qlog.i: home/josel/robocomp/classes/qlog/qlog.cpp.i
+.PHONY : home/josel/robocomp/classes/qlog/qlog.i
+
+# target to preprocess a source file
+home/josel/robocomp/classes/qlog/qlog.cpp.i:
+	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.i
+.PHONY : home/josel/robocomp/classes/qlog/qlog.cpp.i
+
+home/josel/robocomp/classes/qlog/qlog.s: home/josel/robocomp/classes/qlog/qlog.cpp.s
+.PHONY : home/josel/robocomp/classes/qlog/qlog.s
+
+# target to generate assembly for a file
+home/josel/robocomp/classes/qlog/qlog.cpp.s:
+	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.s
+.PHONY : home/josel/robocomp/classes/qlog/qlog.cpp.s
+
+home/josel/robocomp/classes/rapplication/rapplication.o: home/josel/robocomp/classes/rapplication/rapplication.cpp.o
+.PHONY : home/josel/robocomp/classes/rapplication/rapplication.o
+
+# target to build an object file
+home/josel/robocomp/classes/rapplication/rapplication.cpp.o:
+	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.o
+.PHONY : home/josel/robocomp/classes/rapplication/rapplication.cpp.o
+
+home/josel/robocomp/classes/rapplication/rapplication.i: home/josel/robocomp/classes/rapplication/rapplication.cpp.i
+.PHONY : home/josel/robocomp/classes/rapplication/rapplication.i
+
+# target to preprocess a source file
+home/josel/robocomp/classes/rapplication/rapplication.cpp.i:
+	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.i
+.PHONY : home/josel/robocomp/classes/rapplication/rapplication.cpp.i
+
+home/josel/robocomp/classes/rapplication/rapplication.s: home/josel/robocomp/classes/rapplication/rapplication.cpp.s
+.PHONY : home/josel/robocomp/classes/rapplication/rapplication.s
+
+# target to generate assembly for a file
+home/josel/robocomp/classes/rapplication/rapplication.cpp.s:
+	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.s
+.PHONY : home/josel/robocomp/classes/rapplication/rapplication.cpp.s
+
+home/josel/robocomp/classes/sigwatch/sigwatch.o: home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o
+.PHONY : home/josel/robocomp/classes/sigwatch/sigwatch.o
+
+# target to build an object file
+home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o:
+	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o
+.PHONY : home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o
+
+home/josel/robocomp/classes/sigwatch/sigwatch.i: home/josel/robocomp/classes/sigwatch/sigwatch.cpp.i
+.PHONY : home/josel/robocomp/classes/sigwatch/sigwatch.i
+
+# target to preprocess a source file
+home/josel/robocomp/classes/sigwatch/sigwatch.cpp.i:
+	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.i
+.PHONY : home/josel/robocomp/classes/sigwatch/sigwatch.cpp.i
+
+home/josel/robocomp/classes/sigwatch/sigwatch.s: home/josel/robocomp/classes/sigwatch/sigwatch.cpp.s
+.PHONY : home/josel/robocomp/classes/sigwatch/sigwatch.s
+
+# target to generate assembly for a file
+home/josel/robocomp/classes/sigwatch/sigwatch.cpp.s:
+	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.s
+.PHONY : home/josel/robocomp/classes/sigwatch/sigwatch.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -418,78 +490,6 @@ main.s: main.cpp.s
 main.cpp.s:
 	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/main.cpp.s
 .PHONY : main.cpp.s
-
-opt/robocomp/classes/qlog/qlog.o: opt/robocomp/classes/qlog/qlog.cpp.o
-.PHONY : opt/robocomp/classes/qlog/qlog.o
-
-# target to build an object file
-opt/robocomp/classes/qlog/qlog.cpp.o:
-	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/qlog/qlog.cpp.o
-.PHONY : opt/robocomp/classes/qlog/qlog.cpp.o
-
-opt/robocomp/classes/qlog/qlog.i: opt/robocomp/classes/qlog/qlog.cpp.i
-.PHONY : opt/robocomp/classes/qlog/qlog.i
-
-# target to preprocess a source file
-opt/robocomp/classes/qlog/qlog.cpp.i:
-	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/qlog/qlog.cpp.i
-.PHONY : opt/robocomp/classes/qlog/qlog.cpp.i
-
-opt/robocomp/classes/qlog/qlog.s: opt/robocomp/classes/qlog/qlog.cpp.s
-.PHONY : opt/robocomp/classes/qlog/qlog.s
-
-# target to generate assembly for a file
-opt/robocomp/classes/qlog/qlog.cpp.s:
-	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/qlog/qlog.cpp.s
-.PHONY : opt/robocomp/classes/qlog/qlog.cpp.s
-
-opt/robocomp/classes/rapplication/rapplication.o: opt/robocomp/classes/rapplication/rapplication.cpp.o
-.PHONY : opt/robocomp/classes/rapplication/rapplication.o
-
-# target to build an object file
-opt/robocomp/classes/rapplication/rapplication.cpp.o:
-	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o
-.PHONY : opt/robocomp/classes/rapplication/rapplication.cpp.o
-
-opt/robocomp/classes/rapplication/rapplication.i: opt/robocomp/classes/rapplication/rapplication.cpp.i
-.PHONY : opt/robocomp/classes/rapplication/rapplication.i
-
-# target to preprocess a source file
-opt/robocomp/classes/rapplication/rapplication.cpp.i:
-	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/rapplication/rapplication.cpp.i
-.PHONY : opt/robocomp/classes/rapplication/rapplication.cpp.i
-
-opt/robocomp/classes/rapplication/rapplication.s: opt/robocomp/classes/rapplication/rapplication.cpp.s
-.PHONY : opt/robocomp/classes/rapplication/rapplication.s
-
-# target to generate assembly for a file
-opt/robocomp/classes/rapplication/rapplication.cpp.s:
-	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/rapplication/rapplication.cpp.s
-.PHONY : opt/robocomp/classes/rapplication/rapplication.cpp.s
-
-opt/robocomp/classes/sigwatch/sigwatch.o: opt/robocomp/classes/sigwatch/sigwatch.cpp.o
-.PHONY : opt/robocomp/classes/sigwatch/sigwatch.o
-
-# target to build an object file
-opt/robocomp/classes/sigwatch/sigwatch.cpp.o:
-	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.o
-.PHONY : opt/robocomp/classes/sigwatch/sigwatch.cpp.o
-
-opt/robocomp/classes/sigwatch/sigwatch.i: opt/robocomp/classes/sigwatch/sigwatch.cpp.i
-.PHONY : opt/robocomp/classes/sigwatch/sigwatch.i
-
-# target to preprocess a source file
-opt/robocomp/classes/sigwatch/sigwatch.cpp.i:
-	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.i
-.PHONY : opt/robocomp/classes/sigwatch/sigwatch.cpp.i
-
-opt/robocomp/classes/sigwatch/sigwatch.s: opt/robocomp/classes/sigwatch/sigwatch.cpp.s
-.PHONY : opt/robocomp/classes/sigwatch/sigwatch.s
-
-# target to generate assembly for a file
-opt/robocomp/classes/sigwatch/sigwatch.cpp.s:
-	cd /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.s
-.PHONY : opt/robocomp/classes/sigwatch/sigwatch.cpp.s
 
 specificmonitor.o: specificmonitor.cpp.o
 .PHONY : specificmonitor.o
@@ -578,18 +578,18 @@ help:
 	@echo "... gotoxy_autogen/mocs_compilation.o"
 	@echo "... gotoxy_autogen/mocs_compilation.i"
 	@echo "... gotoxy_autogen/mocs_compilation.s"
+	@echo "... home/josel/robocomp/classes/qlog/qlog.o"
+	@echo "... home/josel/robocomp/classes/qlog/qlog.i"
+	@echo "... home/josel/robocomp/classes/qlog/qlog.s"
+	@echo "... home/josel/robocomp/classes/rapplication/rapplication.o"
+	@echo "... home/josel/robocomp/classes/rapplication/rapplication.i"
+	@echo "... home/josel/robocomp/classes/rapplication/rapplication.s"
+	@echo "... home/josel/robocomp/classes/sigwatch/sigwatch.o"
+	@echo "... home/josel/robocomp/classes/sigwatch/sigwatch.i"
+	@echo "... home/josel/robocomp/classes/sigwatch/sigwatch.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... opt/robocomp/classes/qlog/qlog.o"
-	@echo "... opt/robocomp/classes/qlog/qlog.i"
-	@echo "... opt/robocomp/classes/qlog/qlog.s"
-	@echo "... opt/robocomp/classes/rapplication/rapplication.o"
-	@echo "... opt/robocomp/classes/rapplication/rapplication.i"
-	@echo "... opt/robocomp/classes/rapplication/rapplication.s"
-	@echo "... opt/robocomp/classes/sigwatch/sigwatch.o"
-	@echo "... opt/robocomp/classes/sigwatch/sigwatch.i"
-	@echo "... opt/robocomp/classes/sigwatch/sigwatch.s"
 	@echo "... specificmonitor.o"
 	@echo "... specificmonitor.i"
 	@echo "... specificmonitor.s"

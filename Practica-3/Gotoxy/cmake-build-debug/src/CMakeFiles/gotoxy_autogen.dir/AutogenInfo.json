@@ -3,12 +3,12 @@
 	"CMAKE_BINARY_DIR" : "/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug",
 	"CMAKE_CURRENT_BINARY_DIR" : "/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src",
 	"CMAKE_CURRENT_SOURCE_DIR" : "/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src",
-	"CMAKE_EXECUTABLE" : "/snap/clion/164/bin/cmake/linux/bin/cmake",
+	"CMAKE_EXECUTABLE" : "/snap/clion/169/bin/cmake/linux/bin/cmake",
 	"CMAKE_LIST_FILES" : 
 	[
 		"/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src/CMakeLists.txt",
-		"/opt/robocomp/cmake/robocomp.cmake",
-		"/opt/robocomp/cmake/modules/qt.cmake",
+		"/home/josel/robocomp/cmake/robocomp.cmake",
+		"/home/josel/robocomp/cmake/modules/qt.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake",
@@ -17,7 +17,7 @@
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/CMakeParseArguments.cmake",
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/CMakeParseArguments.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake",
@@ -52,7 +52,7 @@
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/CMakeParseArguments.cmake",
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/CMakeParseArguments.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Sql/Qt5SqlConfigVersion.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Sql/Qt5SqlConfig.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
@@ -69,33 +69,54 @@
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Network/Qt5Network_QGenericEnginePlugin.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Network/Qt5Network_QNetworkManagerEnginePlugin.cmake",
 		"/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src/CMakeListsSpecific.txt",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/FindIce.cmake",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/SelectLibraryConfigurations.cmake",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/SelectLibraryConfigurations.cmake",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageHandleStandardArgs.cmake",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageMessage.cmake",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/FindThreads.cmake",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/CheckLibraryExists.cmake",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/CheckIncludeFile.cmake",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/CheckCSourceCompiles.cmake",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/Internal/CheckSourceCompiles.cmake",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/CheckIncludeFile.c.in",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/CheckFunctionExists.c",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/CheckFunctionExists.c",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageHandleStandardArgs.cmake",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageMessage.cmake",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/FindIce.cmake",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/SelectLibraryConfigurations.cmake",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/SelectLibraryConfigurations.cmake",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/SelectLibraryConfigurations.cmake",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageHandleStandardArgs.cmake",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageMessage.cmake"
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/FindIce.cmake",
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/SelectLibraryConfigurations.cmake",
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/SelectLibraryConfigurations.cmake",
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageHandleStandardArgs.cmake",
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageMessage.cmake",
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/FindThreads.cmake",
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/CheckLibraryExists.cmake",
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/CheckIncludeFile.cmake",
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/CheckCSourceCompiles.cmake",
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/Internal/CheckSourceCompiles.cmake",
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageHandleStandardArgs.cmake",
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageMessage.cmake",
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/FindIce.cmake",
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/SelectLibraryConfigurations.cmake",
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/SelectLibraryConfigurations.cmake",
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/SelectLibraryConfigurations.cmake",
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageHandleStandardArgs.cmake",
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageMessage.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy",
 	"DEP_FILE" : "",
 	"DEP_FILE_RULE_NAME" : "",
 	"HEADERS" : 
 	[
+		[
+			"/home/josel/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h",
+			"MU",
+			"E3H55E6XIR/moc_abstract_graphic_viewer.cpp",
+			null
+		],
+		[
+			"/home/josel/robocomp/classes/qlog/qlog.h",
+			"MU",
+			"BYLFT4MJQA/moc_qlog.cpp",
+			null
+		],
+		[
+			"/home/josel/robocomp/classes/rapplication/rapplication.h",
+			"MU",
+			"LHLNQS37AA/moc_rapplication.cpp",
+			null
+		],
+		[
+			"/home/josel/robocomp/classes/sigwatch/sigwatch.h",
+			"MU",
+			"UCT32XW4AW/moc_sigwatch.cpp",
+			null
+		],
 		[
 			"/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src/commonbehaviorI.h",
 			"MU",
@@ -124,30 +145,6 @@
 			"/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src/specificworker.h",
 			"MU",
 			"EWIEGA46WW/moc_specificworker.cpp",
-			null
-		],
-		[
-			"/opt/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h",
-			"MU",
-			"WU3NUE3SBC/moc_abstract_graphic_viewer.cpp",
-			null
-		],
-		[
-			"/opt/robocomp/classes/qlog/qlog.h",
-			"MU",
-			"2FGXPJ7LXO/moc_qlog.cpp",
-			null
-		],
-		[
-			"/opt/robocomp/classes/rapplication/rapplication.h",
-			"MU",
-			"QJTTXZVCVU/moc_rapplication.cpp",
-			null
-		],
-		[
-			"/opt/robocomp/classes/sigwatch/sigwatch.h",
-			"MU",
-			"A42NFNQRPH/moc_sigwatch.cpp",
 			null
 		]
 	],
@@ -180,9 +177,9 @@
 		"/opt/robocomp/include",
 		"/classes",
 		"/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug",
-		"/opt/robocomp/classes",
-		"/opt/robocomp/libs",
-		"/opt/robocomp/interfaces",
+		"/home/josel/robocomp/classes",
+		"/home/josel/robocomp/libs",
+		"/home/josel/robocomp/interfaces",
 		"/include",
 		"/usr/include/x86_64-linux-gnu/qt5",
 		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
@@ -211,7 +208,7 @@
 		"-dM",
 		"-E",
 		"-c",
-		"/snap/clion/164/bin/cmake/linux/share/cmake-3.20/Modules/CMakeCXXCompilerABI.cpp"
+		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/CMakeCXXCompilerABI.cpp"
 	],
 	"MOC_PREDEFS_FILE" : "/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src/gotoxy_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
@@ -233,6 +230,13 @@
 	"SETTINGS_FILE" : "/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src/CMakeFiles/gotoxy_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "/home/josel/robocomp/classes/qlog/qlog.cpp", "MU", null ],
+		[
+			"/home/josel/robocomp/classes/rapplication/rapplication.cpp",
+			"MU",
+			null
+		],
+		[ "/home/josel/robocomp/classes/sigwatch/sigwatch.cpp", "MU", null ],
 		[
 			"/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src/commonbehaviorI.cpp",
 			"MU",
@@ -262,10 +266,7 @@
 			"/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src/specificworker.cpp",
 			"MU",
 			null
-		],
-		[ "/opt/robocomp/classes/qlog/qlog.cpp", "MU", null ],
-		[ "/opt/robocomp/classes/rapplication/rapplication.cpp", "MU", null ],
-		[ "/opt/robocomp/classes/sigwatch/sigwatch.cpp", "MU", null ]
+		]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
