@@ -17,11 +17,11 @@ src/CMakeFiles/gotoxy.dir/Laser.cpp.o: \
  src/Laser.h
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: \
  ../src/config.h \
+ /home/alumno/robocomp/classes/qlog/qlog.h \
  ../src/commonbehaviorI.cpp \
  ../src/commonbehaviorI.h \
  ../src/genericmonitor.h \
  ../src/genericworker.h \
- /opt/robocomp/classes/qlog/qlog.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QEvent \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QList \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMargins \
@@ -488,11 +488,11 @@ src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: \
  src/Laser.h \
  src/ui_mainUI.h
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: \
+ /home/alumno/robocomp/classes/qlog/qlog.h \
  ../src/config.h \
  ../src/genericmonitor.cpp \
  ../src/genericmonitor.h \
  ../src/genericworker.h \
- /opt/robocomp/classes/qlog/qlog.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QEvent \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QList \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMargins \
@@ -959,10 +959,10 @@ src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: \
  src/Laser.h \
  src/ui_mainUI.h
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: \
+ /home/alumno/robocomp/classes/qlog/qlog.h \
  ../src/config.h \
  ../src/genericworker.cpp \
  ../src/genericworker.h \
- /opt/robocomp/classes/qlog/qlog.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QEvent \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QList \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMargins \
@@ -1429,13 +1429,13 @@ src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: \
  src/Laser.h \
  src/ui_mainUI.h
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: \
- /home/josel/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
- /home/josel/robocomp/classes/qlog/qlog.h \
- src/gotoxy_autogen/E3H55E6XIR/moc_abstract_graphic_viewer.cpp \
+ /home/alumno/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
+ /home/alumno/robocomp/classes/qlog/qlog.h \
  src/gotoxy_autogen/EWIEGA46WW/moc_genericmonitor.cpp \
  src/gotoxy_autogen/EWIEGA46WW/moc_genericworker.cpp \
  src/gotoxy_autogen/EWIEGA46WW/moc_specificmonitor.cpp \
  src/gotoxy_autogen/EWIEGA46WW/moc_specificworker.cpp \
+ src/gotoxy_autogen/I3FNLAJYSS/moc_abstract_graphic_viewer.cpp \
  src/gotoxy_autogen/mocs_compilation.cpp \
  ../src/config.h \
  ../src/genericmonitor.h \
@@ -1918,10 +1918,10 @@ src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: \
  src/GenericBase.h \
  src/Laser.h \
  src/ui_mainUI.h
-src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.o: \
+src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.o: \
  ../src/config.h \
- /home/josel/robocomp/classes/qlog/qlog.cpp \
- /home/josel/robocomp/classes/qlog/qlog.h \
+ /home/alumno/robocomp/classes/qlog/qlog.cpp \
+ /home/alumno/robocomp/classes/qlog/qlog.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QStringList \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QtCore \
@@ -2115,9 +2115,9 @@ src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qwaitcondition.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qwineventnotifier.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qxmlstream.h
-src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.o: \
- /home/josel/robocomp/classes/rapplication/rapplication.cpp \
- /home/josel/robocomp/classes/rapplication/rapplication.h \
+src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.o: \
+ /home/alumno/robocomp/classes/rapplication/rapplication.cpp \
+ /home/alumno/robocomp/classes/rapplication/rapplication.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QStringList \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QtCore \
@@ -2311,10 +2311,10 @@ src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qwaitcondition.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qwineventnotifier.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qxmlstream.h
-src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o: \
- ../../../../../robocomp/classes/sigwatch/sigwatch.h \
- /home/josel/robocomp/classes/sigwatch/sigwatch.cpp \
- /home/josel/robocomp/classes/sigwatch/sigwatch.h \
+src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o: \
+ ../../../../../../classes/sigwatch/sigwatch.h \
+ /home/alumno/robocomp/classes/sigwatch/sigwatch.cpp \
+ /home/alumno/robocomp/classes/sigwatch/sigwatch.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
@@ -2385,10 +2385,10 @@ src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h \
  src/gotoxy_autogen/include/moc_sigwatch.cpp
 src/CMakeFiles/gotoxy.dir/main.cpp.o: \
- /home/josel/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
- /home/josel/robocomp/classes/qlog/qlog.h \
- /home/josel/robocomp/classes/rapplication/rapplication.h \
- /home/josel/robocomp/classes/sigwatch/sigwatch.h \
+ /home/alumno/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
+ /home/alumno/robocomp/classes/qlog/qlog.h \
+ /home/alumno/robocomp/classes/rapplication/rapplication.h \
+ /home/alumno/robocomp/classes/sigwatch/sigwatch.h \
  ../src/commonbehaviorI.h \
  ../src/config.h \
  ../src/genericmonitor.h \
@@ -2873,12 +2873,12 @@ src/CMakeFiles/gotoxy.dir/main.cpp.o: \
  src/Laser.h \
  src/ui_mainUI.h
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: \
+ /home/alumno/robocomp/classes/qlog/qlog.h \
  ../src/config.h \
  ../src/genericmonitor.h \
  ../src/genericworker.h \
  ../src/specificmonitor.cpp \
  ../src/specificmonitor.h \
- /opt/robocomp/classes/qlog/qlog.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QEvent \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QList \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMargins \
@@ -3347,8 +3347,8 @@ src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: \
 src/CMakeFiles/gotoxy.dir/specificworker.cpp.o: \
  ../src/config.h \
  ../src/genericworker.h \
- /home/josel/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
- /home/josel/robocomp/classes/qlog/qlog.h \
+ /home/alumno/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
+ /home/alumno/robocomp/classes/qlog/qlog.h \
  ../src/specificworker.cpp \
  ../src/specificworker.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QEvent \

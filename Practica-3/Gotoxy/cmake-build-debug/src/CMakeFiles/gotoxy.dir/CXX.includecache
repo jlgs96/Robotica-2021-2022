@@ -30,7 +30,7 @@ GenericBase.h
 Laser.h
 -
 
-/home/josel/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h
+/home/alumno/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h
 QWidget
 -
 QGraphicsScene
@@ -54,9 +54,9 @@ QGraphicsPolygonItem
 iostream
 -
 
-/home/josel/robocomp/classes/qlog/qlog.h
+/home/alumno/robocomp/classes/qlog/qlog.h
 config.h
-/home/josel/robocomp/classes/qlog/config.h
+/home/alumno/robocomp/classes/qlog/config.h
 QtCore
 -
 iostream
@@ -68,11 +68,11 @@ boost/format.hpp
 boost/format.hpp
 -
 
-/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src/specificworker.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/src/specificworker.cpp
 specificworker.h
-/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src/specificworker.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/src/specificworker.h
 
-/home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src/specificworker.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/src/specificworker.h
 genericworker.h
 -
 innermodel/innermodel.h

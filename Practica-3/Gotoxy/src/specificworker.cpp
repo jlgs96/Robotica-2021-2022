@@ -111,19 +111,15 @@ void SpecificWorker::compute()
     if(target.active){
         Eigen::Vector2f robot_eigen(bState.x, bState.z);
         Eigen::Vector2f target_eigen(target.destiny.x(), target.destiny.y());
-        if(float distance = (robot_eigen - target_eigen).norm(); distance > 100){
+        if(float distance = (target_eigen - robot_eigen).norm(); distance > 100){
             QPointF pt = world_to_robot(target, bState);
 
             float beta = atan2(pt.x(), pt.y());
-            int giro = 1;
-            if (beta > 0)
-            {
-                giro = -1;
-            }
+
 
             float adv = MAX_ADV_SPEED * dist_to_target(distance)* rotation_speed(beta);
             try {
-                differentialrobot_proxy->setSpeedBase(adv,beta*giro);
+                differentialrobot_proxy->setSpeedBase(adv,beta);
             }catch(const Ice::Exception &e){
                 std::cout<<e.what()<<std::endl;
             }
@@ -178,7 +174,7 @@ void SpecificWorker::compute()
 float SpecificWorker::dist_to_target(float dist){
     float threshold = 500;
     float speed;
-    if(dist > threshold){
+    if(dist >= threshold){
         speed = MAX_ADV_SPEED;
     }else{
         speed = dist * (MAX_ADV_SPEED/threshold);
@@ -192,9 +188,7 @@ float SpecificWorker::dist_to_target(float dist){
 float SpecificWorker::rotation_speed(float beta) {
     float v= 0.0;
     float e = 2.71828;
-    float lambda= 0.272839167;
-
-
+    float lambda= 0.10857362;
 
     v = pow(e, -pow(beta,2)/lambda);
 
@@ -207,10 +201,10 @@ QPointF SpecificWorker::world_to_robot(Target target, RoboCompGenericBase::TBase
     Eigen::Vector2f T(bState.x, bState.z), point_in_world(target.destiny.x(), target.destiny.y());
     Eigen::Matrix2f R;
 
-    R << cos(angle), sin(angle), -sin(angle), cos(angle);
+    R << cos(angle), -sin(angle), sin(angle), cos(angle);
 
-    Eigen::Vector2f point_in_robot = R * point_in_world - T;
-    return QPointF(point_in_robot[0], point_in_world[1]);
+    Eigen::Vector2f point_in_robot = R.transpose() * (point_in_world - T);
+    return QPointF(point_in_robot.x(), point_in_robot.y());
 
 
 }

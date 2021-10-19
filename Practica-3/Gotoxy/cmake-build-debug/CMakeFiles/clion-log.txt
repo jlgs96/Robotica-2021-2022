@@ -1,4 +1,4 @@
-/snap/clion/169/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy
+/snap/clion/169/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy
 CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
   Compatibility with CMake < 2.8.12 will be removed from a future version of
   CMake.
@@ -8,29 +8,29 @@ CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
 
 
 -- COMPILING WITH QT5
--- Ice version: 3.7.6
+-- Ice version: 3.7.3
 -- Found the following Ice libraries:
 --   Ice++11 (required)
 --   IceStorm++11 (required)
--- Found Ice: /usr/bin/slice2cpp (found version "3.7.6") 
--- RoboComp root is now set to /home/josel/robocomp/
+-- Found Ice: /usr/bin/slice2cpp (found version "3.7.3") 
+-- RoboComp root is now set to /home/alumno/robocomp/
 -- 
--- Ice version: 3.7.6
+-- Ice version: 3.7.3
 -- Found the following Ice libraries:
 --   Ice (required)
 --   IceStorm (required)
 -- The following Ice libraries were not found:
 --   IceUtil (optional)
--- Found Ice: /usr/bin/slice2cpp (found version "3.7.6") 
--- BU Adding rule to generate /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src/CommonBehavior.ice from /home/josel/robocomp/interfaces/IDSLs/CommonBehavior.idsl
--- BU Adding rule to generate /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src/DifferentialRobot.ice from /home/josel/robocomp/interfaces/IDSLs/DifferentialRobot.idsl
--- BU Adding rule to generate /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src/GenericBase.ice from /home/josel/robocomp/interfaces/IDSLs/GenericBase.idsl
--- BU Adding rule to generate /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src/Laser.ice from /home/josel/robocomp/interfaces/IDSLs/Laser.idsl
--- BU ice=>h/cpp: Adding rule to generate CommonBehavior.h and CommonBehavior.cpp from /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src/CommonBehavior.ice
--- BU ice=>h/cpp: Adding rule to generate DifferentialRobot.h and DifferentialRobot.cpp from /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src/DifferentialRobot.ice
--- BU ice=>h/cpp: Adding rule to generate GenericBase.h and GenericBase.cpp from /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src/GenericBase.ice
--- BU ice=>h/cpp: Adding rule to generate Laser.h and Laser.cpp from /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/src/Laser.ice
+-- Found Ice: /usr/bin/slice2cpp (found version "3.7.3") 
+-- BU Adding rule to generate /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/src/CommonBehavior.ice from /home/alumno/robocomp/interfaces/IDSLs/CommonBehavior.idsl
+-- BU Adding rule to generate /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/src/DifferentialRobot.ice from /home/alumno/robocomp/interfaces/IDSLs/DifferentialRobot.idsl
+-- BU Adding rule to generate /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/src/GenericBase.ice from /home/alumno/robocomp/interfaces/IDSLs/GenericBase.idsl
+-- BU Adding rule to generate /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/src/Laser.ice from /home/alumno/robocomp/interfaces/IDSLs/Laser.idsl
+-- BU ice=>h/cpp: Adding rule to generate CommonBehavior.h and CommonBehavior.cpp from /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/src/CommonBehavior.ice
+-- BU ice=>h/cpp: Adding rule to generate DifferentialRobot.h and DifferentialRobot.cpp from /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/src/DifferentialRobot.ice
+-- BU ice=>h/cpp: Adding rule to generate GenericBase.h and GenericBase.cpp from /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/src/GenericBase.ice
+-- BU ice=>h/cpp: Adding rule to generate Laser.h and Laser.cpp from /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/src/Laser.ice
 -- Generating header file from mainUI.ui
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/josel/software/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug
+-- Build files have been written to: /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug
