@@ -53,10 +53,10 @@ RM = /snap/clion/169/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy
+CMAKE_SOURCE_DIR = /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug
+CMAKE_BINARY_DIR = /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug
 
 # Utility rule file for gotoxy_autogen.
 
@@ -67,8 +67,8 @@ include src/CMakeFiles/gotoxy_autogen.dir/compiler_depend.make
 include src/CMakeFiles/gotoxy_autogen.dir/progress.make
 
 src/CMakeFiles/gotoxy_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target gotoxy"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && /snap/clion/169/bin/cmake/linux/bin/cmake -E cmake_autogen /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src/CMakeFiles/gotoxy_autogen.dir/AutogenInfo.json Debug
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target gotoxy"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug/src && /snap/clion/169/bin/cmake/linux/bin/cmake -E cmake_autogen /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug/src/CMakeFiles/gotoxy_autogen.dir/AutogenInfo.json Debug
 
 gotoxy_autogen: src/CMakeFiles/gotoxy_autogen
 gotoxy_autogen: src/CMakeFiles/gotoxy_autogen.dir/build.make
@@ -79,10 +79,10 @@ src/CMakeFiles/gotoxy_autogen.dir/build: gotoxy_autogen
 .PHONY : src/CMakeFiles/gotoxy_autogen.dir/build
 
 src/CMakeFiles/gotoxy_autogen.dir/clean:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src && $(CMAKE_COMMAND) -P CMakeFiles/gotoxy_autogen.dir/cmake_clean.cmake
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug/src && $(CMAKE_COMMAND) -P CMakeFiles/gotoxy_autogen.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/gotoxy_autogen.dir/clean
 
 src/CMakeFiles/gotoxy_autogen.dir/depend:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/src /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src/CMakeFiles/gotoxy_autogen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug/src /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug/src/CMakeFiles/gotoxy_autogen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/gotoxy_autogen.dir/depend
 

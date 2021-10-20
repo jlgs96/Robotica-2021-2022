@@ -90,6 +90,7 @@ void SpecificWorker::initialize(int period)
 void SpecificWorker::compute()
 {
     RoboCompGenericBase::TBaseState bState;
+
     try {
         RoboCompLaser::TLaserData ldata = laser_proxy->getLaserData();
         draw_laser(ldata);
@@ -108,52 +109,63 @@ void SpecificWorker::compute()
     } catch (const Ice::Exception &e) {
         std::cout<<e.what()<<std::endl;
     }
-    if(target.active){
-        Eigen::Vector2f robot_eigen(bState.x, bState.z);
-        Eigen::Vector2f target_eigen(target.destiny.x(), target.destiny.y());
-        if(float distance = (target_eigen - robot_eigen).norm(); distance > 100){
-            QPointF pt = world_to_robot(target, bState);
-
-            float beta = atan2(pt.x(), pt.y());
-
-
-            float adv = MAX_ADV_SPEED * dist_to_target(distance)* rotation_speed(beta);
+    switch (estado) {
+        case State::IDLE:
             try {
-                differentialrobot_proxy->setSpeedBase(adv,beta);
-            }catch(const Ice::Exception &e){
+                differentialrobot_proxy->setSpeedBase(0,0);
+            }catch (const Ice::Exception &e){
                 std::cout<<e.what()<<std::endl;
             }
-        }
-        else{
-            try{
-                differentialrobot_proxy->setSpeedBase(0,0);
-                target.active = false;
-            }
-            catch(const Ice::Exception &e){
-                std::cout<<e.what()<< std::endl;
-
-            }
-        }
+            if(target.active)
+                estado = State::RUN;
+            break;
+        case State::RUN:
+            estado = run(bState, target);
+            break;
+        case State::OBSTACLE:
+            break;
+        case State::SURROUND:
+            break;
     }
 
 
+}
+/*
+ * METODO RUN PRACTICA 4
+ *
+ */
 
-    //computeCODE
-    //QMutexLocker locker(mutex);
-	//try
-	//{
-	//  camera_proxy->getYImage(0,img, cState, bState);
-	//  memcpy(image_gray.data, &img[0], m_width*m_height*sizeof(uchar));
-	//  searchTags(image_gray);
-	//}
-	//catch(const Ice::Exception &e)
-	//{
-	//  std::cout << "Error reading from Camera" << e << std::endl;
-	//}
-	
-	
+SpecificWorker::State SpecificWorker::run(const RoboCompGenericBase::TBaseState &bState, Target &target){
+    float distance;
+    Eigen::Vector2f robot_eigen(bState.x, bState.z);
+    Eigen::Vector2f target_eigen(target.destiny.x(), target.destiny.y());
+    QPointF pt = world_to_robot(target, bState);
+    if( distance = (target_eigen - robot_eigen).norm(); distance <= 100)
+        target.active=false;
+        return State::IDLE;
+    float beta = atan2(pt.x(), pt.y());
+
+    float adv = MAX_ADV_SPEED * dist_to_target(distance)* rotation_speed(beta);
+    try {
+        differentialrobot_proxy->setSpeedBase(adv,beta);
+    }catch(const Ice::Exception &e){
+        std::cout<<e.what()<<std::endl;
+    }
+
+    return State::RUN;
 }
 
+
+SpecificWorker::State SpecificWorker::obstacle(const RoboCompGenericBase::TBaseState &bState,const Target &target){
+    float distance;
+    Eigen::Vector2f robot_eigen(bState.x, bState.z);
+    Eigen::Vector2f target_eigen(target.destiny.x(), target.destiny.y());
+    if( distance = (target_eigen - robot_eigen).norm(); distance <= 100)
+        target.active
+        return State::IDLE;
+
+    return State::OBSTACLE;
+}
 
 /*
  * METODO PARA CALCULAR VELOCIDAD MÁXIMA SEGÚN DISTANCIA AL OBJETO

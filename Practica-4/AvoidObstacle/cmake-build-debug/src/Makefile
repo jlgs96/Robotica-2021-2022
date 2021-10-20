@@ -57,34 +57,13 @@ RM = /snap/clion/169/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy
+CMAKE_SOURCE_DIR = /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug
+CMAKE_BINARY_DIR = /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/snap/clion/169/bin/cmake/linux/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/snap/clion/169/bin/cmake/linux/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -110,6 +89,27 @@ install/local/fast: preinstall/fast
 	/snap/clion/169/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/snap/clion/169/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/snap/clion/169/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -132,14 +132,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/CMakeFiles /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/src//CMakeFiles/progress.marks
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug/CMakeFiles 0
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug/CMakeFiles /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug/src//CMakeFiles/progress.marks
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,36 +148,36 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/ICES__home_alumno_robocomp_components_g8-M1_Robotica-2021-2022_Practica-3_Gotoxy_src.dir/rule:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/ICES__home_alumno_robocomp_components_g8-M1_Robotica-2021-2022_Practica-3_Gotoxy_src.dir/rule
-.PHONY : src/CMakeFiles/ICES__home_alumno_robocomp_components_g8-M1_Robotica-2021-2022_Practica-3_Gotoxy_src.dir/rule
+src/CMakeFiles/ICES__home_josel_software_Robotica-2021-2022_Practica-4_AvoidObstacle_src.dir/rule:
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/ICES__home_josel_software_Robotica-2021-2022_Practica-4_AvoidObstacle_src.dir/rule
+.PHONY : src/CMakeFiles/ICES__home_josel_software_Robotica-2021-2022_Practica-4_AvoidObstacle_src.dir/rule
 
 # Convenience name for target.
-ICES__home_alumno_robocomp_components_g8-M1_Robotica-2021-2022_Practica-3_Gotoxy_src: src/CMakeFiles/ICES__home_alumno_robocomp_components_g8-M1_Robotica-2021-2022_Practica-3_Gotoxy_src.dir/rule
-.PHONY : ICES__home_alumno_robocomp_components_g8-M1_Robotica-2021-2022_Practica-3_Gotoxy_src
+ICES__home_josel_software_Robotica-2021-2022_Practica-4_AvoidObstacle_src: src/CMakeFiles/ICES__home_josel_software_Robotica-2021-2022_Practica-4_AvoidObstacle_src.dir/rule
+.PHONY : ICES__home_josel_software_Robotica-2021-2022_Practica-4_AvoidObstacle_src
 
 # fast build rule for target.
-ICES__home_alumno_robocomp_components_g8-M1_Robotica-2021-2022_Practica-3_Gotoxy_src/fast:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ICES__home_alumno_robocomp_components_g8-M1_Robotica-2021-2022_Practica-3_Gotoxy_src.dir/build.make src/CMakeFiles/ICES__home_alumno_robocomp_components_g8-M1_Robotica-2021-2022_Practica-3_Gotoxy_src.dir/build
-.PHONY : ICES__home_alumno_robocomp_components_g8-M1_Robotica-2021-2022_Practica-3_Gotoxy_src/fast
+ICES__home_josel_software_Robotica-2021-2022_Practica-4_AvoidObstacle_src/fast:
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ICES__home_josel_software_Robotica-2021-2022_Practica-4_AvoidObstacle_src.dir/build.make src/CMakeFiles/ICES__home_josel_software_Robotica-2021-2022_Practica-4_AvoidObstacle_src.dir/build
+.PHONY : ICES__home_josel_software_Robotica-2021-2022_Practica-4_AvoidObstacle_src/fast
 
 # Convenience name for target.
 src/CMakeFiles/gotoxy.dir/rule:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/gotoxy.dir/rule
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/gotoxy.dir/rule
 .PHONY : src/CMakeFiles/gotoxy.dir/rule
 
 # Convenience name for target.
@@ -186,12 +186,12 @@ gotoxy: src/CMakeFiles/gotoxy.dir/rule
 
 # fast build rule for target.
 gotoxy/fast:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/build
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/build
 .PHONY : gotoxy/fast
 
 # Convenience name for target.
 src/CMakeFiles/gotoxy_autogen.dir/rule:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/gotoxy_autogen.dir/rule
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/gotoxy_autogen.dir/rule
 .PHONY : src/CMakeFiles/gotoxy_autogen.dir/rule
 
 # Convenience name for target.
@@ -200,7 +200,7 @@ gotoxy_autogen: src/CMakeFiles/gotoxy_autogen.dir/rule
 
 # fast build rule for target.
 gotoxy_autogen/fast:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy_autogen.dir/build.make src/CMakeFiles/gotoxy_autogen.dir/build
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy_autogen.dir/build.make src/CMakeFiles/gotoxy_autogen.dir/build
 .PHONY : gotoxy_autogen/fast
 
 CommonBehavior.o: CommonBehavior.cpp.o
@@ -208,7 +208,7 @@ CommonBehavior.o: CommonBehavior.cpp.o
 
 # target to build an object file
 CommonBehavior.cpp.o:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.o
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.o
 .PHONY : CommonBehavior.cpp.o
 
 CommonBehavior.i: CommonBehavior.cpp.i
@@ -216,7 +216,7 @@ CommonBehavior.i: CommonBehavior.cpp.i
 
 # target to preprocess a source file
 CommonBehavior.cpp.i:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.i
 .PHONY : CommonBehavior.cpp.i
 
 CommonBehavior.s: CommonBehavior.cpp.s
@@ -224,7 +224,7 @@ CommonBehavior.s: CommonBehavior.cpp.s
 
 # target to generate assembly for a file
 CommonBehavior.cpp.s:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.s
 .PHONY : CommonBehavior.cpp.s
 
 DifferentialRobot.o: DifferentialRobot.cpp.o
@@ -232,7 +232,7 @@ DifferentialRobot.o: DifferentialRobot.cpp.o
 
 # target to build an object file
 DifferentialRobot.cpp.o:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o
 .PHONY : DifferentialRobot.cpp.o
 
 DifferentialRobot.i: DifferentialRobot.cpp.i
@@ -240,7 +240,7 @@ DifferentialRobot.i: DifferentialRobot.cpp.i
 
 # target to preprocess a source file
 DifferentialRobot.cpp.i:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.i
 .PHONY : DifferentialRobot.cpp.i
 
 DifferentialRobot.s: DifferentialRobot.cpp.s
@@ -248,7 +248,7 @@ DifferentialRobot.s: DifferentialRobot.cpp.s
 
 # target to generate assembly for a file
 DifferentialRobot.cpp.s:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.s
 .PHONY : DifferentialRobot.cpp.s
 
 GenericBase.o: GenericBase.cpp.o
@@ -256,7 +256,7 @@ GenericBase.o: GenericBase.cpp.o
 
 # target to build an object file
 GenericBase.cpp.o:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/GenericBase.cpp.o
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/GenericBase.cpp.o
 .PHONY : GenericBase.cpp.o
 
 GenericBase.i: GenericBase.cpp.i
@@ -264,7 +264,7 @@ GenericBase.i: GenericBase.cpp.i
 
 # target to preprocess a source file
 GenericBase.cpp.i:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/GenericBase.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/GenericBase.cpp.i
 .PHONY : GenericBase.cpp.i
 
 GenericBase.s: GenericBase.cpp.s
@@ -272,7 +272,7 @@ GenericBase.s: GenericBase.cpp.s
 
 # target to generate assembly for a file
 GenericBase.cpp.s:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/GenericBase.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/GenericBase.cpp.s
 .PHONY : GenericBase.cpp.s
 
 Laser.o: Laser.cpp.o
@@ -280,7 +280,7 @@ Laser.o: Laser.cpp.o
 
 # target to build an object file
 Laser.cpp.o:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/Laser.cpp.o
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/Laser.cpp.o
 .PHONY : Laser.cpp.o
 
 Laser.i: Laser.cpp.i
@@ -288,7 +288,7 @@ Laser.i: Laser.cpp.i
 
 # target to preprocess a source file
 Laser.cpp.i:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/Laser.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/Laser.cpp.i
 .PHONY : Laser.cpp.i
 
 Laser.s: Laser.cpp.s
@@ -296,7 +296,7 @@ Laser.s: Laser.cpp.s
 
 # target to generate assembly for a file
 Laser.cpp.s:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/Laser.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/Laser.cpp.s
 .PHONY : Laser.cpp.s
 
 commonbehaviorI.o: commonbehaviorI.cpp.o
@@ -304,7 +304,7 @@ commonbehaviorI.o: commonbehaviorI.cpp.o
 
 # target to build an object file
 commonbehaviorI.cpp.o:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o
 .PHONY : commonbehaviorI.cpp.o
 
 commonbehaviorI.i: commonbehaviorI.cpp.i
@@ -312,7 +312,7 @@ commonbehaviorI.i: commonbehaviorI.cpp.i
 
 # target to preprocess a source file
 commonbehaviorI.cpp.i:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.i
 .PHONY : commonbehaviorI.cpp.i
 
 commonbehaviorI.s: commonbehaviorI.cpp.s
@@ -320,7 +320,7 @@ commonbehaviorI.s: commonbehaviorI.cpp.s
 
 # target to generate assembly for a file
 commonbehaviorI.cpp.s:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.s
 .PHONY : commonbehaviorI.cpp.s
 
 genericmonitor.o: genericmonitor.cpp.o
@@ -328,7 +328,7 @@ genericmonitor.o: genericmonitor.cpp.o
 
 # target to build an object file
 genericmonitor.cpp.o:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o
 .PHONY : genericmonitor.cpp.o
 
 genericmonitor.i: genericmonitor.cpp.i
@@ -336,7 +336,7 @@ genericmonitor.i: genericmonitor.cpp.i
 
 # target to preprocess a source file
 genericmonitor.cpp.i:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.i
 .PHONY : genericmonitor.cpp.i
 
 genericmonitor.s: genericmonitor.cpp.s
@@ -344,7 +344,7 @@ genericmonitor.s: genericmonitor.cpp.s
 
 # target to generate assembly for a file
 genericmonitor.cpp.s:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.s
 .PHONY : genericmonitor.cpp.s
 
 genericworker.o: genericworker.cpp.o
@@ -352,7 +352,7 @@ genericworker.o: genericworker.cpp.o
 
 # target to build an object file
 genericworker.cpp.o:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/genericworker.cpp.o
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/genericworker.cpp.o
 .PHONY : genericworker.cpp.o
 
 genericworker.i: genericworker.cpp.i
@@ -360,7 +360,7 @@ genericworker.i: genericworker.cpp.i
 
 # target to preprocess a source file
 genericworker.cpp.i:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/genericworker.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/genericworker.cpp.i
 .PHONY : genericworker.cpp.i
 
 genericworker.s: genericworker.cpp.s
@@ -368,7 +368,7 @@ genericworker.s: genericworker.cpp.s
 
 # target to generate assembly for a file
 genericworker.cpp.s:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/genericworker.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/genericworker.cpp.s
 .PHONY : genericworker.cpp.s
 
 gotoxy_autogen/mocs_compilation.o: gotoxy_autogen/mocs_compilation.cpp.o
@@ -376,7 +376,7 @@ gotoxy_autogen/mocs_compilation.o: gotoxy_autogen/mocs_compilation.cpp.o
 
 # target to build an object file
 gotoxy_autogen/mocs_compilation.cpp.o:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o
 .PHONY : gotoxy_autogen/mocs_compilation.cpp.o
 
 gotoxy_autogen/mocs_compilation.i: gotoxy_autogen/mocs_compilation.cpp.i
@@ -384,7 +384,7 @@ gotoxy_autogen/mocs_compilation.i: gotoxy_autogen/mocs_compilation.cpp.i
 
 # target to preprocess a source file
 gotoxy_autogen/mocs_compilation.cpp.i:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.i
 .PHONY : gotoxy_autogen/mocs_compilation.cpp.i
 
 gotoxy_autogen/mocs_compilation.s: gotoxy_autogen/mocs_compilation.cpp.s
@@ -392,87 +392,87 @@ gotoxy_autogen/mocs_compilation.s: gotoxy_autogen/mocs_compilation.cpp.s
 
 # target to generate assembly for a file
 gotoxy_autogen/mocs_compilation.cpp.s:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.s
 .PHONY : gotoxy_autogen/mocs_compilation.cpp.s
 
-home/alumno/robocomp/classes/qlog/qlog.o: home/alumno/robocomp/classes/qlog/qlog.cpp.o
-.PHONY : home/alumno/robocomp/classes/qlog/qlog.o
+home/josel/robocomp/classes/qlog/qlog.o: home/josel/robocomp/classes/qlog/qlog.cpp.o
+.PHONY : home/josel/robocomp/classes/qlog/qlog.o
 
 # target to build an object file
-home/alumno/robocomp/classes/qlog/qlog.cpp.o:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.o
-.PHONY : home/alumno/robocomp/classes/qlog/qlog.cpp.o
+home/josel/robocomp/classes/qlog/qlog.cpp.o:
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.o
+.PHONY : home/josel/robocomp/classes/qlog/qlog.cpp.o
 
-home/alumno/robocomp/classes/qlog/qlog.i: home/alumno/robocomp/classes/qlog/qlog.cpp.i
-.PHONY : home/alumno/robocomp/classes/qlog/qlog.i
+home/josel/robocomp/classes/qlog/qlog.i: home/josel/robocomp/classes/qlog/qlog.cpp.i
+.PHONY : home/josel/robocomp/classes/qlog/qlog.i
 
 # target to preprocess a source file
-home/alumno/robocomp/classes/qlog/qlog.cpp.i:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.i
-.PHONY : home/alumno/robocomp/classes/qlog/qlog.cpp.i
+home/josel/robocomp/classes/qlog/qlog.cpp.i:
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.i
+.PHONY : home/josel/robocomp/classes/qlog/qlog.cpp.i
 
-home/alumno/robocomp/classes/qlog/qlog.s: home/alumno/robocomp/classes/qlog/qlog.cpp.s
-.PHONY : home/alumno/robocomp/classes/qlog/qlog.s
+home/josel/robocomp/classes/qlog/qlog.s: home/josel/robocomp/classes/qlog/qlog.cpp.s
+.PHONY : home/josel/robocomp/classes/qlog/qlog.s
 
 # target to generate assembly for a file
-home/alumno/robocomp/classes/qlog/qlog.cpp.s:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.s
-.PHONY : home/alumno/robocomp/classes/qlog/qlog.cpp.s
+home/josel/robocomp/classes/qlog/qlog.cpp.s:
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.s
+.PHONY : home/josel/robocomp/classes/qlog/qlog.cpp.s
 
-home/alumno/robocomp/classes/rapplication/rapplication.o: home/alumno/robocomp/classes/rapplication/rapplication.cpp.o
-.PHONY : home/alumno/robocomp/classes/rapplication/rapplication.o
+home/josel/robocomp/classes/rapplication/rapplication.o: home/josel/robocomp/classes/rapplication/rapplication.cpp.o
+.PHONY : home/josel/robocomp/classes/rapplication/rapplication.o
 
 # target to build an object file
-home/alumno/robocomp/classes/rapplication/rapplication.cpp.o:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.o
-.PHONY : home/alumno/robocomp/classes/rapplication/rapplication.cpp.o
+home/josel/robocomp/classes/rapplication/rapplication.cpp.o:
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.o
+.PHONY : home/josel/robocomp/classes/rapplication/rapplication.cpp.o
 
-home/alumno/robocomp/classes/rapplication/rapplication.i: home/alumno/robocomp/classes/rapplication/rapplication.cpp.i
-.PHONY : home/alumno/robocomp/classes/rapplication/rapplication.i
+home/josel/robocomp/classes/rapplication/rapplication.i: home/josel/robocomp/classes/rapplication/rapplication.cpp.i
+.PHONY : home/josel/robocomp/classes/rapplication/rapplication.i
 
 # target to preprocess a source file
-home/alumno/robocomp/classes/rapplication/rapplication.cpp.i:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.i
-.PHONY : home/alumno/robocomp/classes/rapplication/rapplication.cpp.i
+home/josel/robocomp/classes/rapplication/rapplication.cpp.i:
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.i
+.PHONY : home/josel/robocomp/classes/rapplication/rapplication.cpp.i
 
-home/alumno/robocomp/classes/rapplication/rapplication.s: home/alumno/robocomp/classes/rapplication/rapplication.cpp.s
-.PHONY : home/alumno/robocomp/classes/rapplication/rapplication.s
+home/josel/robocomp/classes/rapplication/rapplication.s: home/josel/robocomp/classes/rapplication/rapplication.cpp.s
+.PHONY : home/josel/robocomp/classes/rapplication/rapplication.s
 
 # target to generate assembly for a file
-home/alumno/robocomp/classes/rapplication/rapplication.cpp.s:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.s
-.PHONY : home/alumno/robocomp/classes/rapplication/rapplication.cpp.s
+home/josel/robocomp/classes/rapplication/rapplication.cpp.s:
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.s
+.PHONY : home/josel/robocomp/classes/rapplication/rapplication.cpp.s
 
-home/alumno/robocomp/classes/sigwatch/sigwatch.o: home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o
-.PHONY : home/alumno/robocomp/classes/sigwatch/sigwatch.o
+home/josel/robocomp/classes/sigwatch/sigwatch.o: home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o
+.PHONY : home/josel/robocomp/classes/sigwatch/sigwatch.o
 
 # target to build an object file
-home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o
-.PHONY : home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o
+home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o:
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o
+.PHONY : home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o
 
-home/alumno/robocomp/classes/sigwatch/sigwatch.i: home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.i
-.PHONY : home/alumno/robocomp/classes/sigwatch/sigwatch.i
+home/josel/robocomp/classes/sigwatch/sigwatch.i: home/josel/robocomp/classes/sigwatch/sigwatch.cpp.i
+.PHONY : home/josel/robocomp/classes/sigwatch/sigwatch.i
 
 # target to preprocess a source file
-home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.i:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.i
-.PHONY : home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.i
+home/josel/robocomp/classes/sigwatch/sigwatch.cpp.i:
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.i
+.PHONY : home/josel/robocomp/classes/sigwatch/sigwatch.cpp.i
 
-home/alumno/robocomp/classes/sigwatch/sigwatch.s: home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.s
-.PHONY : home/alumno/robocomp/classes/sigwatch/sigwatch.s
+home/josel/robocomp/classes/sigwatch/sigwatch.s: home/josel/robocomp/classes/sigwatch/sigwatch.cpp.s
+.PHONY : home/josel/robocomp/classes/sigwatch/sigwatch.s
 
 # target to generate assembly for a file
-home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.s:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.s
-.PHONY : home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.s
+home/josel/robocomp/classes/sigwatch/sigwatch.cpp.s:
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.s
+.PHONY : home/josel/robocomp/classes/sigwatch/sigwatch.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/main.cpp.o
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -480,7 +480,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/main.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -488,7 +488,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/main.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 specificmonitor.o: specificmonitor.cpp.o
@@ -496,7 +496,7 @@ specificmonitor.o: specificmonitor.cpp.o
 
 # target to build an object file
 specificmonitor.cpp.o:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o
 .PHONY : specificmonitor.cpp.o
 
 specificmonitor.i: specificmonitor.cpp.i
@@ -504,7 +504,7 @@ specificmonitor.i: specificmonitor.cpp.i
 
 # target to preprocess a source file
 specificmonitor.cpp.i:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.i
 .PHONY : specificmonitor.cpp.i
 
 specificmonitor.s: specificmonitor.cpp.s
@@ -512,7 +512,7 @@ specificmonitor.s: specificmonitor.cpp.s
 
 # target to generate assembly for a file
 specificmonitor.cpp.s:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.s
 .PHONY : specificmonitor.cpp.s
 
 specificworker.o: specificworker.cpp.o
@@ -520,7 +520,7 @@ specificworker.o: specificworker.cpp.o
 
 # target to build an object file
 specificworker.cpp.o:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/specificworker.cpp.o
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/specificworker.cpp.o
 .PHONY : specificworker.cpp.o
 
 specificworker.i: specificworker.cpp.i
@@ -528,7 +528,7 @@ specificworker.i: specificworker.cpp.i
 
 # target to preprocess a source file
 specificworker.cpp.i:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/specificworker.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/specificworker.cpp.i
 .PHONY : specificworker.cpp.i
 
 specificworker.s: specificworker.cpp.s
@@ -536,7 +536,7 @@ specificworker.s: specificworker.cpp.s
 
 # target to generate assembly for a file
 specificworker.cpp.s:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/specificworker.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/specificworker.cpp.s
 .PHONY : specificworker.cpp.s
 
 # Help Target
@@ -551,7 +551,7 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... ICES__home_alumno_robocomp_components_g8-M1_Robotica-2021-2022_Practica-3_Gotoxy_src"
+	@echo "... ICES__home_josel_software_Robotica-2021-2022_Practica-4_AvoidObstacle_src"
 	@echo "... gotoxy_autogen"
 	@echo "... gotoxy"
 	@echo "... CommonBehavior.o"
@@ -578,15 +578,15 @@ help:
 	@echo "... gotoxy_autogen/mocs_compilation.o"
 	@echo "... gotoxy_autogen/mocs_compilation.i"
 	@echo "... gotoxy_autogen/mocs_compilation.s"
-	@echo "... home/alumno/robocomp/classes/qlog/qlog.o"
-	@echo "... home/alumno/robocomp/classes/qlog/qlog.i"
-	@echo "... home/alumno/robocomp/classes/qlog/qlog.s"
-	@echo "... home/alumno/robocomp/classes/rapplication/rapplication.o"
-	@echo "... home/alumno/robocomp/classes/rapplication/rapplication.i"
-	@echo "... home/alumno/robocomp/classes/rapplication/rapplication.s"
-	@echo "... home/alumno/robocomp/classes/sigwatch/sigwatch.o"
-	@echo "... home/alumno/robocomp/classes/sigwatch/sigwatch.i"
-	@echo "... home/alumno/robocomp/classes/sigwatch/sigwatch.s"
+	@echo "... home/josel/robocomp/classes/qlog/qlog.o"
+	@echo "... home/josel/robocomp/classes/qlog/qlog.i"
+	@echo "... home/josel/robocomp/classes/qlog/qlog.s"
+	@echo "... home/josel/robocomp/classes/rapplication/rapplication.o"
+	@echo "... home/josel/robocomp/classes/rapplication/rapplication.i"
+	@echo "... home/josel/robocomp/classes/rapplication/rapplication.s"
+	@echo "... home/josel/robocomp/classes/sigwatch/sigwatch.o"
+	@echo "... home/josel/robocomp/classes/sigwatch/sigwatch.i"
+	@echo "... home/josel/robocomp/classes/sigwatch/sigwatch.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -607,6 +607,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-3/Gotoxy/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
