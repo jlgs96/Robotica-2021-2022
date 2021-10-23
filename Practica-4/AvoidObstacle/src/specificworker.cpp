@@ -73,10 +73,8 @@ void SpecificWorker::initialize(int period)
     laser_in_robot_polygon=new QGraphicsRectItem(-10, 10, 20, 20, robot_polygon);
     laser_in_robot_polygon->setPos(0, 190);
     try{
-    
         RoboCompGenericBase::TBaseState bState;
         differentialrobot_proxy->getBaseState(bState);
-        last_point=QPointF(bState.x, bState.z);
     }
     catch(const Ice::Exception &e){std::cout<<e.what()<<std::endl;}
     connect(viewer, &AbstractGraphicViewer::new_mouse_coordinates, this, &SpecificWorker::new_target_slot);
@@ -86,7 +84,7 @@ void SpecificWorker::initialize(int period)
 
 
 
-
+//////////CODIGO DE LA MAQUINA DE ESTADOS//////////////////
 void SpecificWorker::compute()
 {
     RoboCompGenericBase::TBaseState bState;
@@ -109,7 +107,9 @@ void SpecificWorker::compute()
     } catch (const Ice::Exception &e) {
         std::cout<<e.what()<<std::endl;
     }
+    target_to_robot = world_to_robot(target, bState);
     switch (estado) {
+        //ESTADO EN ESPERA
         case State::IDLE:
             try {
                 differentialrobot_proxy->setSpeedBase(0,0);
@@ -117,13 +117,18 @@ void SpecificWorker::compute()
                 std::cout<<e.what()<<std::endl;
             }
             if(target.active)
+
+
                 estado = State::RUN;
             break;
+            //EL IR PARA ADELANTE, EL CLASICO
         case State::RUN:
             estado = run(bState, target);
             break;
+            //REORIENTAR Y GIRAR EN LA PARED
         case State::OBSTACLE:
             break;
+            //UNA VEZ GIRADO, TIRAR ADELANTE HACIA EL PUNTO
         case State::SURROUND:
             break;
     }
@@ -139,11 +144,12 @@ SpecificWorker::State SpecificWorker::run(const RoboCompGenericBase::TBaseState 
     float distance;
     Eigen::Vector2f robot_eigen(bState.x, bState.z);
     Eigen::Vector2f target_eigen(target.destiny.x(), target.destiny.y());
-    QPointF pt = world_to_robot(target, bState);
-    if( distance = (target_eigen - robot_eigen).norm(); distance <= 100)
+    if( distance = (target_eigen - robot_eigen).norm(); distance <= 100){
         target.active=false;
         return State::IDLE;
-    float beta = atan2(pt.x(), pt.y());
+    }
+
+    float beta = atan2(target_to_robot.x(), target_to_robot.y());
 
     float adv = MAX_ADV_SPEED * dist_to_target(distance)* rotation_speed(beta);
     try {
@@ -156,17 +162,41 @@ SpecificWorker::State SpecificWorker::run(const RoboCompGenericBase::TBaseState 
 }
 
 
-SpecificWorker::State SpecificWorker::obstacle(const RoboCompGenericBase::TBaseState &bState,const Target &target){
+SpecificWorker::State SpecificWorker::obstacle(const RoboCompGenericBase::TBaseState &bState,Target &target){
     float distance;
     Eigen::Vector2f robot_eigen(bState.x, bState.z);
     Eigen::Vector2f target_eigen(target.destiny.x(), target.destiny.y());
-    if( distance = (target_eigen - robot_eigen).norm(); distance <= 100)
-        target.active
+    if( distance = (target_eigen - robot_eigen).norm(); distance <= 100){
+        target.active;
         return State::IDLE;
+    }
+
 
     return State::OBSTACLE;
 }
 
+SpecificWorker::State SpecificWorker::surround(const RoboCompGenericBase::TBaseState &bState,Target &target) {
+    float distance;
+    Eigen::Vector2f robot_eigen(bState.x, bState.z);
+    Eigen::Vector2f target_eigen(target.destiny.x(), target.destiny.y());
+    if( distance = (target_eigen - robot_eigen).norm(); distance <= 100){
+        target.active;
+        return State::IDLE;
+    }
+
+    if (poly.containsPoint(target.destiny, Qt::OddEvenFill))  // point to check. Must be in robot’s coordinate system
+        return State::RUN;
+
+
+    return State::SURROUND;
+}
+
+
+
+
+
+
+////////////METODOS DE PROPOSITO GENERAL/////////////
 /*
  * METODO PARA CALCULAR VELOCIDAD MÁXIMA SEGÚN DISTANCIA AL OBJETO
  *
@@ -221,10 +251,11 @@ QPointF SpecificWorker::world_to_robot(Target target, RoboCompGenericBase::TBase
 
 }
 void SpecificWorker::new_target_slot(QPointF point) {
-    target_point = point;
+
     target.destiny = point;
     target.active = true;
-    qInfo() << target_point;
+    qInfo() << target.destiny;
+    estado= State::IDLE;
 
 }
 void SpecificWorker::draw_laser(const RoboCompLaser::TLaserData &ldata) // robot coordinates
@@ -237,10 +268,7 @@ void SpecificWorker::draw_laser(const RoboCompLaser::TLaserData &ldata) // robot
    }
 
    float cx, cy;
-   QPolygonF poly;
-
-
-
+   poly.clear();
    poly << QPointF(0,0);
    for (auto &pointer : ldata){
         //transformar base

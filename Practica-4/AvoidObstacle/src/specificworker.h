@@ -45,33 +45,36 @@ public:
     Target target;
     enum class State {IDLE, RUN, OBSTACLE, SURROUND};
     State estado = State::IDLE;
-
     float MAX_ADV_SPEED = 1000;
+
+    ////////////METODOS DE PROPOSITO GENERAL//////////
     bool setParams(RoboCompCommonBehavior::ParameterList params);
     void draw_laser(const RoboCompLaser::TLaserData &ldata);
     QPointF world_to_robot(Target target, RoboCompGenericBase::TBaseState bState);
     float dist_to_target(float dist);
     float rotation_speed(float beta);
-    //SIWTHC CASE PRACTICA 4 METHODS
+
+
+
+    ////////METODOS DE COMPORTAMIENTO ROBOT///////////////
     State run(const RoboCompGenericBase::TBaseState &bState, Target &target);
-    State obstacle(const RoboCompGenericBase::TBaseState &bState,const Target &target);
+    State obstacle(const RoboCompGenericBase::TBaseState &bState, Target &target);
+    State surround(const RoboCompGenericBase::TBaseState &bState, Target &target);
+
+    ///////////VARIABLES VARIAS/////////////////////////
     AbstractGraphicViewer *viewer;
     const int ROBOT_LENGTH = 400;
     QGraphicsPolygonItem *robot_polygon;
     QGraphicsRectItem *laser_in_robot_polygon;
-    QPointF last_point;
-    QPointF target_point;
-
-
-
-
-
-
+    QPointF target_to_robot;
+    QPolygonF  poly;
+    ///////SLOTS DE CONEXION/////
 public slots:
 	void compute();
 	int startup_check();
 	void initialize(int period);
-void new_target_slot(QPointF point);//
+void new_target_slot(QPointF point);
+
 private:
 	std::shared_ptr < InnerModel > innerModel;
 	bool startup_check_flag;
