@@ -37,15 +37,26 @@ Q_OBJECT
 public:
 	SpecificWorker(TuplePrx tprx, bool startup_check);
 	~SpecificWorker();
+
+
+    ///////ESTRUCTURA PARA DEFINIR EL TARGET DEL ROBOT//////////
     typedef struct{
         QPointF destiny;
         bool active;
     }Target;
 
+    //////ESTRUCTURA PARA DEFINIR LA FUNCIÓN DE LA RECTA DEL ROBOT/////
+    typedef struct {
+        QPointF robot;
+        QPointF target;
+    }LinearFunction;
+    //////INICIALIZACION DE LAS ESTRUCTURAS///////////
     Target target;
+    LinearFunction function;
+
+    /////DECLARACIÓN DEL TIPO ENUMERADO PARA LOS ESTADOS DEL ROBOT/////
     enum class State {IDLE, RUN, OBSTACLE, SURROUND};
     State estado = State::IDLE;
-    float MAX_ADV_SPEED = 1000;
 
     ////////////METODOS DE PROPOSITO GENERAL//////////
     bool setParams(RoboCompCommonBehavior::ParameterList params);
@@ -62,6 +73,7 @@ public:
     State surround(const RoboCompGenericBase::TBaseState &bState, Target &target);
 
     ///////////VARIABLES VARIAS/////////////////////////
+    float MAX_ADV_SPEED = 1000;
     AbstractGraphicViewer *viewer;
     const int ROBOT_LENGTH = 400;
     QGraphicsPolygonItem *robot_polygon;

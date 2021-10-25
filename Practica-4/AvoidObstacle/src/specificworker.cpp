@@ -108,6 +108,7 @@ void SpecificWorker::compute()
         std::cout<<e.what()<<std::endl;
     }
     target_to_robot = world_to_robot(target, bState);
+
     switch (estado) {
         //ESTADO EN ESPERA
         case State::IDLE:
@@ -117,8 +118,6 @@ void SpecificWorker::compute()
                 std::cout<<e.what()<<std::endl;
             }
             if(target.active)
-
-
                 estado = State::RUN;
             break;
             //EL IR PARA ADELANTE, EL CLASICO
@@ -148,7 +147,7 @@ SpecificWorker::State SpecificWorker::run(const RoboCompGenericBase::TBaseState 
         target.active=false;
         return State::IDLE;
     }
-
+    //OJO A ESTO, AQUÍ LOS EJES A ATAN2 SE LOS PASA CAMBIADOS, PRIMERO EJE Y, LUEGO EJE X
     float beta = atan2(target_to_robot.x(), target_to_robot.y());
 
     float adv = MAX_ADV_SPEED * dist_to_target(distance)* rotation_speed(beta);
@@ -183,8 +182,8 @@ SpecificWorker::State SpecificWorker::surround(const RoboCompGenericBase::TBaseS
         target.active;
         return State::IDLE;
     }
-
-    if (poly.containsPoint(target.destiny, Qt::OddEvenFill))  // point to check. Must be in robot’s coordinate system
+    //METODO PARA COMPROBAR SI EL PUNTO EXISTE DENTRO DEL POLÍGONO DEL LASER
+    if (poly.containsPoint(target.destiny, Qt::OddEvenFill))
         return State::RUN;
 
 
