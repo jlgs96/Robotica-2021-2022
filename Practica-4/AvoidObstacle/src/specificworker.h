@@ -64,16 +64,17 @@ public:
     QPointF world_to_robot(Target target, RoboCompGenericBase::TBaseState bState);
     float dist_to_target(float dist);
     float rotation_speed(float beta);
+    bool isInFunction(const RoboCompGenericBase::TBaseState &bState);
 
 
 
     ////////METODOS DE COMPORTAMIENTO ROBOT///////////////
-    State run(const RoboCompGenericBase::TBaseState &bState, Target &target);
+    State run(const RoboCompGenericBase::TBaseState &bState, Target &target, const  RoboCompLaser::TData &data);
     State obstacle(const RoboCompGenericBase::TBaseState &bState, Target &target);
     State surround(const RoboCompGenericBase::TBaseState &bState, Target &target);
 
     ///////////VARIABLES VARIAS/////////////////////////
-    float MAX_ADV_SPEED = 1000;
+    float MAX_ADV_SPEED = 1000.0;
     AbstractGraphicViewer *viewer;
     const int ROBOT_LENGTH = 400;
     QGraphicsPolygonItem *robot_polygon;

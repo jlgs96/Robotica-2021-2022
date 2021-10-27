@@ -72,6 +72,7 @@ void SpecificWorker::initialize(int period)
     robot_polygon= viewer->add_robot(ROBOT_LENGTH);
     laser_in_robot_polygon=new QGraphicsRectItem(-10, 10, 20, 20, robot_polygon);
     laser_in_robot_polygon->setPos(0, 190);
+
     try{
         RoboCompGenericBase::TBaseState bState;
         differentialrobot_proxy->getBaseState(bState);
@@ -88,11 +89,15 @@ void SpecificWorker::initialize(int period)
 void SpecificWorker::compute()
 {
     RoboCompGenericBase::TBaseState bState;
-
+    RoboCompLaser::TLaserData ldata ;
+    int tam = 0;
     try {
-        RoboCompLaser::TLaserData ldata = laser_proxy->getLaserData();
+        ldata = laser_proxy->getLaserData();
         draw_laser(ldata);
-
+        tam = (ldata.size())/6;
+        //sort laser data from small to large distances using a lambda function.
+        std::sort( ldata.begin()+tam, ldata.end()-tam, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return     a.dist < b.dist; });
+        //previterangle = angle
     } catch (const Ice::Exception &e) {
         std::cout<<e.what()<<std::endl;
     }
@@ -118,11 +123,16 @@ void SpecificWorker::compute()
                 std::cout<<e.what()<<std::endl;
             }
             if(target.active)
+            {
+                function.robot = QPointF(bState.x, bState.z);
                 estado = State::RUN;
+
+            }
+                /////ALMACENAMOS LA POSICION ACTUAL DEL ROBOT AL ACTUALIZAR EL PUNTO////
             break;
             //EL IR PARA ADELANTE, EL CLASICO
         case State::RUN:
-            estado = run(bState, target);
+            estado = run(bState, target, ldata[tam]);
             break;
             //REORIENTAR Y GIRAR EN LA PARED
         case State::OBSTACLE:
@@ -134,18 +144,25 @@ void SpecificWorker::compute()
 
 
 }
-/*
- * METODO RUN PRACTICA 4
- *
- */
 
-SpecificWorker::State SpecificWorker::run(const RoboCompGenericBase::TBaseState &bState, Target &target){
-    float distance;
+SpecificWorker::State SpecificWorker::run(const RoboCompGenericBase::TBaseState &bState, Target &target, const RoboCompLaser::TData &data){
+    float distance = 0.0;
+    float threshold = 280.0;
     Eigen::Vector2f robot_eigen(bState.x, bState.z);
     Eigen::Vector2f target_eigen(target.destiny.x(), target.destiny.y());
     if( distance = (target_eigen - robot_eigen).norm(); distance <= 100){
         target.active=false;
         return State::IDLE;
+    }
+    std::cout<<data.dist<<std::endl;
+    if(data.dist<threshold)
+    {
+        try {
+            differentialrobot_proxy->setSpeedBase(0,0);
+        }catch(const Ice::Exception &e){
+            std::cout<<e.what()<<std::endl;
+        }
+        return State::OBSTACLE;
     }
     //OJO A ESTO, AQUÍ LOS EJES A ATAN2 SE LOS PASA CAMBIADOS, PRIMERO EJE Y, LUEGO EJE X
     float beta = atan2(target_to_robot.x(), target_to_robot.y());
@@ -171,7 +188,8 @@ SpecificWorker::State SpecificWorker::obstacle(const RoboCompGenericBase::TBaseS
     }
 
 
-    return State::OBSTACLE;
+
+    return State::SURROUND;
 }
 
 SpecificWorker::State SpecificWorker::surround(const RoboCompGenericBase::TBaseState &bState,Target &target) {
@@ -182,7 +200,7 @@ SpecificWorker::State SpecificWorker::surround(const RoboCompGenericBase::TBaseS
         target.active;
         return State::IDLE;
     }
-    //METODO PARA COMPROBAR SI EL PUNTO EXISTE DENTRO DEL POLÍGONO DEL LASER
+    //METODO PARA COMPROBAR SI EL PUNTO EXISTE DENTRO DEL POLÍGONO DEL LASERs
     if (poly.containsPoint(target.destiny, Qt::OddEvenFill))
         return State::RUN;
 
@@ -250,8 +268,8 @@ QPointF SpecificWorker::world_to_robot(Target target, RoboCompGenericBase::TBase
 
 }
 void SpecificWorker::new_target_slot(QPointF point) {
-
     target.destiny = point;
+    function.target = target.destiny;
     target.active = true;
     qInfo() << target.destiny;
     estado= State::IDLE;
@@ -285,7 +303,14 @@ void SpecificWorker::draw_laser(const RoboCompLaser::TLaserData &ldata) // robot
    laser_polygon = viewer->scene.addPolygon(laser_in_robot_polygon->mapToScene(poly), QPen(QColor("DarkGreen"), 30), QBrush(color));
    laser_polygon->setZValue(3);
 }
+bool SpecificWorker::isInFunction(const RoboCompGenericBase::TBaseState &bState)
+{
 
+
+
+
+    return false;
+}
 
 int SpecificWorker::startup_check()
 {
