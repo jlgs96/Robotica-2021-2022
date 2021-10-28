@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../../../../../robocomp/classes/sigwatch/sigwatch.h
-QObject
--
-signal.h
--
-
 ../src/config.h
 
 ../src/genericworker.h
@@ -60,10 +54,6 @@ QGraphicsPolygonItem
 iostream
 -
 
-/home/josel/robocomp/classes/qlog/qlog.cpp
-qlog.h
-/home/josel/robocomp/classes/qlog/qlog.h
-
 /home/josel/robocomp/classes/qlog/qlog.h
 config.h
 /home/josel/robocomp/classes/qlog/config.h
@@ -78,10 +68,6 @@ boost/format.hpp
 boost/format.hpp
 -
 
-/home/josel/robocomp/classes/rapplication/rapplication.cpp
-rapplication.h
-/home/josel/robocomp/classes/rapplication/rapplication.h
-
 /home/josel/robocomp/classes/rapplication/rapplication.h
 Ice/Ice.h
 -
@@ -92,106 +78,10 @@ IceUtil/IceUtil.h
 QtCore
 -
 
-/home/josel/robocomp/classes/sigwatch/sigwatch.cpp
-sys/socket.h
--
-unistd.h
--
-errno.h
--
-QMap
--
-QSocketNotifier
--
-QDebug
--
-sigwatch.h
-/home/josel/robocomp/classes/sigwatch/sigwatch.h
-moc_sigwatch.cpp
-/home/josel/robocomp/classes/sigwatch/moc_sigwatch.cpp
-
 /home/josel/robocomp/classes/sigwatch/sigwatch.h
 QObject
 -
 signal.h
--
-
-/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug/src/CommonBehavior.cpp
-CommonBehavior.h
--
-IceUtil/PushDisableWarnings.h
--
-Ice/LocalException.h
--
-Ice/ValueFactory.h
--
-Ice/OutgoingAsync.h
--
-Ice/InputStream.h
--
-Ice/OutputStream.h
--
-IceUtil/PopDisableWarnings.h
--
-
-/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug/src/DifferentialRobot.cpp
-DifferentialRobot.h
--
-IceUtil/PushDisableWarnings.h
--
-Ice/LocalException.h
--
-Ice/ValueFactory.h
--
-Ice/OutgoingAsync.h
--
-Ice/InputStream.h
--
-Ice/OutputStream.h
--
-Ice/LocalException.h
--
-IceUtil/PopDisableWarnings.h
--
-
-/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug/src/GenericBase.cpp
-GenericBase.h
--
-IceUtil/PushDisableWarnings.h
--
-Ice/LocalException.h
--
-Ice/ValueFactory.h
--
-Ice/OutgoingAsync.h
--
-Ice/InputStream.h
--
-Ice/OutputStream.h
--
-Ice/LocalException.h
--
-IceUtil/PopDisableWarnings.h
--
-
-/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug/src/Laser.cpp
-Laser.h
--
-IceUtil/PushDisableWarnings.h
--
-Ice/LocalException.h
--
-Ice/ValueFactory.h
--
-Ice/OutgoingAsync.h
--
-Ice/InputStream.h
--
-Ice/OutputStream.h
--
-Ice/LocalException.h
--
-IceUtil/PopDisableWarnings.h
 -
 
 /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug/src/gotoxy_autogen/E3H55E6XIR/moc_abstract_graphic_viewer.cpp
@@ -246,10 +136,6 @@ EWIEGA46WW/moc_specificmonitor.cpp
 EWIEGA46WW/moc_specificworker.cpp
 /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/cmake-build-debug/src/gotoxy_autogen/EWIEGA46WW/moc_specificworker.cpp
 
-/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/commonbehaviorI.cpp
-commonbehaviorI.h
-/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/commonbehaviorI.h
-
 /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/commonbehaviorI.h
 Ice/Ice.h
 -
@@ -263,10 +149,6 @@ genericmonitor.h
 /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/genericmonitor.h
 
 /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/config.h
-
-/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/genericmonitor.cpp
-genericmonitor.h
-/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/genericmonitor.h
 
 /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/genericmonitor.h
 Ice/Ice.h
@@ -281,10 +163,6 @@ qlog/qlog.h
 -
 CommonBehavior.h
 -
-
-/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/genericworker.cpp
-genericworker.h
-/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/genericworker.h
 
 /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/genericworker.h
 config.h
@@ -342,10 +220,6 @@ commonbehaviorI.h
 GenericBase.h
 -
 
-/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/specificmonitor.cpp
-specificmonitor.h
-/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/specificmonitor.h
-
 /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/specificmonitor.h
 genericmonitor.h
 /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/genericmonitor.h
@@ -364,10 +238,6 @@ abstract_graphic_viewer/abstract_graphic_viewer.h
 eigen3/Eigen/Eigen
 -
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug
-qdebug.h
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h
-
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QEvent
 qcoreevent.h
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h
@@ -375,10 +245,6 @@ qcoreevent.h
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 qlist.h
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
-qmap.h
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QMargins
 qmargins.h
@@ -415,10 +281,6 @@ qsize.h
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QSizeF
 qsize.h
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qsize.h
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/QSocketNotifier
-qsocketnotifier.h
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qsocketnotifier.h
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QStringList
 qstringlist.h
@@ -5418,14 +5280,6 @@ GenericBase.h
 IceUtil/UndefSysMacros.h
 -
 IceUtil/PopDisableWarnings.h
--
-
-src/gotoxy_autogen/include/moc_sigwatch.cpp
-../../../../../../../../robocomp/classes/sigwatch/sigwatch.h
-../../../../../robocomp/classes/sigwatch/sigwatch.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
 -
 
 src/ui_mainUI.h

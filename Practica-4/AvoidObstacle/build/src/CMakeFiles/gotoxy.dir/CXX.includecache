@@ -82,6 +82,10 @@ QGraphicsPolygonItem
 iostream
 -
 
+/home/josel/robocomp/classes/qlog/qlog.cpp
+qlog.h
+/home/josel/robocomp/classes/qlog/qlog.h
+
 /home/josel/robocomp/classes/qlog/qlog.h
 config.h
 /home/josel/robocomp/classes/qlog/config.h
@@ -95,6 +99,10 @@ boost/format.hpp
 -
 boost/format.hpp
 -
+
+/home/josel/robocomp/classes/rapplication/rapplication.cpp
+rapplication.h
+/home/josel/robocomp/classes/rapplication/rapplication.h
 
 /home/josel/robocomp/classes/rapplication/rapplication.h
 Ice/Ice.h

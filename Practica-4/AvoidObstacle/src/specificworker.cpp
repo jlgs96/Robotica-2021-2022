@@ -115,8 +115,10 @@ void SpecificWorker::compute()
     target_to_robot = world_to_robot(target, bState);
 
     switch (estado) {
+
         //ESTADO EN ESPERA
         case State::IDLE:
+            std::cout<<"estoy en estado IDLE"<<std::endl;
             try {
                 differentialrobot_proxy->setSpeedBase(0,0);
             }catch (const Ice::Exception &e){
@@ -132,13 +134,17 @@ void SpecificWorker::compute()
             break;
             //EL IR PARA ADELANTE, EL CLASICO
         case State::RUN:
+            std::cout<<"estoy en estado RUN"<<std::endl;
             estado = run(bState, target, ldata[tam]);
             break;
             //REORIENTAR Y GIRAR EN LA PARED
         case State::OBSTACLE:
+            std::cout<<"estoy en estado OBSTACLE"<<std::endl;
+            estado = obstacle(bState,target,ldata,tam);
             break;
             //UNA VEZ GIRADO, TIRAR ADELANTE HACIA EL PUNTO
         case State::SURROUND:
+            std::cout<<"estoy en estado SURROUND"<<std::endl;
             break;
     }
 
@@ -147,38 +153,39 @@ void SpecificWorker::compute()
 
 SpecificWorker::State SpecificWorker::run(const RoboCompGenericBase::TBaseState &bState, Target &target, const RoboCompLaser::TData &data){
     float distance = 0.0;
-    float threshold = 280.0;
+    float threshold = 300.0;
     Eigen::Vector2f robot_eigen(bState.x, bState.z);
     Eigen::Vector2f target_eigen(target.destiny.x(), target.destiny.y());
     if( distance = (target_eigen - robot_eigen).norm(); distance <= 100){
         target.active=false;
         return State::IDLE;
     }
-    std::cout<<data.dist<<std::endl;
-    if(data.dist<threshold)
-    {
-        try {
-            differentialrobot_proxy->setSpeedBase(0,0);
-        }catch(const Ice::Exception &e){
-            std::cout<<e.what()<<std::endl;
-        }
-        return State::OBSTACLE;
-    }
+
     //OJO A ESTO, AQUÍ LOS EJES A ATAN2 SE LOS PASA CAMBIADOS, PRIMERO EJE Y, LUEGO EJE X
     float beta = atan2(target_to_robot.x(), target_to_robot.y());
+    float adv = MAX_ADV_SPEED * dist_to_target_object(distance)* dist_to_target_object(data.dist) *rotation_speed(beta);
 
-    float adv = MAX_ADV_SPEED * dist_to_target(distance)* rotation_speed(beta);
+
+    ////COMPROBACIÓN DE VELOCIDAD/////
     try {
         differentialrobot_proxy->setSpeedBase(adv,beta);
+        if(data.dist<threshold)
+        {
+            differentialrobot_proxy->setSpeedBase(0,0);
+            return State::OBSTACLE;
+        }
     }catch(const Ice::Exception &e){
         std::cout<<e.what()<<std::endl;
     }
+    std::cout<<data.dist<<std::endl;
+
+
 
     return State::RUN;
 }
 
 
-SpecificWorker::State SpecificWorker::obstacle(const RoboCompGenericBase::TBaseState &bState,Target &target){
+SpecificWorker::State SpecificWorker::obstacle(const RoboCompGenericBase::TBaseState &bState,Target &target, const RoboCompLaser::TLaserData &ldata, int tam ){
     float distance;
     Eigen::Vector2f robot_eigen(bState.x, bState.z);
     Eigen::Vector2f target_eigen(target.destiny.x(), target.destiny.y());
@@ -186,13 +193,34 @@ SpecificWorker::State SpecificWorker::obstacle(const RoboCompGenericBase::TBaseS
         target.active;
         return State::IDLE;
     }
+    ////CONDICION DE SALIDA A COMPROBACION DE ANGULO////
+    if(abs(ldata[tam].angle) >= 1.48353)
+    {
+        try {
+            differentialrobot_proxy->setSpeedBase(0,0);
+        } catch (const Ice::Exception &e) {
+        }
+        return State::SURROUND;
+    }
+    /////FUNCION LMBDA PARA SUMA PARA MEDIA////
+    float halftam= ldata.size()/2;
+    auto lambdaF=[](float a, const RoboCompLaser::TData &data){return a+data.dist;};
+    float acumDrch = std::accumulate(ldata.begin()+tam,ldata.end()-halftam,ldata[tam].dist,lambdaF);
+    float acumIzq = std::accumulate(ldata.end()-halftam, ldata.end()-tam,ldata[halftam].dist,lambdaF);
+    //float acum = std::accumulate(ldata.begin()+tam, ldata.end()-tam,0.0,[](float a, const RoboCompLaser::TData &data){return a+data.dist;});
+    
 
 
+    /////GIRO///////
+    try {
+        differentialrobot_proxy->setSpeedBase(0, rotation_speed(ldata[tam].angle));
+    } catch (const Ice::Exception &e) {
 
-    return State::SURROUND;
+    }
+    return State::OBSTACLE;
 }
 
-SpecificWorker::State SpecificWorker::surround(const RoboCompGenericBase::TBaseState &bState,Target &target) {
+SpecificWorker::State SpecificWorker::surround(const RoboCompGenericBase::TBaseState &bState,Target &target, const RoboCompLaser::TData &data) {
     float distance;
     Eigen::Vector2f robot_eigen(bState.x, bState.z);
     Eigen::Vector2f target_eigen(target.destiny.x(), target.destiny.y());
@@ -230,7 +258,7 @@ SpecificWorker::State SpecificWorker::surround(const RoboCompGenericBase::TBaseS
  *lambda = -(x²)/lnF(angle) (Rotation_Speed)
  * lambda = -(0,5²)/ln0.4
  */
-float SpecificWorker::dist_to_target(float dist){
+float SpecificWorker::dist_to_target_object(float dist){
     float threshold = 500;
     float speed;
     if(dist >= threshold){

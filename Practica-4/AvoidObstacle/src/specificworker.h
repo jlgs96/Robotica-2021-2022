@@ -62,7 +62,7 @@ public:
     bool setParams(RoboCompCommonBehavior::ParameterList params);
     void draw_laser(const RoboCompLaser::TLaserData &ldata);
     QPointF world_to_robot(Target target, RoboCompGenericBase::TBaseState bState);
-    float dist_to_target(float dist);
+    float dist_to_target_object(float dist);
     float rotation_speed(float beta);
     bool isInFunction(const RoboCompGenericBase::TBaseState &bState);
 
@@ -70,8 +70,8 @@ public:
 
     ////////METODOS DE COMPORTAMIENTO ROBOT///////////////
     State run(const RoboCompGenericBase::TBaseState &bState, Target &target, const  RoboCompLaser::TData &data);
-    State obstacle(const RoboCompGenericBase::TBaseState &bState, Target &target);
-    State surround(const RoboCompGenericBase::TBaseState &bState, Target &target);
+    State obstacle(const RoboCompGenericBase::TBaseState &bState, Target &target, const RoboCompLaser::TLaserData &ldata, int tam);
+    State surround(const RoboCompGenericBase::TBaseState &bState, Target &target, const RoboCompLaser::TData &data);
 
     ///////////VARIABLES VARIAS/////////////////////////
     float MAX_ADV_SPEED = 1000.0;
