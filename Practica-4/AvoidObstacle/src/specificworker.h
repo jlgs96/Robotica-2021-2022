@@ -61,7 +61,7 @@ public:
     ////////////METODOS DE PROPOSITO GENERAL//////////
     bool setParams(RoboCompCommonBehavior::ParameterList params);
     void draw_laser(const RoboCompLaser::TLaserData &ldata);
-    QPointF world_to_robot(Target target, RoboCompGenericBase::TBaseState bState);
+    QPointF world_to_robot(RoboCompGenericBase::TBaseState bState);
     float dist_to_target_object(float dist);
     float rotation_speed(float beta);
     bool isInFunction(const RoboCompGenericBase::TBaseState &bState);
@@ -69,9 +69,9 @@ public:
 
 
     ////////METODOS DE COMPORTAMIENTO ROBOT///////////////
-    State run(const RoboCompGenericBase::TBaseState &bState, Target &target, const  RoboCompLaser::TData &data);
-    State obstacle(const RoboCompGenericBase::TBaseState &bState, Target &target, const RoboCompLaser::TLaserData &ldata, int tam);
-    State surround(const RoboCompGenericBase::TBaseState &bState, Target &target, const RoboCompLaser::TData &data);
+    State run(const RoboCompGenericBase::TBaseState &bState,const  RoboCompLaser::TLaserData &ldata);
+    State obstacle(const RoboCompGenericBase::TBaseState &bState,const RoboCompLaser::TLaserData &ldata);
+    State surround(const RoboCompGenericBase::TBaseState &bState,const RoboCompLaser::TLaserData &ldata);
 
     ///////////VARIABLES VARIAS/////////////////////////
     float MAX_ADV_SPEED = 1000.0;
@@ -92,6 +92,9 @@ private:
 	std::shared_ptr < InnerModel > innerModel;
 	bool startup_check_flag;
 
+    bool distance_ahead(const RoboCompLaser::TLaserData &ldata, float dist, int semiwidth);
+
+    RoboCompLaser::TData get_min_ldata_element(const RoboCompLaser::TLaserData &ldata, int semiwidth);
 };
 
 #endif
