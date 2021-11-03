@@ -222,6 +222,7 @@ SpecificWorker::State SpecificWorker::obstacle(const RoboCompGenericBase::TBaseS
     /////GIRO///////
     try {
         differentialrobot_proxy->setSpeedBase(0,1);
+        differentialrobot_proxy->setSpeedBase(0,1);
     } catch (const Ice::Exception &e) {
 
     }
