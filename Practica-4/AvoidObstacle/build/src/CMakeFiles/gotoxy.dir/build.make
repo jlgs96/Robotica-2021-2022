@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle
+CMAKE_SOURCE_DIR = /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build
+CMAKE_BINARY_DIR = /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/gotoxy.dir/depend.make
@@ -58,227 +58,227 @@ include src/CMakeFiles/gotoxy.dir/progress.make
 include src/CMakeFiles/gotoxy.dir/flags.make
 
 src/CommonBehavior.cpp:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "BU ice=>h/cpp: Generating CommonBehavior.h and CommonBehavior.cpp from /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/CommonBehavior.ice"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && slice2cpp --underscore /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/CommonBehavior.ice -I/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/ --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "BU ice=>h/cpp: Generating CommonBehavior.h and CommonBehavior.cpp from /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/CommonBehavior.ice"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && slice2cpp --underscore /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/CommonBehavior.ice -I/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/ --output-dir .
 
 src/CommonBehavior.h: src/CommonBehavior.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/CommonBehavior.h
 
 src/DifferentialRobot.cpp:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "BU ice=>h/cpp: Generating DifferentialRobot.h and DifferentialRobot.cpp from /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/DifferentialRobot.ice"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && slice2cpp --underscore /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/DifferentialRobot.ice -I/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/ --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "BU ice=>h/cpp: Generating DifferentialRobot.h and DifferentialRobot.cpp from /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/DifferentialRobot.ice"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && slice2cpp --underscore /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/DifferentialRobot.ice -I/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/ --output-dir .
 
 src/DifferentialRobot.h: src/DifferentialRobot.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/DifferentialRobot.h
 
 src/GenericBase.cpp:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "BU ice=>h/cpp: Generating GenericBase.h and GenericBase.cpp from /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/GenericBase.ice"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && slice2cpp --underscore /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/GenericBase.ice -I/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/ --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "BU ice=>h/cpp: Generating GenericBase.h and GenericBase.cpp from /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/GenericBase.ice"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && slice2cpp --underscore /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/GenericBase.ice -I/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/ --output-dir .
 
 src/GenericBase.h: src/GenericBase.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/GenericBase.h
 
 src/Laser.cpp:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "BU ice=>h/cpp: Generating Laser.h and Laser.cpp from /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/Laser.ice"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && slice2cpp --underscore /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/Laser.ice -I/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/ --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "BU ice=>h/cpp: Generating Laser.h and Laser.cpp from /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/Laser.ice"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && slice2cpp --underscore /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/Laser.ice -I/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/ --output-dir .
 
 src/Laser.h: src/Laser.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/Laser.h
 
 src/ui_mainUI.h: ../src/mainUI.ui
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating ui_mainUI.h"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/lib/qt5/bin/uic -o /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/ui_mainUI.h /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/mainUI.ui
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating ui_mainUI.h"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/lib/qt5/bin/uic -o /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/ui_mainUI.h /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/mainUI.ui
 
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: src/gotoxy_autogen/mocs_compilation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o -c /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/gotoxy_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o -c /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/gotoxy_autogen/mocs_compilation.cpp
 
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.i"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/gotoxy_autogen/mocs_compilation.cpp > CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/gotoxy_autogen/mocs_compilation.cpp > CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.i
 
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.s"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/gotoxy_autogen/mocs_compilation.cpp -o CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/gotoxy_autogen/mocs_compilation.cpp -o CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.s
 
 src/CMakeFiles/gotoxy.dir/specificworker.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/specificworker.cpp.o: ../src/specificworker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/CMakeFiles/gotoxy.dir/specificworker.cpp.o"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/specificworker.cpp.o -c /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/specificworker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/CMakeFiles/gotoxy.dir/specificworker.cpp.o"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/specificworker.cpp.o -c /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/specificworker.cpp
 
 src/CMakeFiles/gotoxy.dir/specificworker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/specificworker.cpp.i"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/specificworker.cpp > CMakeFiles/gotoxy.dir/specificworker.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/specificworker.cpp > CMakeFiles/gotoxy.dir/specificworker.cpp.i
 
 src/CMakeFiles/gotoxy.dir/specificworker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/specificworker.cpp.s"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/specificworker.cpp -o CMakeFiles/gotoxy.dir/specificworker.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/specificworker.cpp -o CMakeFiles/gotoxy.dir/specificworker.cpp.s
 
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: ../src/specificmonitor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/specificmonitor.cpp.o -c /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/specificmonitor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/specificmonitor.cpp.o -c /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/specificmonitor.cpp
 
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/specificmonitor.cpp.i"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/specificmonitor.cpp > CMakeFiles/gotoxy.dir/specificmonitor.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/specificmonitor.cpp > CMakeFiles/gotoxy.dir/specificmonitor.cpp.i
 
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/specificmonitor.cpp.s"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/specificmonitor.cpp -o CMakeFiles/gotoxy.dir/specificmonitor.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/specificmonitor.cpp -o CMakeFiles/gotoxy.dir/specificmonitor.cpp.s
 
-src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
-src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.o: /home/alumno/robocomp/classes/rapplication/rapplication.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.o"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.o -c /home/alumno/robocomp/classes/rapplication/rapplication.cpp
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.o: /home/josel/robocomp/classes/rapplication/rapplication.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.o"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.o -c /home/josel/robocomp/classes/rapplication/rapplication.cpp
 
-src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.i"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alumno/robocomp/classes/rapplication/rapplication.cpp > CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.i
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.i"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/josel/robocomp/classes/rapplication/rapplication.cpp > CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.i
 
-src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.s"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alumno/robocomp/classes/rapplication/rapplication.cpp -o CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.s
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.s"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/josel/robocomp/classes/rapplication/rapplication.cpp -o CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.s
 
-src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
-src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o: /home/alumno/robocomp/classes/sigwatch/sigwatch.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o -c /home/alumno/robocomp/classes/sigwatch/sigwatch.cpp
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o: /home/josel/robocomp/classes/sigwatch/sigwatch.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o -c /home/josel/robocomp/classes/sigwatch/sigwatch.cpp
 
-src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.i"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alumno/robocomp/classes/sigwatch/sigwatch.cpp > CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.i
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.i"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/josel/robocomp/classes/sigwatch/sigwatch.cpp > CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.i
 
-src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.s"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alumno/robocomp/classes/sigwatch/sigwatch.cpp -o CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.s
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.s"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/josel/robocomp/classes/sigwatch/sigwatch.cpp -o CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.s
 
-src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
-src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.o: /home/alumno/robocomp/classes/qlog/qlog.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.o"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.o -c /home/alumno/robocomp/classes/qlog/qlog.cpp
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.o: /home/josel/robocomp/classes/qlog/qlog.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.o"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.o -c /home/josel/robocomp/classes/qlog/qlog.cpp
 
-src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.i"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alumno/robocomp/classes/qlog/qlog.cpp > CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.i
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.i"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/josel/robocomp/classes/qlog/qlog.cpp > CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.i
 
-src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.s"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alumno/robocomp/classes/qlog/qlog.cpp -o CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.s
+src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.s"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/josel/robocomp/classes/qlog/qlog.cpp -o CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.s
 
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/CMakeFiles/gotoxy.dir/main.cpp.o"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/main.cpp.o -c /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/CMakeFiles/gotoxy.dir/main.cpp.o"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/main.cpp.o -c /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/main.cpp
 
 src/CMakeFiles/gotoxy.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/main.cpp.i"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/main.cpp > CMakeFiles/gotoxy.dir/main.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/main.cpp > CMakeFiles/gotoxy.dir/main.cpp.i
 
 src/CMakeFiles/gotoxy.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/main.cpp.s"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/main.cpp -o CMakeFiles/gotoxy.dir/main.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/main.cpp -o CMakeFiles/gotoxy.dir/main.cpp.s
 
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: ../src/genericmonitor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/genericmonitor.cpp.o -c /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/genericmonitor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/genericmonitor.cpp.o -c /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/genericmonitor.cpp
 
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/genericmonitor.cpp.i"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/genericmonitor.cpp > CMakeFiles/gotoxy.dir/genericmonitor.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/genericmonitor.cpp > CMakeFiles/gotoxy.dir/genericmonitor.cpp.i
 
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/genericmonitor.cpp.s"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/genericmonitor.cpp -o CMakeFiles/gotoxy.dir/genericmonitor.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/genericmonitor.cpp -o CMakeFiles/gotoxy.dir/genericmonitor.cpp.s
 
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: ../src/commonbehaviorI.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o -c /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/commonbehaviorI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o -c /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/commonbehaviorI.cpp
 
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.i"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/commonbehaviorI.cpp > CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/commonbehaviorI.cpp > CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.i
 
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.s"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/commonbehaviorI.cpp -o CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/commonbehaviorI.cpp -o CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.s
 
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: ../src/genericworker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object src/CMakeFiles/gotoxy.dir/genericworker.cpp.o"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/genericworker.cpp.o -c /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/genericworker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object src/CMakeFiles/gotoxy.dir/genericworker.cpp.o"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/genericworker.cpp.o -c /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/genericworker.cpp
 
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/genericworker.cpp.i"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/genericworker.cpp > CMakeFiles/gotoxy.dir/genericworker.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/genericworker.cpp > CMakeFiles/gotoxy.dir/genericworker.cpp.i
 
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/genericworker.cpp.s"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src/genericworker.cpp -o CMakeFiles/gotoxy.dir/genericworker.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src/genericworker.cpp -o CMakeFiles/gotoxy.dir/genericworker.cpp.s
 
 src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.o: src/CommonBehavior.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.o"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/CommonBehavior.cpp.o -c /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/CommonBehavior.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.o"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/CommonBehavior.cpp.o -c /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/CommonBehavior.cpp
 
 src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/CommonBehavior.cpp.i"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/CommonBehavior.cpp > CMakeFiles/gotoxy.dir/CommonBehavior.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/CommonBehavior.cpp > CMakeFiles/gotoxy.dir/CommonBehavior.cpp.i
 
 src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/CommonBehavior.cpp.s"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/CommonBehavior.cpp -o CMakeFiles/gotoxy.dir/CommonBehavior.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/CommonBehavior.cpp -o CMakeFiles/gotoxy.dir/CommonBehavior.cpp.s
 
 src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o: src/DifferentialRobot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o -c /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/DifferentialRobot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o -c /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/DifferentialRobot.cpp
 
 src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.i"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/DifferentialRobot.cpp > CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/DifferentialRobot.cpp > CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.i
 
 src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.s"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/DifferentialRobot.cpp -o CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/DifferentialRobot.cpp -o CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.s
 
 src/CMakeFiles/gotoxy.dir/GenericBase.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/GenericBase.cpp.o: src/GenericBase.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object src/CMakeFiles/gotoxy.dir/GenericBase.cpp.o"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/GenericBase.cpp.o -c /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/GenericBase.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object src/CMakeFiles/gotoxy.dir/GenericBase.cpp.o"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/GenericBase.cpp.o -c /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/GenericBase.cpp
 
 src/CMakeFiles/gotoxy.dir/GenericBase.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/GenericBase.cpp.i"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/GenericBase.cpp > CMakeFiles/gotoxy.dir/GenericBase.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/GenericBase.cpp > CMakeFiles/gotoxy.dir/GenericBase.cpp.i
 
 src/CMakeFiles/gotoxy.dir/GenericBase.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/GenericBase.cpp.s"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/GenericBase.cpp -o CMakeFiles/gotoxy.dir/GenericBase.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/GenericBase.cpp -o CMakeFiles/gotoxy.dir/GenericBase.cpp.s
 
 src/CMakeFiles/gotoxy.dir/Laser.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/Laser.cpp.o: src/Laser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object src/CMakeFiles/gotoxy.dir/Laser.cpp.o"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/Laser.cpp.o -c /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/Laser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object src/CMakeFiles/gotoxy.dir/Laser.cpp.o"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/Laser.cpp.o -c /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/Laser.cpp
 
 src/CMakeFiles/gotoxy.dir/Laser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/Laser.cpp.i"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/Laser.cpp > CMakeFiles/gotoxy.dir/Laser.cpp.i
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/Laser.cpp > CMakeFiles/gotoxy.dir/Laser.cpp.i
 
 src/CMakeFiles/gotoxy.dir/Laser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/Laser.cpp.s"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/Laser.cpp -o CMakeFiles/gotoxy.dir/Laser.cpp.s
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/Laser.cpp -o CMakeFiles/gotoxy.dir/Laser.cpp.s
 
 # Object files for target gotoxy
 gotoxy_OBJECTS = \
 "CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/gotoxy.dir/specificworker.cpp.o" \
 "CMakeFiles/gotoxy.dir/specificmonitor.cpp.o" \
-"CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.o" \
-"CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o" \
-"CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.o" \
+"CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.o" \
+"CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o" \
+"CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.o" \
 "CMakeFiles/gotoxy.dir/main.cpp.o" \
 "CMakeFiles/gotoxy.dir/genericmonitor.cpp.o" \
 "CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o" \
@@ -294,9 +294,9 @@ gotoxy_EXTERNAL_OBJECTS =
 ../bin/gotoxy: src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o
 ../bin/gotoxy: src/CMakeFiles/gotoxy.dir/specificworker.cpp.o
 ../bin/gotoxy: src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o
-../bin/gotoxy: src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.o
-../bin/gotoxy: src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o
-../bin/gotoxy: src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.o
+../bin/gotoxy: src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/rapplication/rapplication.cpp.o
+../bin/gotoxy: src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/sigwatch/sigwatch.cpp.o
+../bin/gotoxy: src/CMakeFiles/gotoxy.dir/home/josel/robocomp/classes/qlog/qlog.cpp.o
 ../bin/gotoxy: src/CMakeFiles/gotoxy.dir/main.cpp.o
 ../bin/gotoxy: src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o
 ../bin/gotoxy: src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o
@@ -319,8 +319,8 @@ gotoxy_EXTERNAL_OBJECTS =
 ../bin/gotoxy: /usr/lib/x86_64-linux-gnu/libQt5Network.so.5.12.8
 ../bin/gotoxy: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8
 ../bin/gotoxy: src/CMakeFiles/gotoxy.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable ../../bin/gotoxy"
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gotoxy.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable ../../bin/gotoxy"
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gotoxy.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/CMakeFiles/gotoxy.dir/build: ../bin/gotoxy
@@ -328,7 +328,7 @@ src/CMakeFiles/gotoxy.dir/build: ../bin/gotoxy
 .PHONY : src/CMakeFiles/gotoxy.dir/build
 
 src/CMakeFiles/gotoxy.dir/clean:
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && $(CMAKE_COMMAND) -P CMakeFiles/gotoxy.dir/cmake_clean.cmake
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src && $(CMAKE_COMMAND) -P CMakeFiles/gotoxy.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/gotoxy.dir/clean
 
 src/CMakeFiles/gotoxy.dir/depend: src/CommonBehavior.cpp
@@ -340,6 +340,6 @@ src/CMakeFiles/gotoxy.dir/depend: src/GenericBase.h
 src/CMakeFiles/gotoxy.dir/depend: src/Laser.cpp
 src/CMakeFiles/gotoxy.dir/depend: src/Laser.h
 src/CMakeFiles/gotoxy.dir/depend: src/ui_mainUI.h
-	cd /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/src /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/CMakeFiles/gotoxy.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/src /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src /home/josel/software/Robotica-2021-2022/Practica-4/AvoidObstacle/build/src/CMakeFiles/gotoxy.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/gotoxy.dir/depend
 

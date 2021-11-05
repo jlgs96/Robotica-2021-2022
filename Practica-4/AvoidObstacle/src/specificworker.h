@@ -91,10 +91,10 @@ void new_target_slot(QPointF point);
 private:
 	std::shared_ptr < InnerModel > innerModel;
 	bool startup_check_flag;
-
     bool distance_ahead(const RoboCompLaser::TLaserData &ldata, float dist, int semiwidth);
-
     RoboCompLaser::TData get_min_ldata_element(const RoboCompLaser::TLaserData &ldata, int semiwidth);
+
+    bool distance_side(const RoboCompLaser::TLaserData &ldata, float dist, int iterBegin, int iterEnd);
 };
 
 #endif

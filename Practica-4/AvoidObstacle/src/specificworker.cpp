@@ -154,8 +154,7 @@ void SpecificWorker::compute()
 
 SpecificWorker::State SpecificWorker::run(const RoboCompGenericBase::TBaseState &bState,  const RoboCompLaser::TLaserData  &ldata){
     float distance = 0.0;
-    float threshold = 300.0;
-    int semiwidth = 16;
+    int semiwidth = 60;
     Eigen::Vector2f robot_eigen(bState.x, bState.z);
     Eigen::Vector2f target_eigen(target.destiny.x(), target.destiny.y());
 
@@ -165,12 +164,13 @@ SpecificWorker::State SpecificWorker::run(const RoboCompGenericBase::TBaseState 
         return State::IDLE;
     }
     ///////CONDITION CRASH OBSTACLE///////
-    if( distance_ahead(ldata, 300, 16))
+    if( distance_ahead(ldata, 300, semiwidth))
     {
         try
         {
             differentialrobot_proxy->setSpeedBase(0,0);
-        } catch (const Ice::Exception &e) {
+        } catch (const Ice::Exception &e)
+        {
             std::cout<<e.what()<<std::endl;
         }
         return State::OBSTACLE;
@@ -195,53 +195,126 @@ SpecificWorker::State SpecificWorker::run(const RoboCompGenericBase::TBaseState 
 
 SpecificWorker::State SpecificWorker::obstacle(const RoboCompGenericBase::TBaseState &bState,const RoboCompLaser::TLaserData &ldata ){
     float distance;
-    float threshold=300.0;
-    int semiwidth = 16;
+    float threshold=425.0;
+    int semiwidth = 60;
     Eigen::Vector2f robot_eigen(bState.x, bState.z);
     Eigen::Vector2f target_eigen(target.destiny.x(), target.destiny.y());
 
     ///////CONDITION TARGET EXIT///////
     if( distance = (target_eigen - robot_eigen).norm(); distance <= 100){
-        target.active;
+        target.active=false;
         return State::IDLE;
     }
 
 
     ////CONDICION DE SALIDA A COMPROBACION DE ANGULO////
-    if(distance_ahead(ldata,threshold,semiwidth))
+    if(!distance_ahead(ldata,threshold,semiwidth))
     {
         try {
             differentialrobot_proxy->setSpeedBase(0,0);
-        } catch (const Ice::Exception &e) {
+        } catch (const Ice::Exception &e)
+        {
+            std::cout<<e.what()<<std::endl;
+
         }
         return State::SURROUND;
     }
-    /////FUNCION LMBDA PARA SUMA PARA MEDIA////
-    float halftam= ldata.size()/2;
+
 
     /////GIRO///////
-    try {
+    try
+    {
         differentialrobot_proxy->setSpeedBase(0,1);
-        differentialrobot_proxy->setSpeedBase(0,1);
-    } catch (const Ice::Exception &e) {
+    } catch (const Ice::Exception &e)
+    {
+        std::cout<<e.what()<<std::endl;
 
     }
     return State::OBSTACLE;
 }
 
-SpecificWorker::State SpecificWorker::surround(const RoboCompGenericBase::TBaseState &bState, const RoboCompLaser::TLaserData  &ldata) {
+SpecificWorker::State SpecificWorker::surround(const RoboCompGenericBase::TBaseState &bState, const RoboCompLaser::TLaserData  &ldata)
+{
     float distance;
+    int semiwidth = 60;
     Eigen::Vector2f robot_eigen(bState.x, bState.z);
     Eigen::Vector2f target_eigen(target.destiny.x(), target.destiny.y());
-    if( distance = (target_eigen - robot_eigen).norm(); distance <= 100){
-        target.active;
+    ////CONDICION SALIDA EN TARGET////
+    if( distance = (target_eigen - robot_eigen).norm(); distance <= 100)
+    {
+        target.active= false;
         return State::IDLE;
     }
-    //METODO PARA COMPROBAR SI EL PUNTO EXISTE DENTRO DEL POLÍGONO DEL LASERs
-    if (poly.containsPoint(target.destiny, Qt::OddEvenFill))
+
+   // std::cout<<ldata.size()<<endl;
+    ////ROBOT IS IN LINEAR FUNCTION OR IS IN POLYGON////
+  /*  if (poly.containsPoint(target_to_robot, Qt::OddEvenFill)/*&& !distance_ahead(ldata,400,ldata.size()/2)/*|| isInFunction(bState)*///)
+/*    {
         return State::RUN;
 
+    }
+  */
+    float adv = MAX_ADV_SPEED/4;
+    float beta = 0.0;
 
+
+
+    //////SACAMOS EL DATO MINIMO PARA CALCULAR EL ANGULO DE GIRO//////
+    float aux_data_angle = get_min_ldata_element(ldata, semiwidth).angle;
+
+    ////DECLARACIÓN DEL ÁNGULO DEL CONO LATERAL////
+    float sideConeangle;
+
+    sideConeangle = get_min_ldata_element(ldata, ldata.size()/2).angle;
+    /////CONTROL DE SEGUIMIENTO PARED/////
+    //////ACERCARSE//////
+  /*  if(!distance_ahead(ldata,300,semiwidth))
+    {
+        beta = -aux_data_angle/abs(aux_data_angle);
+        beta = beta * 0.5;
+    }
+
+    //////ALEJARSE//////
+    if(distance_ahead(ldata,600,semiwidth))
+    {
+        beta = aux_data_angle/abs(aux_data_angle);
+        beta = beta * 0.5;
+    }
+
+*/  int coneBegin;
+    int coneEnd;
+    ////////LEFTOOOOOOOO////////
+    if(sideConeangle < 0)
+    {
+        coneBegin = 30;
+        coneEnd = ldata.size()/2 +30;
+        std::cout<< "LADO IZQUIERDO"<<std::endl;
+    }else
+        ////////RIGHTOOOOO////////
+    {
+        coneBegin = ldata.size()/2 +30;
+        coneEnd = 30;
+        std::cout<< "LADO DERECHO"<<std::endl;
+    }
+
+    if(distance_side(ldata, 200, coneBegin, coneEnd))
+    {
+        beta = -sideConeangle/abs(sideConeangle);
+    }
+    if(!distance_side(ldata, 300, coneBegin, coneEnd))
+    {
+        beta = sideConeangle/abs(sideConeangle);
+    }
+
+    std::cout<< sideConeangle<<endl;
+
+    try
+    {
+        differentialrobot_proxy->setSpeedBase(adv, beta*0.5);
+    } catch (const Ice::Exception &e) {
+        std::cout<<e.what()<<std::endl;
+
+    }
     return State::SURROUND;
 }
 /////////////////////////////////////////////
@@ -268,7 +341,7 @@ SpecificWorker::State SpecificWorker::surround(const RoboCompGenericBase::TBaseS
  * lambda = -(0,5²)/ln0.4
  */
 float SpecificWorker::dist_to_target_object(float dist){
-    float threshold = 500;
+    float threshold = 1000;
     float speed;
     if(dist >= threshold){
         speed = MAX_ADV_SPEED;
@@ -298,7 +371,12 @@ bool SpecificWorker::distance_ahead(const RoboCompLaser::TLaserData &ldata, floa
     return (*min).dist <= dist;
 }
 
+bool SpecificWorker::distance_side(const RoboCompLaser::TLaserData &ldata, float dist, int iterBegin, int iterEnd)
+{
 
+    auto min = std::min_element(ldata.begin() + (iterBegin), ldata.end() - (iterEnd), [](auto a, auto b){return a.dist < b.dist;});
+    return (*min).dist <= dist;
+}
 RoboCompLaser::TData SpecificWorker::get_min_ldata_element(const RoboCompLaser::TLaserData &ldata, int semiwidth)
 {
     size_t s = ldata.size();
@@ -306,7 +384,7 @@ RoboCompLaser::TData SpecificWorker::get_min_ldata_element(const RoboCompLaser::
     return (*minimal_element);
 }
 
-QPointF SpecificWorker::world_to_robot(Target target, RoboCompGenericBase::TBaseState bState)
+QPointF SpecificWorker::world_to_robot(RoboCompGenericBase::TBaseState bState)
 {
     float angle = bState.alpha;
     Eigen::Vector2f T(bState.x, bState.z), point_in_world(target.destiny.x(), target.destiny.y());
@@ -360,7 +438,6 @@ bool SpecificWorker::isInFunction(const RoboCompGenericBase::TBaseState &bState)
 
 
 
-
     return false;
 }
 
@@ -370,10 +447,6 @@ int SpecificWorker::startup_check()
 	QTimer::singleShot(200, qApp, SLOT(quit()));
 	return 0;
 }
-
-
-
-
 /**************************************/
 // From the RoboCompDifferentialRobot you can call this methods:
 // this->differentialrobot_proxy->correctOdometer(...)
