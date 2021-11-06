@@ -248,12 +248,11 @@ SpecificWorker::State SpecificWorker::surround(const RoboCompGenericBase::TBaseS
 
    // std::cout<<ldata.size()<<endl;
     ////ROBOT IS IN LINEAR FUNCTION OR IS IN POLYGON////
-  /*  if (poly.containsPoint(target_to_robot, Qt::OddEvenFill)/*&& !distance_ahead(ldata,400,ldata.size()/2)/*|| isInFunction(bState)*///)
-/*    {
+    if (poly.containsPoint(target_to_robot, Qt::OddEvenFill))/*&& !distance_ahead(ldata,400,ldata.size()/2)/*|| isInFunction(bState)*///)
+    {
         return State::RUN;
-
     }
-  */
+
     float adv = MAX_ADV_SPEED/4;
     float beta = 0.0;
 
@@ -358,8 +357,8 @@ float SpecificWorker::rotation_speed(float beta) {
     float v= 0.0;
     float e = 2.71828;
     float lambda= 0.10857362;
-
-    v = pow(e, -pow(beta,2)/lambda);
+    float lambda_no_drive = 0.36067376;
+    v = pow(e, -pow(beta,2)/lambda_no_drive);
 
 return v;
 }
@@ -435,9 +434,6 @@ void SpecificWorker::draw_laser(const RoboCompLaser::TLaserData &ldata) // robot
 }
 bool SpecificWorker::isInFunction(const RoboCompGenericBase::TBaseState &bState)
 {
-
-
-
     return false;
 }
 
