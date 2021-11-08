@@ -52,7 +52,7 @@ public:
     }LinearFunction;
     //////INICIALIZACION DE LAS ESTRUCTURAS///////////
     Target target;
-    LinearFunction function;
+    LinearFunction linear_function;
 
     /////DECLARACIÓN DEL TIPO ENUMERADO PARA LOS ESTADOS DEL ROBOT/////
     enum class State {IDLE, RUN, OBSTACLE, SURROUND};

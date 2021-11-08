@@ -126,7 +126,7 @@ void SpecificWorker::compute()
             }
             if(target.active)
             {
-                function.robot = QPointF(bState.x, bState.z);
+                linear_function.robot = QPointF(bState.x, bState.z);
                 estado = State::RUN;
 
             }
@@ -282,14 +282,14 @@ SpecificWorker::State SpecificWorker::surround(const RoboCompGenericBase::TBaseS
 
 */  int coneBegin;
     int coneEnd;
-    ////////LEFTOOOOOOOO////////
+    ////////LEFT////////
     if(sideConeangle < 0)
     {
         coneBegin = 30;
         coneEnd = ldata.size()/2 +30;
         std::cout<< "LADO IZQUIERDO"<<std::endl;
     }else
-        ////////RIGHTOOOOO////////
+        ////////RIGHT////////
     {
         coneBegin = ldata.size()/2 +30;
         coneEnd = 30;
@@ -398,7 +398,7 @@ QPointF SpecificWorker::world_to_robot(RoboCompGenericBase::TBaseState bState)
 }
 void SpecificWorker::new_target_slot(QPointF point) {
     target.destiny = point;
-    function.target = target.destiny;
+    linear_function.target = target.destiny;
     target.active = true;
     qInfo() << target.destiny;
     estado= State::IDLE;
@@ -434,6 +434,28 @@ void SpecificWorker::draw_laser(const RoboCompLaser::TLaserData &ldata) // robot
 }
 bool SpecificWorker::isInFunction(const RoboCompGenericBase::TBaseState &bState)
 {
+
+    float A = linear_function.robot.y() - linear_function.target.y();
+    float B = linear_function.target.x() - linear_function.robot.x();
+    float C = (linear_function.robot.x() - linear_function.target.x())*linear_function.robot.y() +(linear_function.target.y() - linear_function.robot.y())*linear_function.robot.x();
+    float dist = (abs(A*bState.x + B*bState.z + C))/ sqrt(pow(A,2) + pow(B,2));
+
+    //SI NO ESTÁ EN LA FUNCIÓN (con cierto margen)
+    if(abs(dist)>10)
+    {
+        return false;
+    }
+
+    //COMPROBAR SI LA POSICIÓN ACTUAL ES MEJOR QUE LA ÚLTIMA POSICIÓN
+    Eigen::Vector2f robot_eigen(bState.x, bState.z);
+    Eigen::Vector2f target_eigen(linear_function.target.x(), linear_function.target.y());
+    Eigen::Vector2f robot_function(linear_function.robot.x(), linear_function.robot.y());
+    if((target_eigen - robot_eigen).norm() < (target_eigen - robot_function).norm())
+    {
+        linear_function.robot = QPointF(bState.x, bState.z);
+        return true;
+    }
+
     return false;
 }
 
