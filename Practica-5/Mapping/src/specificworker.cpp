@@ -77,8 +77,8 @@ void SpecificWorker::initialize(int period)
 
 
     try{
-        RoboCompGenericBase::TBaseState bState;
-        differentialrobot_proxy->getBaseState(bState);
+        RoboCompGenericBase::TBaseState r_state;
+        differentialrobot_proxy->getBaseState(r_state);
     }
     catch(const Ice::Exception &e){std::cout<<e.what()<<std::endl;}
     connect(viewer, &AbstractGraphicViewer::new_mouse_coordinates, this, &SpecificWorker::new_target_slot);
@@ -89,240 +89,129 @@ void SpecificWorker::initialize(int period)
 
 
 //////////CODIGO DE LA MAQUINA DE ESTADOS//////////////////
-void SpecificWorker::compute()
-{
-    RoboCompGenericBase::TBaseState bState;
+void SpecificWorker::compute() {
+
     RoboCompFullPoseEstimation::FullPoseEuler r_state;
-    RoboCompLaser::TLaserData ldata ;
+    RoboCompLaser::TLaserData ldata;
     int tam = 0;
     try {
         ldata = laser_proxy->getLaserData();
         draw_laser(ldata);
-       // tam = (ldata.size())/4;
+        // tam = (ldata.size())/4;
         //sort laser data from small to large distances using a lambda function.
-       // std::sort( ldata.begin()+tam, ldata.end()-tam, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return     a.dist < b.dist; });
+        // std::sort( ldata.begin()+tam, ldata.end()-tam, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return     a.dist < b.dist; });
         //previterangle = angle
     } catch (const Ice::Exception &e) {
-        std::cout<<e.what()<<std::endl;
+        std::cout << e.what() << std::endl;
     }
 
 
-    try
-    {
+    try {
         r_state = fullposeestimation_proxy->getFullPoseEuler();
-        robot_polygon->setRotation(r_state.rz*180/M_PI);
+        robot_polygon->setRotation(r_state.rz * 180 / M_PI);
         robot_polygon->setPos(r_state.x, r_state.y);
 
     } catch (const Ice::Exception &e) {
-        std::cout<<e.what()<<std::endl;
+        std::cout << e.what() << std::endl;
     }
-    target_to_robot = world_to_robot(bState);
-/*
-    switch (estado) {
+    target_to_robot = world_to_robot(r_state);
+//    update_map(ldata, r_state);
+  //  std::cout<<Mapp.percentage_changed()<<std::endl;
+
+
+    switch (mappState) {
 
         //ESTADO EN ESPERA
-        case State::IDLE:
-            std::cout<<"estoy en estado IDLE"<<std::endl;
+        case State::EXPLORE:
+            std::cout<<"estoy en estado EXPLORE"<<std::endl;
             try {
-                differentialrobot_proxy->setSpeedBase(0,0);
+                exploringRoom(ldata,r_state);
             }catch (const Ice::Exception &e){
                 std::cout<<e.what()<<std::endl;
-            }
-            if(target.active)
-            {
-                linear_function.robot = QPointF(bState.x, bState.z);
-                estado = State::RUN;
-
             }
                 /////ALMACENAMOS LA POSICION ACTUAL DEL ROBOT AL ACTUALIZAR EL PUNTO////
             break;
             //EL IR PARA ADELANTE, EL CLASICO
-        case State::RUN:
+        case State::DOOR:
             std::cout<<"estoy en estado RUN"<<std::endl;
-            estado = run(bState,  ldata);
+            //estado = run(r_state,  ldata);
             break;
             //REORIENTAR Y GIRAR EN LA PARED
-        case State::OBSTACLE:
+        case State::CHANGEROOM:
             std::cout<<"estoy en estado OBSTACLE"<<std::endl;
-            estado = obstacle(bState, ldata);
+            //estado = obstacle(r_state, ldata);
             break;
             //UNA VEZ GIRADO, TIRAR ADELANTE HACIA EL PUNTO
-        case State::SURROUND:
+        case State::CENTERROOM:
             std::cout<<"estoy en estado SURROUND"<<std::endl;
-            estado = surround(bState, ldata);
+            //estado = surround(r_state, ldata);
             break;
     }
 
-*/
+
+
 }
-
-SpecificWorker::State SpecificWorker::run(const RoboCompGenericBase::TBaseState &bState,  const RoboCompLaser::TLaserData  &ldata){
-    float distance = 0.0;
-    int semiwidth = 60;
-    Eigen::Vector2f robot_eigen(bState.x, bState.z);
-    Eigen::Vector2f target_eigen(target.destiny.x(), target.destiny.y());
-
-    ///////CONDITION TARGET EXIT///////
-    if( distance = (target_eigen - robot_eigen).norm(); distance <= 100){
-        target.active=false;
-        return State::IDLE;
-    }
-    ///////CONDITION CRASH OBSTACLE///////
-    if( distance_ahead(ldata, 300, semiwidth))
-    {
-        try
-        {
-            differentialrobot_proxy->setSpeedBase(0,0);
-        } catch (const Ice::Exception &e)
-        {
-            std::cout<<e.what()<<std::endl;
-        }
-        return State::OBSTACLE;
-    }
-
-    /////////////////////////////////////////////////
-
-    //OJO A ESTO, AQUÍ LOS EJES A ATAN2 SE LOS PASA CAMBIADOS, PRIMERO EJE Y, LUEGO EJE X
-    float beta = atan2(target_to_robot.x(), target_to_robot.y());
-    float adv = MAX_ADV_SPEED * dist_to_target_object(distance)* dist_to_target_object(get_min_ldata_element(ldata,semiwidth).dist) *rotation_speed(beta);
-
-    try
-    {
-        differentialrobot_proxy->setSpeedBase(adv,beta);
-    } catch (const Ice::Exception &e)
-    {
-        std::cout<<e.what()<<std::endl;
-    }
-    return State::RUN;
-}
-
-
-SpecificWorker::State SpecificWorker::obstacle(const RoboCompGenericBase::TBaseState &bState,const RoboCompLaser::TLaserData &ldata ){
-    float distance;
-    float threshold=425.0;
-    int semiwidth = 60;
-    Eigen::Vector2f robot_eigen(bState.x, bState.z);
-    Eigen::Vector2f target_eigen(target.destiny.x(), target.destiny.y());
-
-    ///////CONDITION TARGET EXIT///////
-    if( distance = (target_eigen - robot_eigen).norm(); distance <= 100){
-        target.active=false;
-        return State::IDLE;
-    }
-
-
-    ////CONDICION DE SALIDA A COMPROBACION DE ANGULO////
-    if(!distance_ahead(ldata,threshold,semiwidth))
-    {
-        try {
-            differentialrobot_proxy->setSpeedBase(0,0);
-        } catch (const Ice::Exception &e)
-        {
-            std::cout<<e.what()<<std::endl;
-
-        }
-        return State::SURROUND;
-    }
-
-
-    /////GIRO///////
-    try
-    {
-        differentialrobot_proxy->setSpeedBase(0,1);
-    } catch (const Ice::Exception &e)
-    {
-        std::cout<<e.what()<<std::endl;
-
-    }
-    return State::OBSTACLE;
-}
-
-SpecificWorker::State SpecificWorker::surround(const RoboCompGenericBase::TBaseState &bState, const RoboCompLaser::TLaserData  &ldata)
+////UPDATE MAP////
+void SpecificWorker::update_map(const RoboCompLaser::TLaserData &ldata,const RoboCompFullPoseEstimation::FullPoseEuler &r_state)
 {
-    float distance;
-    int semiwidth = 60;
-    Eigen::Vector2f robot_eigen(bState.x, bState.z);
-    Eigen::Vector2f target_eigen(target.destiny.x(), target.destiny.y());
-    ////CONDICION SALIDA EN TARGET////
-    if( distance = (target_eigen - robot_eigen).norm(); distance <= 100)
+    float cx, cy;
+    float end;
+    float slice ;
+    ////SLICE////
+    float part;
+    for (auto &ld: ldata)
     {
-        target.active= false;
-        return State::IDLE;
+    ////CALCULO DE COORDENADAS DEL LASER////
+        cx = ld.dist * cos(ld.angle);
+        cy = ld.dist *sin(ld.angle);
+
+        Eigen::Vector2f  laser_tip(cy,cx);
+        part =ld.dist/TILE/2;
+        end = 1.0 - (1/part);
+        slice = 1/part;
+        for(const auto &&point : iter::range<float>(0.0, end, slice))
+        {
+            auto q = robot_to_world(r_state, laser_tip * point);
+            Mapp.add_miss(q);
+        }
+        auto rr = robot_to_world(r_state,laser_tip);
+        if(ld.dist < MAX_LASER_DIST)
+        {
+            Mapp.add_hit(rr);
+        }
+        else
+            Mapp.add_miss(rr);
     }
-
-   // std::cout<<ldata.size()<<endl;
-    ////ROBOT IS IN LINEAR FUNCTION OR IS IN POLYGON////
-    if (poly.containsPoint(target_to_robot, Qt::OddEvenFill))/*&& !distance_ahead(ldata,400,ldata.size()/2)/*|| isInFunction(bState)*///)
-    {
-        return State::RUN;
-    }
-
-    float adv = MAX_ADV_SPEED/4;
-    float beta = 0.0;
-
-
-
-    //////SACAMOS EL DATO MINIMO PARA CALCULAR EL ANGULO DE GIRO//////
-    float aux_data_angle = get_min_ldata_element(ldata, semiwidth).angle;
-
-    ////DECLARACIÓN DEL ÁNGULO DEL CONO LATERAL////
-    float sideConeangle;
-
-    sideConeangle = get_min_ldata_element(ldata, ldata.size()/2).angle;
-    /////CONTROL DE SEGUIMIENTO PARED/////
-    //////ACERCARSE//////
-  /*  if(!distance_ahead(ldata,300,semiwidth))
-    {
-        beta = -aux_data_angle/abs(aux_data_angle);
-        beta = beta * 0.5;
-    }
-
-    //////ALEJARSE//////
-    if(distance_ahead(ldata,600,semiwidth))
-    {
-        beta = aux_data_angle/abs(aux_data_angle);
-        beta = beta * 0.5;
-    }
-
-*/  int coneBegin;
-    int coneEnd;
-    ////////LEFT////////
-    if(sideConeangle < 0)
-    {
-        coneBegin = 30;
-        coneEnd = ldata.size()/2 +30;
-        std::cout<< "LADO IZQUIERDO"<<std::endl;
-    }else
-        ////////RIGHT////////
-    {
-        coneBegin = ldata.size()/2 +30;
-        coneEnd = 30;
-        std::cout<< "LADO DERECHO"<<std::endl;
-    }
-
-    if(distance_side(ldata, 200, coneBegin, coneEnd))
-    {
-        beta = -sideConeangle/abs(sideConeangle);
-    }
-    if(!distance_side(ldata, 300, coneBegin, coneEnd))
-    {
-        beta = sideConeangle/abs(sideConeangle);
-    }
-
-    std::cout<< sideConeangle<<endl;
-
-    try
-    {
-        differentialrobot_proxy->setSpeedBase(adv, beta*0.5);
-    } catch (const Ice::Exception &e) {
-        std::cout<<e.what()<<std::endl;
-
-    }
-    return State::SURROUND;
 }
-/////////////////////////////////////////////
 
 
+void SpecificWorker::exploringRoom(const RoboCompLaser::TLaserData &ldata,const RoboCompFullPoseEstimation::FullPoseEuler &r_state)
+{
+   update_map(ldata, r_state);
+   float percenteage_changed=0.0;
+   percenteage_changed = Mapp.percentage_changed();
+  
+   std::cout << percenteage_changed*1000 << std::endl;
+   percenteage_changed = percenteage_changed * 1000;
+   try
+   {
+        differentialrobot_proxy->setSpeedBase(0,1);
+   }catch (const Ice::Exception &e)
+   {
+       std::cout<<e.what()<<std::endl;
+   }
+
+   if(percenteage_changed<1.2)
+   {
+       try
+       {
+        differentialrobot_proxy->setSpeedBase(0,0);
+       }catch (const Ice::Exception &e)
+       {
+           std::cout<<e.what()<<std::endl;
+       }
+   }
+}
 
 
 
@@ -386,18 +275,34 @@ RoboCompLaser::TData SpecificWorker::get_min_ldata_element(const RoboCompLaser::
     auto minimal_element = std::min_element(ldata.begin() + (s/2 - semiwidth), ldata.end() - (s/2 - semiwidth), [](auto a, auto b){return a.dist < b.dist;});
     return (*minimal_element);
 }
-
-QPointF SpecificWorker::world_to_robot(RoboCompGenericBase::TBaseState bState)
+RoboCompLaser::TData SpecificWorker::get_max_ldata_element(const RoboCompLaser::TLaserData &ldata, int semiwidth)
 {
-    float angle = bState.alpha;
-    Eigen::Vector2f T(bState.x, bState.z), point_in_world(target.destiny.x(), target.destiny.y());
+    size_t s = ldata.size();
+    auto maximun_element = std::max_element(ldata.begin() + (s/2 - semiwidth), ldata.end() - (s/2 - semiwidth), [](auto a, auto b){return a.dist > b.dist;});
+    return (*maximun_element);
+}
+
+QPointF SpecificWorker::world_to_robot( RoboCompFullPoseEstimation::FullPoseEuler r_state)
+{
+    float angle = r_state.rz;
+    Eigen::Vector2f T(r_state.x, r_state.y), point_in_world(target.destiny.x(), target.destiny.y());
     Eigen::Matrix2f R;
 
     R << cos(angle), -sin(angle), sin(angle), cos(angle);
 
     Eigen::Vector2f point_in_robot = R.transpose() * (point_in_world - T);
     return QPointF(point_in_robot.x(), point_in_robot.y());
+}
 
+Eigen::Vector2f  SpecificWorker::robot_to_world(const RoboCompFullPoseEstimation::FullPoseEuler &r_state, Eigen::Vector2f cartesianP)
+{
+
+    float angle = r_state.rz;
+    Eigen::Matrix2f R;
+    R << cos(angle), -sin(angle), sin(angle), cos(angle);
+
+    Eigen::Vector2f robot(r_state.x,r_state.y);
+    return R * cartesianP+robot;
 
 }
 void SpecificWorker::new_target_slot(QPointF point) {
@@ -405,7 +310,7 @@ void SpecificWorker::new_target_slot(QPointF point) {
     linear_function.target = target.destiny;
     target.active = true;
     qInfo() << target.destiny;
-    estado= State::IDLE;
+    mappState= State::EXPLORE;
 
 }
 void SpecificWorker::draw_laser(const RoboCompLaser::TLaserData &ldata) // robot coordinates
@@ -436,13 +341,13 @@ void SpecificWorker::draw_laser(const RoboCompLaser::TLaserData &ldata) // robot
    laser_polygon = viewer->scene.addPolygon(laser_in_robot_polygon->mapToScene(poly), QPen(QColor("DarkGreen"), 30), QBrush(color));
    laser_polygon->setZValue(3);
 }
-bool SpecificWorker::isInFunction(const RoboCompGenericBase::TBaseState &bState)
+bool SpecificWorker::isInFunction(const  RoboCompFullPoseEstimation::FullPoseEuler &r_state)
 {
 
     float A = linear_function.robot.y() - linear_function.target.y();
     float B = linear_function.target.x() - linear_function.robot.x();
     float C = (linear_function.robot.x() - linear_function.target.x())*linear_function.robot.y() +(linear_function.target.y() - linear_function.robot.y())*linear_function.robot.x();
-    float dist = (abs(A*bState.x + B*bState.z + C))/ sqrt(pow(A,2) + pow(B,2));
+    float dist = (abs(A*r_state.x + B*r_state.y + C))/ sqrt(pow(A,2) + pow(B,2));
 
     //SI NO ESTÁ EN LA FUNCIÓN (con cierto margen)
     if(abs(dist)>10)
@@ -451,12 +356,12 @@ bool SpecificWorker::isInFunction(const RoboCompGenericBase::TBaseState &bState)
     }
 
     //COMPROBAR SI LA POSICIÓN ACTUAL ES MEJOR QUE LA ÚLTIMA POSICIÓN
-    Eigen::Vector2f robot_eigen(bState.x, bState.z);
+    Eigen::Vector2f robot_eigen(r_state.x, r_state.y);
     Eigen::Vector2f target_eigen(linear_function.target.x(), linear_function.target.y());
     Eigen::Vector2f robot_function(linear_function.robot.x(), linear_function.robot.y());
     if((target_eigen - robot_eigen).norm() < (target_eigen - robot_function).norm())
     {
-        linear_function.robot = QPointF(bState.x, bState.z);
+        linear_function.robot = QPointF(r_state.x, r_state.y);
         return true;
     }
 
@@ -486,7 +391,7 @@ int SpecificWorker::startup_check()
 
 /**************************************/
 // From the RoboCompLaser you can call this methods:
-// this->laser_proxy->getLaserAndBStateData(...)
+// this->laser_proxy->getLaserAndr_stateData(...)
 // this->laser_proxy->getLaserConfData(...)
 // this->laser_proxy->getLaserData(...)
 

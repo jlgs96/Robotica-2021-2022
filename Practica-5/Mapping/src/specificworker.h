@@ -32,6 +32,8 @@
 #include <abstract_graphic_viewer/abstract_graphic_viewer.h>
 #include <eigen3/Eigen/Eigen>
 #include <grid2d/grid.h>
+#include <cppitertools/range.hpp>
+#include <cppitertools/sliding_window.hpp>
 //#include <grid2d/grid.cpp>
 class SpecificWorker : public GenericWorker
 {
@@ -52,28 +54,42 @@ public:
         QPointF robot;
         QPointF target;
     }LinearFunction;
+
+
     //////INICIALIZACION DE LAS ESTRUCTURAS///////////
     Target target;
     LinearFunction linear_function;
 
     /////DECLARACIÓN DEL TIPO ENUMERADO PARA LOS ESTADOS DEL ROBOT/////
-    enum class State {IDLE, RUN, OBSTACLE, SURROUND};
-    State estado = State::IDLE;
+
+    ///OLD ENUM STATES///
+    //enum class State {IDLE, RUN, OBSTACLE, SURROUND};
+    //State estado = State::IDLE;
+
+    /*
+     * NUEVA DECLARACIÓN DE LOS ESTADOS:
+     * EPXLORE: MAPPING DE LA HABITACIÓN ACTUAL
+     * DOOR: BUSCA LA SALIDA DE LA HABITACIÓN
+     * CHANGEROOM: CAMBIA DE UNA HABITACION A OTRA
+     * CENTERROOM: SE COLOCA EN EL CENTRO DE LA HABITACIÓN PARA MAPPING
+     */
+    enum class State {EXPLORE, DOOR, CHANGEROOM, CENTERROOM};
+    State mappState = State::EXPLORE;
+
+
 
     ////////////METODOS DE PROPOSITO GENERAL//////////
     bool setParams(RoboCompCommonBehavior::ParameterList params);
     void draw_laser(const RoboCompLaser::TLaserData &ldata);
-    QPointF world_to_robot(RoboCompGenericBase::TBaseState bState);
+    QPointF world_to_robot( const RoboCompFullPoseEstimation::FullPoseEuler r_state);
+
+    ///OLD, MAYBE REUSABLE METODOS DE PROPOSITO GENERAL///
     float dist_to_target_object(float dist);
     float rotation_speed(float beta);
-    bool isInFunction(const RoboCompGenericBase::TBaseState &bState);
+    bool isInFunction(const  RoboCompFullPoseEstimation::FullPoseEuler &r_state);
 
 
 
-    ////////METODOS DE COMPORTAMIENTO ROBOT///////////////
-    State run(const RoboCompGenericBase::TBaseState &bState,const  RoboCompLaser::TLaserData &ldata);
-    State obstacle(const RoboCompGenericBase::TBaseState &bState,const RoboCompLaser::TLaserData &ldata);
-    State surround(const RoboCompGenericBase::TBaseState &bState,const RoboCompLaser::TLaserData &ldata);
 
     ///////////VARIABLES VARIAS/////////////////////////
     float MAX_ADV_SPEED = 1000.0;
@@ -83,6 +99,20 @@ public:
     QGraphicsRectItem *laser_in_robot_polygon;
     QPointF target_to_robot;
     QPolygonF  poly;
+
+
+    /////VARIABLES MAPPING/////
+    const int MAX_LASER_DIST = 4000;
+    const int TILE = 200;
+
+
+
+
+    ////METODOS MAPPING////
+    void update_map(const RoboCompLaser::TLaserData  &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
+    Eigen::Vector2f robot_to_world( const RoboCompFullPoseEstimation::FullPoseEuler &r_state, Eigen::Vector2f cartesianP);
+    void exploringRoom(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
+
     ///////SLOTS DE CONEXION/////
 public slots:
 	void compute();
@@ -99,7 +129,8 @@ private:
     /////GRID VARIABLE/////
     Grid Mapp;
 
-
+    /////CONSIGUE EL ELEMENTO MAXIMO/////
+    RoboCompLaser::TData get_max_ldata_element(const RoboCompLaser::TLaserData &ldata, int semiwidth);
 
 };
 
