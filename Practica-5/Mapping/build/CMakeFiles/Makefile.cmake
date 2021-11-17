@@ -7,14 +7,14 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/home/josel/robocomp/cmake/modules/qt.cmake"
-  "/home/josel/robocomp/cmake/robocomp.cmake"
   "../CMakeLists.txt"
   "CMakeFiles/3.16.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeSystem.cmake"
   "../src/CMakeLists.txt"
   "../src/CMakeListsSpecific.txt"
+  "/home/alumno/robocomp/cmake/modules/qt.cmake"
+  "/home/alumno/robocomp/cmake/robocomp.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake"
@@ -185,6 +185,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/gotoxy.dir/DependInfo.cmake"
-  "src/CMakeFiles/ICES__home_josel_software_Robotica-2021-2022_Practica-5_Mapping_src.dir/DependInfo.cmake"
+  "src/CMakeFiles/ICES__home_alumno_Documentos_g8-M1_Robotica-2021-2022_Practica-5_Mapping_src.dir/DependInfo.cmake"
   "src/CMakeFiles/gotoxy_autogen.dir/DependInfo.cmake"
   )

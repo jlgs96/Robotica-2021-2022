@@ -1,66 +1,66 @@
 {
-	"BUILD_DIR" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen",
-	"CMAKE_BINARY_DIR" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build",
-	"CMAKE_CURRENT_BINARY_DIR" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src",
-	"CMAKE_CURRENT_SOURCE_DIR" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src",
+	"BUILD_DIR" : "/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen",
+	"CMAKE_BINARY_DIR" : "/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src",
 	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
-	"CMAKE_SOURCE_DIR" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping",
+	"CMAKE_SOURCE_DIR" : "/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping",
 	"HEADERS" : 
 	[
 		[
-			"/home/josel/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h",
-			"MU",
-			"E3H55E6XIR/moc_abstract_graphic_viewer.cpp"
-		],
-		[
-			"/home/josel/robocomp/classes/grid2d/grid.h",
-			"MU",
-			"IBAVEXVJ6P/moc_grid.cpp"
-		],
-		[
-			"/home/josel/robocomp/classes/qlog/qlog.h",
-			"MU",
-			"BYLFT4MJQA/moc_qlog.cpp"
-		],
-		[
-			"/home/josel/robocomp/classes/rapplication/rapplication.h",
-			"MU",
-			"LHLNQS37AA/moc_rapplication.cpp"
-		],
-		[
-			"/home/josel/robocomp/classes/sigwatch/sigwatch.h",
-			"MU",
-			"UCT32XW4AW/moc_sigwatch.cpp"
-		],
-		[
-			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/commonbehaviorI.h",
+			"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/commonbehaviorI.h",
 			"MU",
 			"EWIEGA46WW/moc_commonbehaviorI.cpp"
 		],
 		[
-			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/genericmonitor.h",
+			"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/genericmonitor.h",
 			"MU",
 			"EWIEGA46WW/moc_genericmonitor.cpp"
 		],
 		[
-			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/genericworker.h",
+			"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/genericworker.h",
 			"MU",
 			"EWIEGA46WW/moc_genericworker.cpp"
 		],
 		[
-			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/specificmonitor.h",
+			"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/specificmonitor.h",
 			"MU",
 			"EWIEGA46WW/moc_specificmonitor.cpp"
 		],
 		[
-			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/specificworker.h",
+			"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/specificworker.h",
 			"MU",
 			"EWIEGA46WW/moc_specificworker.cpp"
+		],
+		[
+			"/home/alumno/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h",
+			"MU",
+			"I3FNLAJYSS/moc_abstract_graphic_viewer.cpp"
+		],
+		[
+			"/home/alumno/robocomp/classes/grid2d/grid.h",
+			"MU",
+			"M34DZLY6O6/moc_grid.cpp"
+		],
+		[
+			"/home/alumno/robocomp/classes/qlog/qlog.h",
+			"MU",
+			"DVFBV33MU7/moc_qlog.cpp"
+		],
+		[
+			"/home/alumno/robocomp/classes/rapplication/rapplication.h",
+			"MU",
+			"GKJOXEN2T4/moc_rapplication.cpp"
+		],
+		[
+			"/home/alumno/robocomp/classes/sigwatch/sigwatch.h",
+			"MU",
+			"Z2MVH3G4AO/moc_sigwatch.cpp"
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/include",
-	"MOC_COMPILATION_FILE" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
 		"ICE_CPP11_MAPPING",
@@ -83,14 +83,14 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src",
-		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src",
+		"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src",
+		"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src",
 		"/opt/robocomp/include",
 		"/classes",
-		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build",
-		"/home/josel/robocomp/classes",
-		"/home/josel/robocomp/libs",
-		"/home/josel/robocomp/interfaces",
+		"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build",
+		"/home/alumno/robocomp/classes",
+		"/home/alumno/robocomp/libs",
+		"/home/alumno/robocomp/interfaces",
 		"/include",
 		"/usr/include/x86_64-linux-gnu/qt5",
 		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
@@ -121,66 +121,66 @@
 		"-c",
 		"/usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : 
 	[
-		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/CommonBehavior.cpp",
-		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/DifferentialRobot.cpp",
-		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/FullPoseEstimation.cpp",
-		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/GenericBase.cpp",
-		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/Laser.cpp",
-		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/ui_mainUI.h"
+		"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/CommonBehavior.cpp",
+		"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/DifferentialRobot.cpp",
+		"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/FullPoseEstimation.cpp",
+		"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/GenericBase.cpp",
+		"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/Laser.cpp",
+		"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/ui_mainUI.h"
 	],
 	"MULTI_CONFIG" : false,
-	"PARALLEL" : 6,
-	"PARSE_CACHE_FILE" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/CMakeFiles/gotoxy_autogen.dir/ParseCache.txt",
+	"PARALLEL" : 8,
+	"PARSE_CACHE_FILE" : "/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/CMakeFiles/gotoxy_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
 	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
 	"QT_VERSION_MAJOR" : 5,
-	"SETTINGS_FILE" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/CMakeFiles/gotoxy_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/CMakeFiles/gotoxy_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "/home/josel/robocomp/classes/grid2d/grid.cpp", "MU" ],
-		[ "/home/josel/robocomp/classes/qlog/qlog.cpp", "MU" ],
-		[ "/home/josel/robocomp/classes/rapplication/rapplication.cpp", "MU" ],
-		[ "/home/josel/robocomp/classes/sigwatch/sigwatch.cpp", "MU" ],
 		[
-			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/commonbehaviorI.cpp",
+			"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/commonbehaviorI.cpp",
 			"MU"
 		],
 		[
-			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/genericmonitor.cpp",
+			"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/genericmonitor.cpp",
 			"MU"
 		],
 		[
-			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/genericworker.cpp",
+			"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/genericworker.cpp",
 			"MU"
 		],
 		[
-			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/main.cpp",
+			"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/main.cpp",
 			"MU"
 		],
 		[
-			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/specificmonitor.cpp",
+			"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/specificmonitor.cpp",
 			"MU"
 		],
 		[
-			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/specificworker.cpp",
+			"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/specificworker.cpp",
 			"MU"
-		]
+		],
+		[ "/home/alumno/robocomp/classes/grid2d/grid.cpp", "MU" ],
+		[ "/home/alumno/robocomp/classes/qlog/qlog.cpp", "MU" ],
+		[ "/home/alumno/robocomp/classes/rapplication/rapplication.cpp", "MU" ],
+		[ "/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp", "MU" ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
 	"UIC_SKIP" : 
 	[
-		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/CommonBehavior.cpp",
-		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/DifferentialRobot.cpp",
-		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/FullPoseEstimation.cpp",
-		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/GenericBase.cpp",
-		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/Laser.cpp",
-		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/ui_mainUI.h",
-		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/mainUI.ui"
+		"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/CommonBehavior.cpp",
+		"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/DifferentialRobot.cpp",
+		"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/FullPoseEstimation.cpp",
+		"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/GenericBase.cpp",
+		"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/Laser.cpp",
+		"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/ui_mainUI.h",
+		"/home/alumno/Documentos/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/mainUI.ui"
 	],
 	"UIC_UI_FILES" : [],
 	"VERBOSITY" : 0

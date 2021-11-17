@@ -69,7 +69,7 @@ void SpecificWorker::initialize(int period)
     //////INICIALIZACIÓN DEL MAPP//////
     QRect dimension( -5000, -2500, 10000, 5000);
     viewer = new AbstractGraphicViewer(this , dimension);
-    Mapp.initialize(dimension,100,&viewer->scene);
+    Mapp.initialize(dimension,TILE,&viewer->scene);
     this->resize(900,450);
     robot_polygon= viewer->add_robot(ROBOT_LENGTH);
     laser_in_robot_polygon=new QGraphicsRectItem(-10, 10, 20, 20, robot_polygon);
@@ -118,10 +118,14 @@ void SpecificWorker::compute() {
 //    update_map(ldata, r_state);
   //  std::cout<<Mapp.percentage_changed()<<std::endl;
 
-
+    static float alpha_Robot = 0.0;
     switch (mappState) {
 
         //ESTADO EN ESPERA
+        case State::TURN:
+            alpha_Robot = r_state.rz;
+            mappState=State::TURN;
+            break;
         case State::EXPLORE:
             std::cout<<"estoy en estado EXPLORE"<<std::endl;
             try
@@ -145,7 +149,7 @@ void SpecificWorker::compute() {
             break;
             //REORIENTAR Y GIRAR EN LA PARED
         case State::CHANGEROOM:
-            std::cout<<"estoy en estado OBSTACLE"<<std::endl;
+            std::cout<<"estoy en estado CHANGEROOM"<<std::endl;
             //estado = obstacle(r_state, ldata);
             break;
             //UNA VEZ GIRADO, TIRAR ADELANTE HACIA EL PUNTO
@@ -161,6 +165,9 @@ void SpecificWorker::compute() {
 ////UPDATE MAP////
 void SpecificWorker::update_map(const RoboCompLaser::TLaserData &ldata,const RoboCompFullPoseEstimation::FullPoseEuler &r_state)
 {
+
+    
+    
     float cx, cy;
     float end;
     float slice ;
@@ -194,7 +201,18 @@ void SpecificWorker::update_map(const RoboCompLaser::TLaserData &ldata,const Rob
 
 SpecificWorker::State SpecificWorker::exploringRoom(const RoboCompLaser::TLaserData &ldata,const RoboCompFullPoseEstimation::FullPoseEuler &r_state)
 {
-   update_map(ldata, r_state);
+
+    std::vector<float> derivate(ldata.size());
+    for(auto &&[k,point] : iter::sliding_window(ldata, 2) | iter::enumerate)
+    {
+        derivate[k] = point[1].dist - point[0].dist;
+    }
+   // for(auto x : derivate)
+     //   std::cout<< x << std::endl;
+
+
+
+    update_map(ldata, r_state);
    float percenteage_changed=0.0;
    percenteage_changed = Mapp.percentage_changed();
 
@@ -264,9 +282,9 @@ SpecificWorker::State SpecificWorker::lookDoor(const RoboCompLaser::TLaserData &
             cy = best_distance_previous.dist *sin(best_distance_previous.angle);
 
             Eigen::Vector2f  laser_tip(cy,cx);
-            Eigen::Vector2f mappDoor = robot_to_world(r_state,laser_tip);
+            Eigen::Vector2f mapDoor = robot_to_world(r_state,laser_tip);
             /////ESQUINA PUERTA 1/////
-            door.setP1(QPointF(mappDoor.x(),mappDoor.y()));
+            door.setP1(QPointF(mapDoor.x(),mapDoor.y()));
 
 
         }else
@@ -275,11 +293,11 @@ SpecificWorker::State SpecificWorker::lookDoor(const RoboCompLaser::TLaserData &
             cy = actual_distance.dist *sin(actual_distance.angle);
 
             Eigen::Vector2f  laser_tip(cy,cx);
-            Eigen::Vector2f mappDoor = robot_to_world(r_state,laser_tip);
+            Eigen::Vector2f mapDoor = robot_to_world(r_state,laser_tip);
 
 
             /////ESQUINA PUERTA 2/////
-            door.setP2(QPointF(mappDoor.x(),mappDoor.y()));
+            door.setP2(QPointF(mapDoor.x(),mapDoor.y()));
         }
 
     }

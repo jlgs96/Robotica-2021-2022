@@ -34,6 +34,7 @@
 #include <grid2d/grid.h>
 #include <cppitertools/range.hpp>
 #include <cppitertools/sliding_window.hpp>
+#include <cppitertools/enumerate.hpp>
 //#include <grid2d/grid.cpp>
 class SpecificWorker : public GenericWorker
 {
@@ -74,7 +75,7 @@ public:
      * CHANGEROOM: CAMBIA DE UNA HABITACION A OTRA
      * CENTERROOM: SE COLOCA EN EL CENTRO DE LA HABITACIÓN PARA MAPPING
      */
-    enum class State {EXPLORE, DOOR, CHANGEROOM, CENTERROOM};
+    enum class State {TURN,EXPLORE, DOOR, CHANGEROOM, CENTERROOM};
     State mappState = State::EXPLORE;
 
 
