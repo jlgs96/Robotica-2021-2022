@@ -124,8 +124,9 @@ void SpecificWorker::compute() {
         //ESTADO EN ESPERA
         case State::EXPLORE:
             std::cout<<"estoy en estado EXPLORE"<<std::endl;
-            try {
-                exploringRoom(ldata,r_state);
+            try
+            {
+                mappState=exploringRoom(ldata,r_state);
             }catch (const Ice::Exception &e){
                 std::cout<<e.what()<<std::endl;
             }
@@ -133,8 +134,14 @@ void SpecificWorker::compute() {
             break;
             //EL IR PARA ADELANTE, EL CLASICO
         case State::DOOR:
-            std::cout<<"estoy en estado RUN"<<std::endl;
-            //estado = run(r_state,  ldata);
+            std::cout<<"estoy en estado DOOR"<<std::endl;
+            try
+            {
+                mappState=lookDoor(ldata,r_state);
+            }catch (const Ice::Exception &e)
+            {
+                std::cout<<e.what()<<std::endl;
+            }
             break;
             //REORIENTAR Y GIRAR EN LA PARED
         case State::CHANGEROOM:
@@ -185,14 +192,28 @@ void SpecificWorker::update_map(const RoboCompLaser::TLaserData &ldata,const Rob
 }
 
 
-void SpecificWorker::exploringRoom(const RoboCompLaser::TLaserData &ldata,const RoboCompFullPoseEstimation::FullPoseEuler &r_state)
+SpecificWorker::State SpecificWorker::exploringRoom(const RoboCompLaser::TLaserData &ldata,const RoboCompFullPoseEstimation::FullPoseEuler &r_state)
 {
    update_map(ldata, r_state);
    float percenteage_changed=0.0;
    percenteage_changed = Mapp.percentage_changed();
-  
+
    std::cout << percenteage_changed*1000 << std::endl;
    percenteage_changed = percenteage_changed * 1000;
+
+    ///EXIT CONDITION///
+    if(percenteage_changed<1.2)
+    {
+        try
+        {
+            differentialrobot_proxy->setSpeedBase(0,0);
+        }catch (const Ice::Exception &e)
+        {
+            std::cout<<e.what()<<std::endl;
+        }
+        return State::DOOR;
+    }
+    ///MAPPEO///
    try
    {
         differentialrobot_proxy->setSpeedBase(0,1);
@@ -201,18 +222,78 @@ void SpecificWorker::exploringRoom(const RoboCompLaser::TLaserData &ldata,const 
        std::cout<<e.what()<<std::endl;
    }
 
-   if(percenteage_changed<1.2)
-   {
-       try
-       {
-        differentialrobot_proxy->setSpeedBase(0,0);
-       }catch (const Ice::Exception &e)
-       {
-           std::cout<<e.what()<<std::endl;
-       }
-   }
+   return State::EXPLORE;
 }
 
+
+SpecificWorker::State SpecificWorker::lookDoor(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state)
+{
+    float umbral = 500;
+    static RoboCompLaser::TData best_distance_previous = ldata[180];
+    RoboCompLaser::TData  actual_distance = ldata[180];
+    static int doors2 = 0;
+    int cx,cy;
+
+
+    ////EXIT CONDITION////
+    if(doors2 == 2)
+    {
+        doors2 = 0;
+        try
+        {
+            differentialrobot_proxy->setSpeedBase(0,0);
+        }catch (const Ice::Exception &e)
+        {
+            std::cout<<e.what()<<std::endl;
+        }
+        return State::CHANGEROOM;
+    }
+
+
+
+
+
+
+    if(abs(actual_distance.dist - best_distance_previous.dist ) > umbral)
+    {
+        doors2++;
+        
+        if(actual_distance.dist-best_distance_previous.dist > 0)
+        {
+            cx = best_distance_previous.dist* cos(best_distance_previous.angle);
+            cy = best_distance_previous.dist *sin(best_distance_previous.angle);
+
+            Eigen::Vector2f  laser_tip(cy,cx);
+            Eigen::Vector2f mappDoor = robot_to_world(r_state,laser_tip);
+            /////ESQUINA PUERTA 1/////
+            door.setP1(QPointF(mappDoor.x(),mappDoor.y()));
+
+
+        }else
+        {
+            cx = actual_distance.dist* cos(actual_distance.angle);
+            cy = actual_distance.dist *sin(actual_distance.angle);
+
+            Eigen::Vector2f  laser_tip(cy,cx);
+            Eigen::Vector2f mappDoor = robot_to_world(r_state,laser_tip);
+
+
+            /////ESQUINA PUERTA 2/////
+            door.setP2(QPointF(mappDoor.x(),mappDoor.y()));
+        }
+
+    }
+    try
+    {
+        differentialrobot_proxy->setSpeedBase(0,0.5);
+
+    }catch (const Ice::Exception &e)
+    {
+        std::cout<<e.what()<<std::endl;
+    }
+    best_distance_previous = actual_distance;
+    return State::DOOR;
+}
 
 
 ////////////METODOS DE PROPOSITO GENERAL/////////////

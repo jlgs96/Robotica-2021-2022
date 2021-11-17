@@ -55,6 +55,7 @@ public:
         QPointF target;
     }LinearFunction;
 
+    /////ESTRUCTURA PARA DEFINIR LA PUERTA/////
 
     //////INICIALIZACION DE LAS ESTRUCTURAS///////////
     Target target;
@@ -99,7 +100,7 @@ public:
     QGraphicsRectItem *laser_in_robot_polygon;
     QPointF target_to_robot;
     QPolygonF  poly;
-
+    QLineF door;
 
     /////VARIABLES MAPPING/////
     const int MAX_LASER_DIST = 4000;
@@ -111,7 +112,9 @@ public:
     ////METODOS MAPPING////
     void update_map(const RoboCompLaser::TLaserData  &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
     Eigen::Vector2f robot_to_world( const RoboCompFullPoseEstimation::FullPoseEuler &r_state, Eigen::Vector2f cartesianP);
-    void exploringRoom(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
+    State exploringRoom(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
+    State lookDoor(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
+    void centerRoom(const RoboCompLaser::TLaserData &ldata);
 
     ///////SLOTS DE CONEXION/////
 public slots:
