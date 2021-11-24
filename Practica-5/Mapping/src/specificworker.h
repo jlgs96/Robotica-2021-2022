@@ -35,6 +35,7 @@
 #include <cppitertools/range.hpp>
 #include <cppitertools/sliding_window.hpp>
 #include <cppitertools/enumerate.hpp>
+#include <cppitertools/combinations_with_replacement.hpp>
 //#include <grid2d/grid.cpp>
 class SpecificWorker : public GenericWorker
 {
@@ -45,23 +46,37 @@ public:
 
 
     ///////ESTRUCTURA PARA DEFINIR EL TARGET DEL ROBOT//////////
-    typedef struct{
+    struct Target
+    {
         QPointF destiny;
         bool active;
-    }Target;
+    };
 
     //////ESTRUCTURA PARA DEFINIR LA FUNCIÓN DE LA RECTA DEL ROBOT/////
-    typedef struct {
+    struct LinearFunction
+    {
         QPointF robot;
         QPointF target;
-    }LinearFunction;
+    };
 
     /////ESTRUCTURA PARA DEFINIR LA PUERTA/////
+    struct Door
+    {
+        Eigen::Vector2f quicio1;
+        Eigen::Vector2f quicio2;
+        int h1, h2;
+
+        bool operator== (Door door){return ((quicio1-door.quicio1).norm() < 400 and (quicio2-door.quicio2).norm()< 400) or ((quicio1-door.quicio2).norm()<400 and (quicio2-door.quicio1).norm()<400) ; }
+        Door door(Eigen::Vector2f c1,Eigen::Vector2f c2 ) : quicio1(c1), quicio2(c2) { };
+
+
+
+    };
 
     //////INICIALIZACION DE LAS ESTRUCTURAS///////////
     Target target;
     LinearFunction linear_function;
-
+    Door door;
     /////DECLARACIÓN DEL TIPO ENUMERADO PARA LOS ESTADOS DEL ROBOT/////
 
     ///OLD ENUM STATES///
@@ -101,7 +116,7 @@ public:
     QGraphicsRectItem *laser_in_robot_polygon;
     QPointF target_to_robot;
     QPolygonF  poly;
-    QLineF door;
+
 
     /////VARIABLES MAPPING/////
     const int MAX_LASER_DIST = 4000;
@@ -116,7 +131,7 @@ public:
     State exploringRoom(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
     State lookDoor(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
     void centerRoom(const RoboCompLaser::TLaserData &ldata);
-
+    void paintDoor(const std::vector<Eigen::Vector2f> &peaks);
     ///////SLOTS DE CONEXION/////
 public slots:
 	void compute();
@@ -132,9 +147,9 @@ private:
     bool distance_side(const RoboCompLaser::TLaserData &ldata, float dist, int iterBegin, int iterEnd);
     /////GRID VARIABLE/////
     Grid Mapp;
-    std::vector<QPointF> huecosPuerta;
-    void calculate_door_points();
 
+    void calculate_door_points();
+    std::vector<Door>Doors;
     /////CONSIGUE EL ELEMENTO MAXIMO/////
     RoboCompLaser::TData get_max_ldata_element(const RoboCompLaser::TLaserData &ldata, int semiwidth);
 

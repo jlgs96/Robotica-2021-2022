@@ -201,11 +201,13 @@ SpecificWorker::State SpecificWorker::exploringRoom(const RoboCompLaser::TLaserD
 
     ///RANGOS DE VALOR ENTRE ESQUINA Y PUERTA///
 
-    float RangeT = 600;
+    float RangeT = 1000;
+    ///UMBRAL PARA COMPROBAR SI ES PUERTA O NO///
+    float isDoor = 700;
     /////CALCULO DE LA DERIVADA/////
-    std::vector<float> derivate(ldata.size());
+    std::vector<float> derivate(ldata.size()-1);
     std::vector<int> indices(0);
-
+    std::vector<Eigen::Vector2f> huecosPuerta;
     Eigen::Vector2f points, mapDoor;
     for(auto &&[k,point] : iter::sliding_window(ldata, 2) | iter::enumerate)
     {
@@ -214,27 +216,63 @@ SpecificWorker::State SpecificWorker::exploringRoom(const RoboCompLaser::TLaserD
 
 
     ///Forma fea: copiar a pelo, comparamos uno a uno y guardamos los índices///
-    for (int i = 0; i < derivate.size(); ++i) {
-
-        if(derivate[i]>RangeT)
-        {
-            ///ES AUN APPEND///
+    for(const auto &&[i,dev]: derivate | iter::enumerate)
+    {
+        if(dev > RangeT)
             indices.push_back(i);
-        }
+        if(dev < -RangeT)
+            indices.push_back(i+1);
     }
+
+
+
+
     for(auto &x: indices)
     {
         RoboCompLaser::TData dato = ldata[x];
-        float cx = dato.dist* cos(dato.angle);
-        float cy = dato.dist *sin(dato.angle);
+        float cx = dato.dist * cos(dato.angle);
+        float cy = dato.dist * sin(dato.angle);
 
         ///CREACIÓN DEL VECTOR AUXILIAR Y POSTERIOR LISTA DE PUNTOS.
-        Eigen::Vector2f  laser_tip(cy,cx);
-        Eigen::Vector2f mapDoor = robot_to_world(r_state,laser_tip);
+        Eigen::Vector2f laser_tip(cy, cx);
+        Eigen::Vector2f mapDoor = robot_to_world(r_state, laser_tip);
 
-        QPointF paux(mapDoor.x(),mapDoor.y());
-        if(std::find(huecosPuerta.begin(),huecosPuerta.end(), paux)==huecosPuerta.end())
-            huecosPuerta.push_back(paux);
+        huecosPuerta.push_back(mapDoor);
+
+
+    }
+    ///Printeamos///
+    paintDoor(huecosPuerta);
+    ///CREAMOS LA PUERTA///
+
+
+
+    for (auto&& c : iter::combinations_with_replacement(huecosPuerta, 2))
+    {
+        if((c[0]-c[1]).norm() > 700 and (c[0]-c[1]).norm()< 1100)
+            Door daux(c[0], c[1]);
+        ///ASIGNAMOS NUM DE HABITACION
+
+        ///INSERTAMOS EN EL CASO DE QUE NO EXISTA
+        if(auto res = std::find_if(Doors.begin(), Doors.end(),[aux](auto a){return aux == a;}); res != Doors.end())
+        {
+            Doors.push_back(*res);
+        }
+
+    }
+
+
+
+
+    for (int index = 0; index <huecosPuerta.size() ; ++index){
+    float dbetween=(huecosPuerta[index-1]-huecosPuerta[index]).norm();
+    if(dbetween <= isDoor)
+    {
+        Door auxdoor;
+
+    }
+
+
 
     }
 
@@ -310,7 +348,7 @@ SpecificWorker::State SpecificWorker::lookDoor(const RoboCompLaser::TLaserData &
             Eigen::Vector2f  laser_tip(cy,cx);
             Eigen::Vector2f mapDoor = robot_to_world(r_state,laser_tip);
             /////ESQUINA PUERTA 1/////
-            door.setP1(QPointF(mapDoor.x(),mapDoor.y()));
+           // door.setP1(QPointF(mapDoor.x(),mapDoor.y()));
 
 
         }else
@@ -323,7 +361,7 @@ SpecificWorker::State SpecificWorker::lookDoor(const RoboCompLaser::TLaserData &
 
 
             /////ESQUINA PUERTA 2/////
-            door.setP2(QPointF(mapDoor.x(),mapDoor.y()));
+            //door.setP2(QPointF(mapDoor.x(),mapDoor.y()));
         }
 
     }
@@ -411,6 +449,21 @@ RoboCompLaser::TData SpecificWorker::get_max_ldata_element(const RoboCompLaser::
 void SpecificWorker::calculate_door_points()
 {
     
+}
+
+void SpecificWorker::paintDoor(const std::vector<Eigen::Vector2f> &peaks)
+{
+    static std::vector<QGraphicsItem*> door_points;
+    for(auto dp : door_points) viewer->scene.removeItem(dp);
+    door_points.clear();
+    for(const auto p: peaks)
+    {
+        door_points.push_back(viewer->scene.addRect(QRectF(p.x()-100, p.y()-100, 200, 200),
+                                                    QPen(QColor("Magenta")), QBrush(QColor("Magenta"))));
+        door_points.back()->setZValue(200);
+    }
+
+
 }
 
 QPointF SpecificWorker::world_to_robot( RoboCompFullPoseEstimation::FullPoseEuler r_state)
