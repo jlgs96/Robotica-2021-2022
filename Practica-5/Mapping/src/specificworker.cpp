@@ -165,9 +165,6 @@ void SpecificWorker::compute() {
 ////UPDATE MAP////
 void SpecificWorker::update_map(const RoboCompLaser::TLaserData &ldata,const RoboCompFullPoseEstimation::FullPoseEuler &r_state)
 {
-
-    
-    
     float cx, cy;
     float end;
     float slice ;
@@ -202,17 +199,46 @@ void SpecificWorker::update_map(const RoboCompLaser::TLaserData &ldata,const Rob
 SpecificWorker::State SpecificWorker::exploringRoom(const RoboCompLaser::TLaserData &ldata,const RoboCompFullPoseEstimation::FullPoseEuler &r_state)
 {
 
+    ///RANGOS DE VALOR ENTRE ESQUINA Y PUERTA///
+
+    float RangeT = 600;
+    /////CALCULO DE LA DERIVADA/////
     std::vector<float> derivate(ldata.size());
+    std::vector<int> indices(0);
+
+    Eigen::Vector2f points, mapDoor;
     for(auto &&[k,point] : iter::sliding_window(ldata, 2) | iter::enumerate)
     {
         derivate[k] = point[1].dist - point[0].dist;
     }
-   // for(auto x : derivate)
-     //   std::cout<< x << std::endl;
 
 
+    ///Forma fea: copiar a pelo, comparamos uno a uno y guardamos los índices///
+    for (int i = 0; i < derivate.size(); ++i) {
 
-    update_map(ldata, r_state);
+        if(derivate[i]>RangeT)
+        {
+            ///ES AUN APPEND///
+            indices.push_back(i);
+        }
+    }
+    for(auto &x: indices)
+    {
+        RoboCompLaser::TData dato = ldata[x];
+        float cx = dato.dist* cos(dato.angle);
+        float cy = dato.dist *sin(dato.angle);
+
+        ///CREACIÓN DEL VECTOR AUXILIAR Y POSTERIOR LISTA DE PUNTOS.
+        Eigen::Vector2f  laser_tip(cy,cx);
+        Eigen::Vector2f mapDoor = robot_to_world(r_state,laser_tip);
+
+        QPointF paux(mapDoor.x(),mapDoor.y());
+        if(std::find(huecosPuerta.begin(),huecosPuerta.end(), paux)==huecosPuerta.end())
+            huecosPuerta.push_back(paux);
+
+    }
+
+   update_map(ldata, r_state);
    float percenteage_changed=0.0;
    percenteage_changed = Mapp.percentage_changed();
 
@@ -379,6 +405,12 @@ RoboCompLaser::TData SpecificWorker::get_max_ldata_element(const RoboCompLaser::
     size_t s = ldata.size();
     auto maximun_element = std::max_element(ldata.begin() + (s/2 - semiwidth), ldata.end() - (s/2 - semiwidth), [](auto a, auto b){return a.dist > b.dist;});
     return (*maximun_element);
+}
+
+
+void SpecificWorker::calculate_door_points()
+{
+    
 }
 
 QPointF SpecificWorker::world_to_robot( RoboCompFullPoseEstimation::FullPoseEuler r_state)

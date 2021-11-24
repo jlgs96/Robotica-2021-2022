@@ -132,6 +132,8 @@ private:
     bool distance_side(const RoboCompLaser::TLaserData &ldata, float dist, int iterBegin, int iterEnd);
     /////GRID VARIABLE/////
     Grid Mapp;
+    std::vector<QPointF> huecosPuerta;
+    void calculate_door_points();
 
     /////CONSIGUE EL ELEMENTO MAXIMO/////
     RoboCompLaser::TData get_max_ldata_element(const RoboCompLaser::TLaserData &ldata, int semiwidth);
