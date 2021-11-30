@@ -62,21 +62,18 @@ public:
     /////ESTRUCTURA PARA DEFINIR LA PUERTA/////
     struct Door
     {
-        Eigen::Vector2f quicio1;
-        Eigen::Vector2f quicio2;
+        Eigen::Vector2f p1;
+        Eigen::Vector2f p2;
         int h1, h2;
-
-        bool operator== (Door door){return ((quicio1-door.quicio1).norm() < 400 and (quicio2-door.quicio2).norm()< 400) or ((quicio1-door.quicio2).norm()<400 and (quicio2-door.quicio1).norm()<400) ; }
-        Door door(Eigen::Vector2f c1,Eigen::Vector2f c2 ) : quicio1(c1), quicio2(c2) { };
-
-
-
+        bool operator== (Door door){return ((p1-door.p1).norm() < 400 and (p2-door.p2).norm()< 400) or ((p1-door.p2).norm()<400 and (p2-door.p1).norm()<400);}
+        Door(Eigen::Vector2f c1,Eigen::Vector2f c2):p1(c1), p2(c2) { };
     };
 
     //////INICIALIZACION DE LAS ESTRUCTURAS///////////
     Target target;
     LinearFunction linear_function;
-    Door door;
+
+    std::vector<Door> doors;
     /////DECLARACIÓN DEL TIPO ENUMERADO PARA LOS ESTADOS DEL ROBOT/////
 
     ///OLD ENUM STATES///

@@ -205,65 +205,47 @@ SpecificWorker::State SpecificWorker::exploringRoom(const RoboCompLaser::TLaserD
     ///UMBRAL PARA COMPROBAR SI ES PUERTA O NO///
     float isDoor = 700;
     /////CALCULO DE LA DERIVADA/////
-    std::vector<float> derivate(ldata.size()-1);
+    float derivate = 0.0;
+    float x, y;
+
     std::vector<int> indices(0);
     std::vector<Eigen::Vector2f> huecosPuerta;
     Eigen::Vector2f points, mapDoor;
+
     for(auto &&[k,point] : iter::sliding_window(ldata, 2) | iter::enumerate)
     {
-        derivate[k] = point[1].dist - point[0].dist;
-    }
+        derivate = point[1].dist - point[0].dist;
+        RoboCompLaser::TData data;
+        if(derivate > RangeT)
+            data = ldata[k];
+        if(derivate < -isDoor)
+            data = ldata[k+1];
+        ///ANGULOS CAMBIADOS OJO
+        x = data.dist * cos(data.angle);
+        y = data.dist * sin(data.angle);
 
-
-    ///Forma fea: copiar a pelo, comparamos uno a uno y guardamos los índices///
-    for(const auto &&[i,dev]: derivate | iter::enumerate)
-    {
-        if(dev > RangeT)
-            indices.push_back(i);
-        if(dev < -RangeT)
-            indices.push_back(i+1);
-    }
-
-
-
-
-    for(auto &x: indices)
-    {
-        RoboCompLaser::TData dato = ldata[x];
-        float cx = dato.dist * cos(dato.angle);
-        float cy = dato.dist * sin(dato.angle);
-
-        ///CREACIÓN DEL VECTOR AUXILIAR Y POSTERIOR LISTA DE PUNTOS.
-        Eigen::Vector2f laser_tip(cy, cx);
-        Eigen::Vector2f mapDoor = robot_to_world(r_state, laser_tip);
-
+        Eigen::Vector2f  tip(y,x);
+        mapDoor = robot_to_world(r_state, tip);
         huecosPuerta.push_back(mapDoor);
-
-
     }
-    ///Printeamos///
+    //huecosPuerta.pop_back();
     paintDoor(huecosPuerta);
-    ///CREAMOS LA PUERTA///
-
-
-
+    ///CREAMOS LA PUERTA Y LA GUARDAMOS///
     for (auto&& c : iter::combinations_with_replacement(huecosPuerta, 2))
     {
         if((c[0]-c[1]).norm() > 700 and (c[0]-c[1]).norm()< 1100)
-            Door daux(c[0], c[1]);
-        ///ASIGNAMOS NUM DE HABITACION
-
-        ///INSERTAMOS EN EL CASO DE QUE NO EXISTA
-        if(auto res = std::find_if(Doors.begin(), Doors.end(),[aux](auto a){return aux == a;}); res != Doors.end())
         {
-            Doors.push_back(*res);
+            Door daux(c[0], c[1]);
+            ///INSERTAMOS EN EL CASO DE QUE NO EXISTA
+            if(auto res = std::find_if(Doors.begin(), Doors.end(),[daux](auto a){return daux == a;}); res == Doors.end())
+            {
+                Doors.push_back(daux);
+            }
         }
-
     }
 
 
-
-
+/*
     for (int index = 0; index <huecosPuerta.size() ; ++index){
     float dbetween=(huecosPuerta[index-1]-huecosPuerta[index]).norm();
     if(dbetween <= isDoor)
@@ -275,6 +257,8 @@ SpecificWorker::State SpecificWorker::exploringRoom(const RoboCompLaser::TLaserD
 
 
     }
+*/
+
 
    update_map(ldata, r_state);
    float percenteage_changed=0.0;
@@ -456,13 +440,22 @@ void SpecificWorker::paintDoor(const std::vector<Eigen::Vector2f> &peaks)
     static std::vector<QGraphicsItem*> door_points;
     for(auto dp : door_points) viewer->scene.removeItem(dp);
     door_points.clear();
-    for(const auto p: peaks)
+    for(const auto &p: peaks)
     {
         door_points.push_back(viewer->scene.addRect(QRectF(p.x()-100, p.y()-100, 200, 200),
                                                     QPen(QColor("Magenta")), QBrush(QColor("Magenta"))));
         door_points.back()->setZValue(200);
     }
 
+    std::cout << "ENTRA"<<std::endl;
+
+    for(const auto &d: doors)
+    {
+        QPointF p1(d.p1.x(),d.p1.y()), p2(d.p2.x(), d.p2.y());
+        door_points.push_back(viewer->scene.addLine(QLineF(p1,p2),
+                                                    QPen(QColor("Magenta"))));
+        door_points.back()->setZValue(200);
+    }
 
 }
 
