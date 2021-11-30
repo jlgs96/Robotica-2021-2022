@@ -70,7 +70,7 @@ cppitertools/enumerate.hpp
 cppitertools/combinations_with_replacement.hpp
 -
 
-/home/josel/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h
+/home/alumno/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h
 QWidget
 -
 QGraphicsScene
@@ -94,7 +94,7 @@ QGraphicsPolygonItem
 iostream
 -
 
-/home/josel/robocomp/classes/grid2d/grid.h
+/home/alumno/robocomp/classes/grid2d/grid.h
 unordered_map
 -
 boost/functional/hash.hpp
@@ -124,9 +124,9 @@ QVector2D
 QColor
 -
 
-/home/josel/robocomp/classes/qlog/qlog.h
+/home/alumno/robocomp/classes/qlog/qlog.h
 config.h
-/home/josel/robocomp/classes/qlog/config.h
+/home/alumno/robocomp/classes/qlog/config.h
 QtCore
 -
 iostream
@@ -138,7 +138,7 @@ boost/format.hpp
 boost/format.hpp
 -
 
-/home/josel/robocomp/classes/rapplication/rapplication.h
+/home/alumno/robocomp/classes/rapplication/rapplication.h
 Ice/Ice.h
 -
 Ice/Application.h
@@ -148,7 +148,7 @@ IceUtil/IceUtil.h
 QtCore
 -
 
-/home/josel/robocomp/classes/sigwatch/sigwatch.cpp
+/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp
 sys/socket.h
 -
 unistd.h
@@ -162,17 +162,17 @@ QSocketNotifier
 QDebug
 -
 sigwatch.h
-/home/josel/robocomp/classes/sigwatch/sigwatch.h
+/home/alumno/robocomp/classes/sigwatch/sigwatch.h
 moc_sigwatch.cpp
-/home/josel/robocomp/classes/sigwatch/moc_sigwatch.cpp
+/home/alumno/robocomp/classes/sigwatch/moc_sigwatch.cpp
 
-/home/josel/robocomp/classes/sigwatch/sigwatch.h
+/home/alumno/robocomp/classes/sigwatch/sigwatch.h
 QObject
 -
 signal.h
 -
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/CommonBehavior.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/CommonBehavior.cpp
 CommonBehavior.h
 -
 IceUtil/PushDisableWarnings.h
@@ -190,7 +190,7 @@ Ice/OutputStream.h
 IceUtil/PopDisableWarnings.h
 -
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/DifferentialRobot.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/DifferentialRobot.cpp
 DifferentialRobot.h
 -
 IceUtil/PushDisableWarnings.h
@@ -210,7 +210,7 @@ Ice/LocalException.h
 IceUtil/PopDisableWarnings.h
 -
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/FullPoseEstimation.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/FullPoseEstimation.cpp
 FullPoseEstimation.h
 -
 IceUtil/PushDisableWarnings.h
@@ -230,7 +230,7 @@ Ice/LocalException.h
 IceUtil/PopDisableWarnings.h
 -
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/GenericBase.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/GenericBase.cpp
 GenericBase.h
 -
 IceUtil/PushDisableWarnings.h
@@ -250,7 +250,7 @@ Ice/LocalException.h
 IceUtil/PopDisableWarnings.h
 -
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/Laser.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/Laser.cpp
 Laser.h
 -
 IceUtil/PushDisableWarnings.h
@@ -270,63 +270,63 @@ Ice/LocalException.h
 IceUtil/PopDisableWarnings.h
 -
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/E3H55E6XIR/moc_abstract_graphic_viewer.cpp
-abstract_graphic_viewer/abstract_graphic_viewer.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/E3H55E6XIR/abstract_graphic_viewer/abstract_graphic_viewer.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/moc_genericmonitor.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/moc_genericmonitor.cpp
 genericmonitor.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/genericmonitor.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/genericmonitor.h
 QtCore/qbytearray.h
 -
 QtCore/qmetatype.h
 -
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/moc_genericworker.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/moc_genericworker.cpp
 genericworker.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/genericworker.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/genericworker.h
 QtCore/qbytearray.h
 -
 QtCore/qmetatype.h
 -
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/moc_specificmonitor.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/moc_specificmonitor.cpp
 specificmonitor.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/specificmonitor.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/specificmonitor.h
 QtCore/qbytearray.h
 -
 QtCore/qmetatype.h
 -
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/moc_specificworker.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/moc_specificworker.cpp
 specificworker.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/specificworker.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/specificworker.h
 QtCore/qbytearray.h
 -
 QtCore/qmetatype.h
 -
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/mocs_compilation.cpp
-E3H55E6XIR/moc_abstract_graphic_viewer.cpp
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/E3H55E6XIR/moc_abstract_graphic_viewer.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/I3FNLAJYSS/moc_abstract_graphic_viewer.cpp
+abstract_graphic_viewer/abstract_graphic_viewer.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/I3FNLAJYSS/abstract_graphic_viewer/abstract_graphic_viewer.h
+QtCore/qbytearray.h
+-
+QtCore/qmetatype.h
+-
+
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/mocs_compilation.cpp
+I3FNLAJYSS/moc_abstract_graphic_viewer.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/I3FNLAJYSS/moc_abstract_graphic_viewer.cpp
 EWIEGA46WW/moc_genericmonitor.cpp
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/moc_genericmonitor.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/moc_genericmonitor.cpp
 EWIEGA46WW/moc_genericworker.cpp
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/moc_genericworker.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/moc_genericworker.cpp
 EWIEGA46WW/moc_specificmonitor.cpp
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/moc_specificmonitor.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/moc_specificmonitor.cpp
 EWIEGA46WW/moc_specificworker.cpp
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/moc_specificworker.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/src/gotoxy_autogen/EWIEGA46WW/moc_specificworker.cpp
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/commonbehaviorI.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/commonbehaviorI.cpp
 commonbehaviorI.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/commonbehaviorI.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/commonbehaviorI.h
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/commonbehaviorI.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/commonbehaviorI.h
 Ice/Ice.h
 -
 CommonBehavior.h
@@ -334,37 +334,37 @@ CommonBehavior.h
 config.h
 -
 genericworker.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/genericworker.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/genericworker.h
 genericmonitor.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/genericmonitor.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/genericmonitor.h
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/config.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/config.h
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/genericmonitor.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/genericmonitor.cpp
 genericmonitor.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/genericmonitor.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/genericmonitor.h
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/genericmonitor.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/genericmonitor.h
 Ice/Ice.h
 -
 QtCore
 -
 genericworker.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/genericworker.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/genericworker.h
 config.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/config.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/config.h
 qlog/qlog.h
 -
 CommonBehavior.h
 -
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/genericworker.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/genericworker.cpp
 genericworker.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/genericworker.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/genericworker.h
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/genericworker.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/genericworker.h
 config.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/config.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/config.h
 stdint.h
 -
 qlog/qlog.h
@@ -386,7 +386,7 @@ GenericBase.h
 Laser.h
 -
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/main.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/main.cpp
 signal.h
 -
 QtCore
@@ -406,33 +406,33 @@ sigwatch/sigwatch.h
 qlog/qlog.h
 -
 config.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/config.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/config.h
 genericmonitor.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/genericmonitor.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/genericmonitor.h
 genericworker.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/genericworker.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/genericworker.h
 specificworker.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/specificworker.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/specificworker.h
 specificmonitor.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/specificmonitor.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/specificmonitor.h
 commonbehaviorI.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/commonbehaviorI.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/commonbehaviorI.h
 GenericBase.h
 -
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/specificmonitor.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/specificmonitor.cpp
 specificmonitor.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/specificmonitor.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/specificmonitor.h
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/specificmonitor.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/specificmonitor.h
 genericmonitor.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/genericmonitor.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/genericmonitor.h
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/specificworker.cpp
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/specificworker.cpp
 specificworker.h
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/specificworker.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/specificworker.h
 
-/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/specificworker.h
+/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/specificworker.h
 genericworker.h
 -
 innermodel/innermodel.h

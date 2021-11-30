@@ -216,24 +216,30 @@ SpecificWorker::State SpecificWorker::exploringRoom(const RoboCompLaser::TLaserD
     {
         derivate = point[1].dist - point[0].dist;
         RoboCompLaser::TData data;
-        if(derivate > RangeT)
-            data = ldata[k];
-        if(derivate < -isDoor)
-            data = ldata[k+1];
-        ///ANGULOS CAMBIADOS OJO
-        x = data.dist * cos(data.angle);
-        y = data.dist * sin(data.angle);
 
-        Eigen::Vector2f  tip(y,x);
-        mapDoor = robot_to_world(r_state, tip);
-        huecosPuerta.push_back(mapDoor);
+       if(abs(derivate)>RangeT)
+       {
+           if(derivate > RangeT)
+               data = ldata[k];
+           if(derivate < -RangeT)
+               data = ldata[k+1];
+           ///ANGULOS CAMBIADOS OJO
+           y = data.dist * cos(data.angle);
+           x = data.dist * sin(data.angle);
+
+
+
+           Eigen::Vector2f  tip(x,y);
+           mapDoor = robot_to_world(r_state, tip);
+           huecosPuerta.push_back(mapDoor);
+
+       }
     }
     //huecosPuerta.pop_back();
-    paintDoor(huecosPuerta);
     ///CREAMOS LA PUERTA Y LA GUARDAMOS///
     for (auto&& c : iter::combinations_with_replacement(huecosPuerta, 2))
     {
-        if((c[0]-c[1]).norm() > 700 and (c[0]-c[1]).norm()< 1100)
+        if((c[0]-c[1]).norm() > 500 and (c[0]-c[1]).norm()< 1100)
         {
             Door daux(c[0], c[1]);
             ///INSERTAMOS EN EL CASO DE QUE NO EXISTA
@@ -242,8 +248,9 @@ SpecificWorker::State SpecificWorker::exploringRoom(const RoboCompLaser::TLaserD
                 Doors.push_back(daux);
             }
         }
+        std::cout<< Doors.size() <<std::endl;
     }
-
+    paintDoor(huecosPuerta);
 
 /*
     for (int index = 0; index <huecosPuerta.size() ; ++index){
@@ -258,8 +265,6 @@ SpecificWorker::State SpecificWorker::exploringRoom(const RoboCompLaser::TLaserD
 
     }
 */
-
-
    update_map(ldata, r_state);
    float percenteage_changed=0.0;
    percenteage_changed = Mapp.percentage_changed();
@@ -268,7 +273,7 @@ SpecificWorker::State SpecificWorker::exploringRoom(const RoboCompLaser::TLaserD
    percenteage_changed = percenteage_changed * 1000;
 
     ///EXIT CONDITION///
-    if(percenteage_changed<1.2)
+    if(percenteage_changed<1.2 )
     {
         try
         {
@@ -440,20 +445,18 @@ void SpecificWorker::paintDoor(const std::vector<Eigen::Vector2f> &peaks)
     static std::vector<QGraphicsItem*> door_points;
     for(auto dp : door_points) viewer->scene.removeItem(dp);
     door_points.clear();
-    for(const auto &p: peaks)
+    /*for(const auto &p: peaks)
     {
         door_points.push_back(viewer->scene.addRect(QRectF(p.x()-100, p.y()-100, 200, 200),
                                                     QPen(QColor("Magenta")), QBrush(QColor("Magenta"))));
         door_points.back()->setZValue(200);
     }
-
-    std::cout << "ENTRA"<<std::endl;
-
-    for(const auto &d: doors)
+    */
+    for(const auto &d: Doors)
     {
         QPointF p1(d.p1.x(),d.p1.y()), p2(d.p2.x(), d.p2.y());
         door_points.push_back(viewer->scene.addLine(QLineF(p1,p2),
-                                                    QPen(QColor("Magenta"))));
+                                                    QPen(QColor("Blue"),50)));
         door_points.back()->setZValue(200);
     }
 

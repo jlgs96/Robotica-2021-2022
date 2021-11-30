@@ -65,15 +65,15 @@ public:
         Eigen::Vector2f p1;
         Eigen::Vector2f p2;
         int h1, h2;
-        bool operator== (Door door){return ((p1-door.p1).norm() < 400 and (p2-door.p2).norm()< 400) or ((p1-door.p2).norm()<400 and (p2-door.p1).norm()<400);}
+        bool operator== (Door door){return ((p1-door.p1).norm() < 800 and (p2-door.p2).norm()< 800) or ((p1-door.p2).norm()<800 and (p2-door.p1).norm()<800);}
         Door(Eigen::Vector2f c1,Eigen::Vector2f c2):p1(c1), p2(c2) { };
     };
 
     //////INICIALIZACION DE LAS ESTRUCTURAS///////////
     Target target;
     LinearFunction linear_function;
+    std::vector<Door>Doors;
 
-    std::vector<Door> doors;
     /////DECLARACIÓN DEL TIPO ENUMERADO PARA LOS ESTADOS DEL ROBOT/////
 
     ///OLD ENUM STATES///
@@ -117,7 +117,7 @@ public:
 
     /////VARIABLES MAPPING/////
     const int MAX_LASER_DIST = 4000;
-    const int TILE = 200;
+    const int TILE = 100;
 
 
 
@@ -146,7 +146,7 @@ private:
     Grid Mapp;
 
     void calculate_door_points();
-    std::vector<Door>Doors;
+
     /////CONSIGUE EL ELEMENTO MAXIMO/////
     RoboCompLaser::TData get_max_ldata_element(const RoboCompLaser::TLaserData &ldata, int semiwidth);
 
