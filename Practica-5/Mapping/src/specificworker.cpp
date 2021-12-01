@@ -122,10 +122,7 @@ void SpecificWorker::compute() {
     switch (mappState) {
 
         //ESTADO EN ESPERA
-        case State::TURN:
-            alpha_Robot = r_state.rz;
-            mappState=State::TURN;
-            break;
+
         case State::EXPLORE:
             std::cout<<"estoy en estado EXPLORE"<<std::endl;
             try
@@ -151,6 +148,7 @@ void SpecificWorker::compute() {
         case State::CHANGEROOM:
             std::cout<<"estoy en estado CHANGEROOM"<<std::endl;
             //estado = obstacle(r_state, ldata);
+
             break;
             //UNA VEZ GIRADO, TIRAR ADELANTE HACIA EL PUNTO
         case State::CENTERROOM:
@@ -198,60 +196,7 @@ void SpecificWorker::update_map(const RoboCompLaser::TLaserData &ldata,const Rob
 
 SpecificWorker::State SpecificWorker::exploringRoom(const RoboCompLaser::TLaserData &ldata,const RoboCompFullPoseEstimation::FullPoseEuler &r_state)
 {
-
-    ///RANGOS DE VALOR ENTRE ESQUINA Y PUERTA///
-
-    float RangeT = 1000;
-    ///UMBRAL PARA COMPROBAR SI ES PUERTA O NO///
-    float isDoor = 700;
-    /////CALCULO DE LA DERIVADA/////
-    float derivate = 0.0;
-    float x, y;
-
-    std::vector<int> indices(0);
-    std::vector<Eigen::Vector2f> huecosPuerta;
-    Eigen::Vector2f points, mapDoor;
-
-    for(auto &&[k,point] : iter::sliding_window(ldata, 2) | iter::enumerate)
-    {
-        derivate = point[1].dist - point[0].dist;
-        RoboCompLaser::TData data;
-
-       if(abs(derivate)>RangeT)
-       {
-           if(derivate > RangeT)
-               data = ldata[k];
-           if(derivate < -RangeT)
-               data = ldata[k+1];
-           ///ANGULOS CAMBIADOS OJO
-           y = data.dist * cos(data.angle);
-           x = data.dist * sin(data.angle);
-
-
-
-           Eigen::Vector2f  tip(x,y);
-           mapDoor = robot_to_world(r_state, tip);
-           huecosPuerta.push_back(mapDoor);
-
-       }
-    }
-    //huecosPuerta.pop_back();
-    ///CREAMOS LA PUERTA Y LA GUARDAMOS///
-    for (auto&& c : iter::combinations_with_replacement(huecosPuerta, 2))
-    {
-        if((c[0]-c[1]).norm() > 500 and (c[0]-c[1]).norm()< 1100)
-        {
-            Door daux(c[0], c[1]);
-            ///INSERTAMOS EN EL CASO DE QUE NO EXISTA
-            if(auto res = std::find_if(Doors.begin(), Doors.end(),[daux](auto a){return daux == a;}); res == Doors.end())
-            {
-                Doors.push_back(daux);
-            }
-        }
-        std::cout<< Doors.size() <<std::endl;
-    }
-    paintDoor(huecosPuerta);
-
+    calculate_door_points(ldata, r_state);
 /*
     for (int index = 0; index <huecosPuerta.size() ; ++index){
     float dbetween=(huecosPuerta[index-1]-huecosPuerta[index]).norm();
@@ -299,70 +244,24 @@ SpecificWorker::State SpecificWorker::exploringRoom(const RoboCompLaser::TLaserD
 
 SpecificWorker::State SpecificWorker::lookDoor(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state)
 {
-    float umbral = 500;
-    static RoboCompLaser::TData best_distance_previous = ldata[180];
-    RoboCompLaser::TData  actual_distance = ldata[180];
-    static int doors2 = 0;
-    int cx,cy;
+    int indexDoor = Doors.size()-1;
 
-
-    ////EXIT CONDITION////
-    if(doors2 == 2)
+    ////COMPROBAR SI ULTIMO ELEMENTO PROCESADO---CONDICION DE SALIDA////
+    if((int)Doors[indexDoor].midPointDoors.size()>0)
     {
-        doors2 = 0;
-        try
+        if(indexDoor = 0; (int)Doors[indexDoor].midPointDoors.size()>0)
         {
-            differentialrobot_proxy->setSpeedBase(0,0);
-        }catch (const Ice::Exception &e)
-        {
-            std::cout<<e.what()<<std::endl;
+            ///salida////
         }
-        return State::CHANGEROOM;
     }
+    
+    ///PUERTA A PROCESAR////
 
 
 
 
 
 
-    if(abs(actual_distance.dist - best_distance_previous.dist ) > umbral)
-    {
-        doors2++;
-        
-        if(actual_distance.dist-best_distance_previous.dist > 0)
-        {
-            cx = best_distance_previous.dist* cos(best_distance_previous.angle);
-            cy = best_distance_previous.dist *sin(best_distance_previous.angle);
-
-            Eigen::Vector2f  laser_tip(cy,cx);
-            Eigen::Vector2f mapDoor = robot_to_world(r_state,laser_tip);
-            /////ESQUINA PUERTA 1/////
-           // door.setP1(QPointF(mapDoor.x(),mapDoor.y()));
-
-
-        }else
-        {
-            cx = actual_distance.dist* cos(actual_distance.angle);
-            cy = actual_distance.dist *sin(actual_distance.angle);
-
-            Eigen::Vector2f  laser_tip(cy,cx);
-            Eigen::Vector2f mapDoor = robot_to_world(r_state,laser_tip);
-
-
-            /////ESQUINA PUERTA 2/////
-            //door.setP2(QPointF(mapDoor.x(),mapDoor.y()));
-        }
-
-    }
-    try
-    {
-        differentialrobot_proxy->setSpeedBase(0,0.5);
-
-    }catch (const Ice::Exception &e)
-    {
-        std::cout<<e.what()<<std::endl;
-    }
-    best_distance_previous = actual_distance;
     return State::DOOR;
 }
 
@@ -435,9 +334,48 @@ RoboCompLaser::TData SpecificWorker::get_max_ldata_element(const RoboCompLaser::
 }
 
 
-void SpecificWorker::calculate_door_points()
+void SpecificWorker::calculate_door_points(const RoboCompLaser::TLaserData &ldata,const RoboCompFullPoseEstimation::FullPoseEuler &r_state)
 {
-    
+    float RangeThreshold = 1000;
+    float isDoor = 700;
+    float derivate = 0.0;
+    float x, y;
+    std::vector<int> indices (0);
+    std::vector<Eigen::Vector2f> pointsDoor;
+    Eigen::Vector2f points, mapDoor;
+
+
+    for(auto &&[k, point]:iter::sliding_window(ldata, 2)|iter::enumerate)
+    {
+        derivate = point[1].dist - point[0].dist;
+        RoboCompLaser::TData data;
+
+        if(abs(derivate)>RangeThreshold)
+        {
+            if(derivate > RangeThreshold)
+                data = ldata[k];
+            if(derivate< -RangeThreshold)
+                data = ldata[k+1];
+
+            x = data.dist * sin(data.angle);
+            y = data.dist * cos(data.angle);
+
+
+            Eigen::Vector2f  tip(x,y);
+            mapDoor = robot_to_world(r_state, tip);
+            pointsDoor.push_back(mapDoor);
+        }
+    }
+    for(auto &&c: iter::combinations_with_replacement(pointsDoor, 2))
+    {
+        if((c[0] - c[1]).norm()>500 and (c[0]-c[1]).norm()<1100)
+        {
+            Door daux(c[0],c[1]);
+            if(auto res = std::find_if(Doors.begin(), Doors.end(), [daux](auto a){return daux == a;}); res == Doors.end())
+                Doors.push_back(daux);
+        }
+    }
+    paintDoor(pointsDoor);
 }
 
 void SpecificWorker::paintDoor(const std::vector<Eigen::Vector2f> &peaks)

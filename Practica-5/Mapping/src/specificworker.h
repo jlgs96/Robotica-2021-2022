@@ -64,9 +64,11 @@ public:
     {
         Eigen::Vector2f p1;
         Eigen::Vector2f p2;
+        std::vector<Eigen::Vector2f> midPointDoors;
         int h1, h2;
         bool operator== (Door door){return ((p1-door.p1).norm() < 800 and (p2-door.p2).norm()< 800) or ((p1-door.p2).norm()<800 and (p2-door.p1).norm()<800);}
         Door(Eigen::Vector2f c1,Eigen::Vector2f c2):p1(c1), p2(c2) { };
+
     };
 
     //////INICIALIZACION DE LAS ESTRUCTURAS///////////
@@ -87,7 +89,7 @@ public:
      * CHANGEROOM: CAMBIA DE UNA HABITACION A OTRA
      * CENTERROOM: SE COLOCA EN EL CENTRO DE LA HABITACIÓN PARA MAPPING
      */
-    enum class State {TURN,EXPLORE, DOOR, CHANGEROOM, CENTERROOM};
+    enum class State {EXPLORE, DOOR, CHANGEROOM, CENTERROOM};
     State mappState = State::EXPLORE;
 
 
@@ -118,7 +120,7 @@ public:
     /////VARIABLES MAPPING/////
     const int MAX_LASER_DIST = 4000;
     const int TILE = 100;
-
+    std::vector<Eigen::Vector2f>midPointsDoorGlobal[2];
 
 
 
@@ -145,7 +147,7 @@ private:
     /////GRID VARIABLE/////
     Grid Mapp;
 
-    void calculate_door_points();
+    void calculate_door_points(const RoboCompLaser::TLaserData &ldata,const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
 
     /////CONSIGUE EL ELEMENTO MAXIMO/////
     RoboCompLaser::TData get_max_ldata_element(const RoboCompLaser::TLaserData &ldata, int semiwidth);

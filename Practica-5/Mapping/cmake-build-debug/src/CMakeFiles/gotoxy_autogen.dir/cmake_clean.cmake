@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/gotoxy_autogen"
+  "gotoxy_autogen/include/ui_mainUI.h"
   "gotoxy_autogen/mocs_compilation.cpp"
 )
 

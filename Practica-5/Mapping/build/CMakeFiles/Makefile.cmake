@@ -185,6 +185,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/gotoxy.dir/DependInfo.cmake"
-  "src/CMakeFiles/ICES__home_alumno_robocomp_components_g8-M1_Robotica-2021-2022_Practica-5_Mapping_src.dir/DependInfo.cmake"
+  "src/CMakeFiles/ICES__home_alumno_software_g8-M1_Robotica-2021-2022_Practica-5_Mapping_src.dir/DependInfo.cmake"
   "src/CMakeFiles/gotoxy_autogen.dir/DependInfo.cmake"
   )
