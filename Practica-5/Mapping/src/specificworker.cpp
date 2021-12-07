@@ -114,14 +114,19 @@ void SpecificWorker::compute() {
     } catch (const Ice::Exception &e) {
         std::cout << e.what() << std::endl;
     }
-    target_to_robot = world_to_robot(r_state);
-//    update_map(ldata, r_state);
-  //  std::cout<<Mapp.percentage_changed()<<std::endl;
-
     static float alpha_Robot = 0.0;
     switch (mappState) {
 
         //ESTADO EN ESPERA
+        case State::IDLE:
+            std::cout<<"estoy en estado IDLE"<<std::endl;
+            try
+            {
+                differentialrobot_proxy->setSpeedBase(0,0);
+            }catch (const Ice::Exception &e){
+                std::cout<<e.what()<<std::endl;
+            }
+
 
         case State::EXPLORE:
             std::cout<<"estoy en estado EXPLORE"<<std::endl;
@@ -148,13 +153,14 @@ void SpecificWorker::compute() {
         case State::CHANGEROOM:
             std::cout<<"estoy en estado CHANGEROOM"<<std::endl;
             //estado = obstacle(r_state, ldata);
+            try
+            {
+                mappState = changeRoom(ldata,r_state);
+            }catch (const Ice::Exception &e) {
+                std::cout << e.what() << std::endl;
+            }
+            break;
 
-            break;
-            //UNA VEZ GIRADO, TIRAR ADELANTE HACIA EL PUNTO
-        case State::CENTERROOM:
-            std::cout<<"estoy en estado SURROUND"<<std::endl;
-            //estado = surround(r_state, ldata);
-            break;
     }
 
 
@@ -251,18 +257,77 @@ SpecificWorker::State SpecificWorker::lookDoor(const RoboCompLaser::TLaserData &
     {
         if(indexDoor = 0; (int)Doors[indexDoor].midPointDoors.size()>0)
         {
-            ///salida////
+            return State::IDLE;
         }
     }
-    
+
+    Eigen::Vector2f middle = (Doors[indexDoor].p1 + Doors[indexDoor].p2)/2;
+
     ///PUERTA A PROCESAR////
+    if(abs(Doors[indexDoor].p1[0] - Doors[indexDoor].p2[0]) < 100)
+    {
+        Doors[indexDoor].midPointDoors.push_back(Eigen::Vector2f(middle[0]+500, middle[1]));
+        Doors[indexDoor].midPointDoors.push_back(Eigen::Vector2f(middle[0]-500, middle[1]));
+    }
+
+    if(abs(Doors[indexDoor].p1[1] - Doors[indexDoor].p2[1]) < 100)
+    {
+        Doors[indexDoor].midPointDoors.push_back(Eigen::Vector2f(middle[0], middle[1]+ 500));
+        Doors[indexDoor].midPointDoors.push_back(Eigen::Vector2f(middle[0] , middle[1]- 500));
+
+    }
+
+    midPointsDoorGlobal = Doors[indexDoor].midPointDoors;
+
+    Eigen::Vector2f  robot(r_state.x, r_state.y);
+    std::sort(midPointsDoorGlobal.begin(), midPointsDoorGlobal.end(), [robot](Eigen::Vector2f a, Eigen::Vector2f b)
+    {return(a-robot).norm() < (b-robot).norm();});
+    return State::CHANGEROOM;
+}
+
+SpecificWorker::State SpecificWorker::changeRoom(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state)
+{
+    float distance = 0.0;
+
+    Eigen::Vector2f robot_eigen(r_state.x, r_state.y);
+    static int flag = 0;
+
+    ///////CONDITION switch EXIT///////
+    if( distance = (midPointsDoorGlobal[flag] - robot_eigen).norm(); distance <= 50)
+    {
+        try
+        {
+            differentialrobot_proxy->setSpeedBase(0,0);
+        }catch (const Ice::Exception &e)
+        {
+            std::cout<<e.what()<<std::endl;
+        }
 
 
+        flag++;
+    }
+    ////EXIT CONDITIONS////
+    if(flag == 2)
+    {
+        flag = 0;
+        return State::EXPLORE;
+    }
 
 
+    /////////////////////////////////////////////////
+    Eigen::Vector2f pointAux = world_to_robot(r_state, midPointsDoorGlobal[flag]);
+    //OJO A ESTO, AQUÍ LOS EJES A ATAN2 SE LOS PASA CAMBIADOS, PRIMERO EJE Y, LUEGO EJE X
+    float beta = atan2(pointAux.x(), pointAux.y());
+    float adv = MAX_ADV_SPEED * dist_to_target_object(distance) * rotation_speed(beta);
 
-
-    return State::DOOR;
+    try
+    {
+        differentialrobot_proxy->setSpeedBase(adv,beta);
+    } catch (const Ice::Exception &e)
+    {
+        std::cout<<e.what()<<std::endl;
+    }
+    return State::CHANGEROOM;
 }
 
 
@@ -400,16 +465,16 @@ void SpecificWorker::paintDoor(const std::vector<Eigen::Vector2f> &peaks)
 
 }
 
-QPointF SpecificWorker::world_to_robot( RoboCompFullPoseEstimation::FullPoseEuler r_state)
+Eigen::Vector2f SpecificWorker::world_to_robot( RoboCompFullPoseEstimation::FullPoseEuler r_state, const Eigen::Vector2f &point_in_world)
 {
     float angle = r_state.rz;
-    Eigen::Vector2f T(r_state.x, r_state.y), point_in_world(target.destiny.x(), target.destiny.y());
+    Eigen::Vector2f T(r_state.x, r_state.y);
     Eigen::Matrix2f R;
 
     R << cos(angle), -sin(angle), sin(angle), cos(angle);
 
     Eigen::Vector2f point_in_robot = R.transpose() * (point_in_world - T);
-    return QPointF(point_in_robot.x(), point_in_robot.y());
+    return point_in_robot;
 }
 
 Eigen::Vector2f  SpecificWorker::robot_to_world(const RoboCompFullPoseEstimation::FullPoseEuler &r_state, Eigen::Vector2f cartesianP)

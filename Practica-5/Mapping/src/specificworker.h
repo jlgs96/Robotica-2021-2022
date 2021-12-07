@@ -89,7 +89,7 @@ public:
      * CHANGEROOM: CAMBIA DE UNA HABITACION A OTRA
      * CENTERROOM: SE COLOCA EN EL CENTRO DE LA HABITACIÓN PARA MAPPING
      */
-    enum class State {EXPLORE, DOOR, CHANGEROOM, CENTERROOM};
+    enum class State {IDLE, EXPLORE, DOOR, CHANGEROOM};
     State mappState = State::EXPLORE;
 
 
@@ -97,7 +97,7 @@ public:
     ////////////METODOS DE PROPOSITO GENERAL//////////
     bool setParams(RoboCompCommonBehavior::ParameterList params);
     void draw_laser(const RoboCompLaser::TLaserData &ldata);
-    QPointF world_to_robot( const RoboCompFullPoseEstimation::FullPoseEuler r_state);
+    Eigen::Vector2f world_to_robot( const RoboCompFullPoseEstimation::FullPoseEuler r_state, const Eigen::Vector2f &point_in_world);
 
     ///OLD, MAYBE REUSABLE METODOS DE PROPOSITO GENERAL///
     float dist_to_target_object(float dist);
@@ -120,7 +120,7 @@ public:
     /////VARIABLES MAPPING/////
     const int MAX_LASER_DIST = 4000;
     const int TILE = 100;
-    std::vector<Eigen::Vector2f>midPointsDoorGlobal[2];
+    std::vector<Eigen::Vector2f>midPointsDoorGlobal;
 
 
 
@@ -129,7 +129,7 @@ public:
     Eigen::Vector2f robot_to_world( const RoboCompFullPoseEstimation::FullPoseEuler &r_state, Eigen::Vector2f cartesianP);
     State exploringRoom(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
     State lookDoor(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
-    void centerRoom(const RoboCompLaser::TLaserData &ldata);
+    State changeRoom(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
     void paintDoor(const std::vector<Eigen::Vector2f> &peaks);
     ///////SLOTS DE CONEXION/////
 public slots:

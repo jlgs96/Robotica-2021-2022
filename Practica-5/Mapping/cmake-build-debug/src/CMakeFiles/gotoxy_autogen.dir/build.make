@@ -53,10 +53,10 @@ RM = /snap/clion/175/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alumno/software/g8-M1/Robotica-2021-2022/Practica-5/Mapping
+CMAKE_SOURCE_DIR = /home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alumno/software/g8-M1/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug
+CMAKE_BINARY_DIR = /home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug
 
 # Utility rule file for gotoxy_autogen.
 
@@ -67,8 +67,8 @@ include src/CMakeFiles/gotoxy_autogen.dir/compiler_depend.make
 include src/CMakeFiles/gotoxy_autogen.dir/progress.make
 
 src/CMakeFiles/gotoxy_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alumno/software/g8-M1/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target gotoxy"
-	cd /home/alumno/software/g8-M1/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src && /snap/clion/175/bin/cmake/linux/bin/cmake -E cmake_autogen /home/alumno/software/g8-M1/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/CMakeFiles/gotoxy_autogen.dir/AutogenInfo.json Debug
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target gotoxy"
+	cd /home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src && /snap/clion/175/bin/cmake/linux/bin/cmake -E cmake_autogen /home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/CMakeFiles/gotoxy_autogen.dir/AutogenInfo.json Debug
 
 gotoxy_autogen: src/CMakeFiles/gotoxy_autogen
 gotoxy_autogen: src/CMakeFiles/gotoxy_autogen.dir/build.make
@@ -79,10 +79,10 @@ src/CMakeFiles/gotoxy_autogen.dir/build: gotoxy_autogen
 .PHONY : src/CMakeFiles/gotoxy_autogen.dir/build
 
 src/CMakeFiles/gotoxy_autogen.dir/clean:
-	cd /home/alumno/software/g8-M1/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src && $(CMAKE_COMMAND) -P CMakeFiles/gotoxy_autogen.dir/cmake_clean.cmake
+	cd /home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src && $(CMAKE_COMMAND) -P CMakeFiles/gotoxy_autogen.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/gotoxy_autogen.dir/clean
 
 src/CMakeFiles/gotoxy_autogen.dir/depend:
-	cd /home/alumno/software/g8-M1/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alumno/software/g8-M1/Robotica-2021-2022/Practica-5/Mapping /home/alumno/software/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src /home/alumno/software/g8-M1/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug /home/alumno/software/g8-M1/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src /home/alumno/software/g8-M1/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/CMakeFiles/gotoxy_autogen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping /home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/src /home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug /home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src /home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/CMakeFiles/gotoxy_autogen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/gotoxy_autogen.dir/depend
 

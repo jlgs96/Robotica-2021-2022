@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/alumno/software/g8-M1/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug"
+			"value" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -127,7 +127,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-j16"
+			"value" : "-j12"
 		},
 		{
 			"name" : "CMAKE_COLOR_MAKEFILE",
@@ -727,7 +727,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/alumno/software/g8-M1/Robotica-2021-2022/Practica-5/Mapping"
+			"value" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1235,7 +1235,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/usr/bin/uname"
+			"value" : "/bin/uname"
 		},
 		{
 			"name" : "CMAKE_VERBOSE_MAKEFILE",
@@ -1263,7 +1263,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/usr/bin/slice2cpp][/usr/include][/usr/share/ice/slice][/usr/lib/x86_64-linux-gnu/libIce++11.so;/usr/lib/x86_64-linux-gnu/libIceStorm++11.so;/usr/lib/x86_64-linux-gnu/libIce.so;/usr/lib/x86_64-linux-gnu/libIceStorm.so][ON][v3.7.3()]"
+			"value" : "[/usr/bin/slice2cpp][/usr/include][/usr/share/ice/slice][/usr/lib/x86_64-linux-gnu/libIce++11.so;/usr/lib/x86_64-linux-gnu/libIceStorm++11.so;/usr/lib/x86_64-linux-gnu/libIce.so;/usr/lib/x86_64-linux-gnu/libIceStorm.so][ON][v3.7.6()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Threads",
@@ -1547,7 +1547,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "Ice_GLACIER2ROUTER_EXECUTABLE-NOTFOUND"
+			"value" : "/usr/bin/glacier2router"
 		},
 		{
 			"name" : "Ice_ICE++11_LIBRARY_DEBUG",
@@ -1603,7 +1603,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "Ice_ICEBOXADMIN_EXECUTABLE-NOTFOUND"
+			"value" : "/usr/bin/iceboxadmin"
 		},
 		{
 			"name" : "Ice_ICEBOXD_EXECUTABLE",
@@ -1651,7 +1651,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "Ice_ICEBRIDGE_EXECUTABLE-NOTFOUND"
+			"value" : "/usr/bin/icebridge"
 		},
 		{
 			"name" : "Ice_ICEGRIDADMIN_EXECUTABLE",
@@ -1663,7 +1663,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "Ice_ICEGRIDADMIN_EXECUTABLE-NOTFOUND"
+			"value" : "/usr/bin/icegridadmin"
 		},
 		{
 			"name" : "Ice_ICEGRIDDB_EXECUTABLE",
@@ -1675,7 +1675,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "Ice_ICEGRIDDB_EXECUTABLE-NOTFOUND"
+			"value" : "/usr/bin/icegriddb"
 		},
 		{
 			"name" : "Ice_ICEGRIDNODED_EXECUTABLE",
@@ -1699,7 +1699,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "Ice_ICEGRIDNODE_EXECUTABLE-NOTFOUND"
+			"value" : "/usr/bin/icegridnode"
 		},
 		{
 			"name" : "Ice_ICEGRIDREGISTRYD_EXECUTABLE",
@@ -1723,7 +1723,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "Ice_ICEGRIDREGISTRY_EXECUTABLE-NOTFOUND"
+			"value" : "/usr/bin/icegridregistry"
 		},
 		{
 			"name" : "Ice_ICEPATCH2CALC_EXECUTABLE",
@@ -1735,7 +1735,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "Ice_ICEPATCH2CALC_EXECUTABLE-NOTFOUND"
+			"value" : "/usr/bin/icepatch2calc"
 		},
 		{
 			"name" : "Ice_ICEPATCH2CLIENT_EXECUTABLE",
@@ -1747,7 +1747,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "Ice_ICEPATCH2CLIENT_EXECUTABLE-NOTFOUND"
+			"value" : "/usr/bin/icepatch2client"
 		},
 		{
 			"name" : "Ice_ICEPATCH2SERVER_EXECUTABLE",
@@ -1759,7 +1759,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "Ice_ICEPATCH2SERVER_EXECUTABLE-NOTFOUND"
+			"value" : "/usr/bin/icepatch2server"
 		},
 		{
 			"name" : "Ice_ICESERVICEINSTALL_EXECUTABLE",
@@ -1815,7 +1815,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "Ice_ICESTORMADMIN_EXECUTABLE-NOTFOUND"
+			"value" : "/usr/bin/icestormadmin"
 		},
 		{
 			"name" : "Ice_ICESTORMDB_EXECUTABLE",
@@ -1827,7 +1827,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "Ice_ICESTORMDB_EXECUTABLE-NOTFOUND"
+			"value" : "/usr/bin/icestormdb"
 		},
 		{
 			"name" : "Ice_ICESTORMMIGRATE_EXECUTABLE",
@@ -2159,7 +2159,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/sbin/sysctl"
+			"value" : "/sbin/sysctl"
 		},
 		{
 			"name" : "Qt5Core_DIR",
@@ -2279,7 +2279,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/home/alumno/software/g8-M1/Robotica-2021-2022/Practica-5/Mapping"
+			"value" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping"
 		},
 		{
 			"name" : "RC_COMPONENT_INSTALL_PATH",
@@ -2303,7 +2303,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/home/alumno/software/g8-M1/Robotica-2021-2022/Practica-5/Mapping"
+			"value" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping"
 		},
 		{
 			"name" : "RoboComp_VERSION",
@@ -2367,7 +2367,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/alumno/software/g8-M1/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug"
+			"value" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug"
 		},
 		{
 			"name" : "gotoxy_IS_TOP_LEVEL",
@@ -2391,7 +2391,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/alumno/software/g8-M1/Robotica-2021-2022/Practica-5/Mapping"
+			"value" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping"
 		}
 	],
 	"kind" : "cache",

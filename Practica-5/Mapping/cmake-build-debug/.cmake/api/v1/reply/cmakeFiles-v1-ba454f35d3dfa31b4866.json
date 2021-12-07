@@ -739,11 +739,11 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/alumno/robocomp/cmake/robocomp.cmake"
+			"path" : "/home/josel/robocomp/cmake/robocomp.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/alumno/robocomp/cmake/modules/qt.cmake"
+			"path" : "/home/josel/robocomp/cmake/modules/qt.cmake"
 		},
 		{
 			"isExternal" : true,
@@ -1095,8 +1095,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/alumno/software/g8-M1/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug",
-		"source" : "/home/alumno/software/g8-M1/Robotica-2021-2022/Practica-5/Mapping"
+		"build" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug",
+		"source" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping"
 	},
 	"version" : 
 	{
