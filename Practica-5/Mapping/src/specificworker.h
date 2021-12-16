@@ -32,6 +32,7 @@
 #include <abstract_graphic_viewer/abstract_graphic_viewer.h>
 #include <eigen3/Eigen/Eigen>
 #include <grid2d/grid.h>
+#include <dynamic_window.h>
 #include <cppitertools/range.hpp>
 #include <cppitertools/sliding_window.hpp>
 #include <cppitertools/enumerate.hpp>
@@ -131,6 +132,7 @@ public:
     State lookDoor(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
     State changeRoom(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
     void paintDoor(const std::vector<Eigen::Vector2f> &peaks);
+    void moveRobot(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state, float d, Eigen::Vector2f v);
     ///////SLOTS DE CONEXION/////
 public slots:
 	void compute();
@@ -146,6 +148,7 @@ private:
     bool distance_side(const RoboCompLaser::TLaserData &ldata, float dist, int iterBegin, int iterEnd);
     /////GRID VARIABLE/////
     Grid Mapp;
+    Dynamic_Window dw;
 
     void calculate_door_points(const RoboCompLaser::TLaserData &ldata,const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
 

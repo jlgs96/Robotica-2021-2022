@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/gotoxy.dir/GenericBase.cpp.o"
   "CMakeFiles/gotoxy.dir/Laser.cpp.o"
   "CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o"
+  "CMakeFiles/gotoxy.dir/dynamic_window.cpp.o"
   "CMakeFiles/gotoxy.dir/genericmonitor.cpp.o"
   "CMakeFiles/gotoxy.dir/genericworker.cpp.o"
   "CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o"

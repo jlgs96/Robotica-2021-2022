@@ -67,7 +67,7 @@ void SpecificWorker::initialize(int period)
 		timer.start(Period);
 	}
     //////INICIALIZACIÓN DEL MAPP//////
-    QRect dimension( -5000, -2500, 10000, 5000);
+    QRect dimension( -5200, -2700, 10400, 5400);
     viewer = new AbstractGraphicViewer(this , dimension);
     Mapp.initialize(dimension,TILE,&viewer->scene);
     this->resize(900,450);
@@ -238,7 +238,7 @@ SpecificWorker::State SpecificWorker::exploringRoom(const RoboCompLaser::TLaserD
     ///MAPPEO///
    try
    {
-        differentialrobot_proxy->setSpeedBase(0,1);
+        differentialrobot_proxy->setSpeedBase(0,0.5);
    }catch (const Ice::Exception &e)
    {
        std::cout<<e.what()<<std::endl;
@@ -251,7 +251,7 @@ SpecificWorker::State SpecificWorker::exploringRoom(const RoboCompLaser::TLaserD
 SpecificWorker::State SpecificWorker::lookDoor(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state)
 {
     int indexDoor = Doors.size()-1;
-
+    int mov = 1500;
     ////COMPROBAR SI ULTIMO ELEMENTO PROCESADO---CONDICION DE SALIDA////
     if((int)Doors[indexDoor].midPointDoors.size()>0)
     {
@@ -266,14 +266,14 @@ SpecificWorker::State SpecificWorker::lookDoor(const RoboCompLaser::TLaserData &
     ///PUERTA A PROCESAR////
     if(abs(Doors[indexDoor].p1[0] - Doors[indexDoor].p2[0]) < 100)
     {
-        Doors[indexDoor].midPointDoors.push_back(Eigen::Vector2f(middle[0]+500, middle[1]));
-        Doors[indexDoor].midPointDoors.push_back(Eigen::Vector2f(middle[0]-500, middle[1]));
+        Doors[indexDoor].midPointDoors.push_back(Eigen::Vector2f(middle[0]+mov, middle[1]));
+        Doors[indexDoor].midPointDoors.push_back(Eigen::Vector2f(middle[0]-mov, middle[1]));
     }
 
     if(abs(Doors[indexDoor].p1[1] - Doors[indexDoor].p2[1]) < 100)
     {
-        Doors[indexDoor].midPointDoors.push_back(Eigen::Vector2f(middle[0], middle[1]+ 500));
-        Doors[indexDoor].midPointDoors.push_back(Eigen::Vector2f(middle[0] , middle[1]- 500));
+        Doors[indexDoor].midPointDoors.push_back(Eigen::Vector2f(middle[0], middle[1]+ mov));
+        Doors[indexDoor].midPointDoors.push_back(Eigen::Vector2f(middle[0] , middle[1]- mov));
 
     }
 
@@ -291,9 +291,9 @@ SpecificWorker::State SpecificWorker::changeRoom(const RoboCompLaser::TLaserData
 
     Eigen::Vector2f robot_eigen(r_state.x, r_state.y);
     static int flag = 0;
-
+    Eigen::Vector2f pointAux = world_to_robot(r_state, midPointsDoorGlobal[flag]);
     ///////CONDITION switch EXIT///////
-    if( distance = (midPointsDoorGlobal[flag] - robot_eigen).norm(); distance <= 50)
+    if(distance = pointAux.norm(); distance <= 150)
     {
         try
         {
@@ -303,6 +303,7 @@ SpecificWorker::State SpecificWorker::changeRoom(const RoboCompLaser::TLaserData
             std::cout<<e.what()<<std::endl;
         }
         flag++;
+        return State::CHANGEROOM;
     }
     ////EXIT CONDITIONS////
     if(flag == 2)
@@ -313,18 +314,35 @@ SpecificWorker::State SpecificWorker::changeRoom(const RoboCompLaser::TLaserData
 
 
     /////////////////////////////////////////////////
-    Eigen::Vector2f pointAux = world_to_robot(r_state, midPointsDoorGlobal[flag]);
+
+
+
     //OJO A ESTO, AQUÍ LOS EJES A ATAN2 SE LOS PASA CAMBIADOS, PRIMERO EJE Y, LUEGO EJE X
-    float beta = atan2(pointAux.x(), pointAux.y());
-    float adv = MAX_ADV_SPEED * dist_to_target_object(distance) * rotation_speed(beta);
+
+    /*QPolygonF laser_poly;
+    for(auto &&l : ldata)
+        laser_poly << QPointF(l.dist*sin(l.angle), l.dist*cos(l.angle));
+    auto [_, __, adv, rot, ___] = dw.compute(pointAux, laser_poly,
+                                             Eigen::Vector3f(r_state.x, r_state.y, r_state.rz),
+                                             Eigen::Vector3f(r_state.vx, r_state.vy, r_state.vrz),
+                                             nullptr /*&viewer_robot->scene*///);
+    /*const float rgain = 0.8;
+    float rotation = rgain*rot;
+
+    float movement = MAX_ADV_SPEED * dist_to_target_object(distance) * rotation_speed(rotation);
+
+
 
     try
     {
-        differentialrobot_proxy->setSpeedBase(adv,beta);
+        differentialrobot_proxy->setSpeedBase(movement,rotation);
     } catch (const Ice::Exception &e)
     {
         std::cout<<e.what()<<std::endl;
     }
+    */
+    moveRobot(ldata,r_state, distance, pointAux);
+
     return State::CHANGEROOM;
 }
 
@@ -377,6 +395,30 @@ bool SpecificWorker::distance_ahead(const RoboCompLaser::TLaserData &ldata, floa
     return (*min).dist <= dist;
 }
 
+
+void SpecificWorker::moveRobot(const RoboCompLaser::TLaserData &ldata,
+                               const RoboCompFullPoseEstimation::FullPoseEuler &r_state, float d, Eigen::Vector2f v)
+                               {
+                                   QPolygonF laser_poly;
+                                   for(auto &&l : ldata)
+                                       laser_poly << QPointF(l.dist*sin(l.angle), l.dist*cos(l.angle));
+                                   auto [_, __, adv, rot, ___] = dw.compute(v, laser_poly,
+                                                                            Eigen::Vector3f(r_state.x, r_state.y, r_state.rz),
+                                                                            Eigen::Vector3f(r_state.vx, r_state.vy, r_state.vrz),
+                                                                            nullptr /*&viewer_robot->scene*/);
+                                   const float rgain = 0.8;
+                                   float rotation = rgain*rot;
+
+                                   float movement = MAX_ADV_SPEED * dist_to_target_object(d) * rotation_speed(rotation);
+
+                                   try
+                                   {
+                                       differentialrobot_proxy->setSpeedBase(movement,rotation);
+                                   } catch (const Ice::Exception &e)
+                                   {
+                                       std::cout<<e.what()<<std::endl;
+                                   }
+                               }
 bool SpecificWorker::distance_side(const RoboCompLaser::TLaserData &ldata, float dist, int iterBegin, int iterEnd)
 {
 
@@ -399,7 +441,7 @@ RoboCompLaser::TData SpecificWorker::get_max_ldata_element(const RoboCompLaser::
 
 void SpecificWorker::calculate_door_points(const RoboCompLaser::TLaserData &ldata,const RoboCompFullPoseEstimation::FullPoseEuler &r_state)
 {
-    float RangeThreshold = 1000;
+    float RangeThreshold = 700;
     float isDoor = 700;
     float derivate = 0.0;
     float x, y;

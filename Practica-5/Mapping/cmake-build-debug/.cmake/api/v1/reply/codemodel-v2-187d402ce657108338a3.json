@@ -1,0 +1,96 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-31e3e657b7b5059ab80f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "src",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src-Debug-224be129c8f956708ad7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "gotoxy",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "ICES__home_alumno_robocomp_components_g8-M1_Robotica-2021-2022_Practica-5_Mapping_src::@145eef247bfb46b6828c",
+					"jsonFile" : "target-ICES__home_alumno_robocomp_components_g8-M1_Robotica-2021-2022_Practica-5_Mapping_src-Debug-5dabf77baf619d456605.json",
+					"name" : "ICES__home_alumno_robocomp_components_g8-M1_Robotica-2021-2022_Practica-5_Mapping_src",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "gotoxy::@145eef247bfb46b6828c",
+					"jsonFile" : "target-gotoxy-Debug-9e86f61b41d57172a83b.json",
+					"name" : "gotoxy",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "gotoxy_autogen::@145eef247bfb46b6828c",
+					"jsonFile" : "target-gotoxy_autogen-Debug-4c075bebfa14c77db2de.json",
+					"name" : "gotoxy_autogen",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug",
+		"source" : "/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
