@@ -1095,8 +1095,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug",
-		"source" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping"
+		"build" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug",
+		"source" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping"
 	},
 	"version" : 
 	{

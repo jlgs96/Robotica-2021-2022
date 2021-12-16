@@ -1,12 +1,12 @@
 {
-	"BUILD_DIR" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/gotoxy_autogen",
-	"CMAKE_BINARY_DIR" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src",
-	"CMAKE_CURRENT_SOURCE_DIR" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/src",
+	"BUILD_DIR" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/gotoxy_autogen",
+	"CMAKE_BINARY_DIR" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src",
 	"CMAKE_EXECUTABLE" : "/snap/clion/175/bin/cmake/linux/bin/cmake",
 	"CMAKE_LIST_FILES" : 
 	[
-		"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/src/CMakeLists.txt",
+		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/CMakeLists.txt",
 		"/home/josel/robocomp/cmake/robocomp.cmake",
 		"/home/josel/robocomp/cmake/modules/qt.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake",
@@ -68,7 +68,7 @@
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Network/Qt5Network_QConnmanEnginePlugin.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Network/Qt5Network_QGenericEnginePlugin.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Network/Qt5Network_QNetworkManagerEnginePlugin.cmake",
-		"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/src/CMakeListsSpecific.txt",
+		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/CMakeListsSpecific.txt",
 		"/snap/clion/175/bin/cmake/linux/share/cmake-3.21/Modules/FindIce.cmake",
 		"/snap/clion/175/bin/cmake/linux/share/cmake-3.21/Modules/SelectLibraryConfigurations.cmake",
 		"/snap/clion/175/bin/cmake/linux/share/cmake-3.21/Modules/SelectLibraryConfigurations.cmake",
@@ -91,41 +91,11 @@
 		"/snap/clion/175/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake",
 		"/snap/clion/175/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageMessage.cmake"
 	],
-	"CMAKE_SOURCE_DIR" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping",
+	"CMAKE_SOURCE_DIR" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping",
 	"DEP_FILE" : "",
 	"DEP_FILE_RULE_NAME" : "",
 	"HEADERS" : 
 	[
-		[
-			"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/src/commonbehaviorI.h",
-			"MU",
-			"EWIEGA46WW/moc_commonbehaviorI.cpp",
-			null
-		],
-		[
-			"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/src/genericmonitor.h",
-			"MU",
-			"EWIEGA46WW/moc_genericmonitor.cpp",
-			null
-		],
-		[
-			"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/src/genericworker.h",
-			"MU",
-			"EWIEGA46WW/moc_genericworker.cpp",
-			null
-		],
-		[
-			"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/src/specificmonitor.h",
-			"MU",
-			"EWIEGA46WW/moc_specificmonitor.cpp",
-			null
-		],
-		[
-			"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/src/specificworker.h",
-			"MU",
-			"EWIEGA46WW/moc_specificworker.cpp",
-			null
-		],
 		[
 			"/home/josel/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h",
 			"MU",
@@ -155,11 +125,41 @@
 			"MU",
 			"UCT32XW4AW/moc_sigwatch.cpp",
 			null
+		],
+		[
+			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/commonbehaviorI.h",
+			"MU",
+			"EWIEGA46WW/moc_commonbehaviorI.cpp",
+			null
+		],
+		[
+			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/genericmonitor.h",
+			"MU",
+			"EWIEGA46WW/moc_genericmonitor.cpp",
+			null
+		],
+		[
+			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/genericworker.h",
+			"MU",
+			"EWIEGA46WW/moc_genericworker.cpp",
+			null
+		],
+		[
+			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/specificmonitor.h",
+			"MU",
+			"EWIEGA46WW/moc_specificmonitor.cpp",
+			null
+		],
+		[
+			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/specificworker.h",
+			"MU",
+			"EWIEGA46WW/moc_specificworker.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/gotoxy_autogen/include",
-	"MOC_COMPILATION_FILE" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/gotoxy_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/gotoxy_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/gotoxy_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
 		"ICE_CPP11_MAPPING",
@@ -181,11 +181,11 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src",
-		"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/src",
+		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src",
+		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src",
 		"/opt/robocomp/include",
 		"/classes",
-		"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug",
+		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug",
 		"/home/josel/robocomp/classes",
 		"/home/josel/robocomp/libs",
 		"/home/josel/robocomp/interfaces",
@@ -219,57 +219,27 @@
 		"-c",
 		"/snap/clion/175/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/gotoxy_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/gotoxy_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : 
 	[
-		"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/CommonBehavior.cpp",
-		"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/DifferentialRobot.cpp",
-		"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/FullPoseEstimation.cpp",
-		"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/GenericBase.cpp",
-		"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/Laser.cpp",
-		"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/ui_mainUI.h"
+		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/CommonBehavior.cpp",
+		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/DifferentialRobot.cpp",
+		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/FullPoseEstimation.cpp",
+		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/GenericBase.cpp",
+		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/Laser.cpp",
+		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/ui_mainUI.h"
 	],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 6,
-	"PARSE_CACHE_FILE" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/CMakeFiles/gotoxy_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/CMakeFiles/gotoxy_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
 	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
 	"QT_VERSION_MAJOR" : 5,
 	"QT_VERSION_MINOR" : 12,
-	"SETTINGS_FILE" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/CMakeFiles/gotoxy_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/CMakeFiles/gotoxy_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[
-			"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/src/commonbehaviorI.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/src/genericmonitor.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/src/genericworker.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/src/main.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/src/specificmonitor.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/src/specificworker.cpp",
-			"MU",
-			null
-		],
 		[ "/home/josel/robocomp/classes/grid2d/grid.cpp", "MU", null ],
 		[ "/home/josel/robocomp/classes/qlog/qlog.cpp", "MU", null ],
 		[
@@ -277,19 +247,49 @@
 			"MU",
 			null
 		],
-		[ "/home/josel/robocomp/classes/sigwatch/sigwatch.cpp", "MU", null ]
+		[ "/home/josel/robocomp/classes/sigwatch/sigwatch.cpp", "MU", null ],
+		[
+			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/commonbehaviorI.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/genericmonitor.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/genericworker.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/main.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/specificmonitor.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/specificworker.cpp",
+			"MU",
+			null
+		]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
 	"UIC_SKIP" : 
 	[
-		"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/CommonBehavior.cpp",
-		"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/DifferentialRobot.cpp",
-		"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/FullPoseEstimation.cpp",
-		"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/GenericBase.cpp",
-		"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/Laser.cpp",
-		"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/ui_mainUI.h",
-		"/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/src/mainUI.ui"
+		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/CommonBehavior.cpp",
+		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/DifferentialRobot.cpp",
+		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/FullPoseEstimation.cpp",
+		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/GenericBase.cpp",
+		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/Laser.cpp",
+		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/ui_mainUI.h",
+		"/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/mainUI.ui"
 	],
 	"UIC_UI_FILES" : [],
 	"VERBOSITY" : 0

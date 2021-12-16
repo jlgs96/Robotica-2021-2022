@@ -302,8 +302,6 @@ SpecificWorker::State SpecificWorker::changeRoom(const RoboCompLaser::TLaserData
         {
             std::cout<<e.what()<<std::endl;
         }
-
-
         flag++;
     }
     ////EXIT CONDITIONS////

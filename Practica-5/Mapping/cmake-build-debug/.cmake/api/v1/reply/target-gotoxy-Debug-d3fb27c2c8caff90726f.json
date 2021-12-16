@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/bin/gotoxy"
+			"path" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/bin/gotoxy"
 		}
 	],
 	"backtrace" : 1,
@@ -134,15 +134,15 @@
 			[
 				{
 					"backtrace" : 0,
-					"path" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/gotoxy_autogen/include"
+					"path" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src/gotoxy_autogen/include"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src"
+					"path" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug/src"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/src/."
+					"path" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/src/."
 				},
 				{
 					"backtrace" : 6,
@@ -154,7 +154,7 @@
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug"
+					"path" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug"
 				},
 				{
 					"backtrace" : 8,
@@ -256,7 +256,7 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "ICES__home_josel_Escritorio_Robotica-2021-2022_Practica-5_Mapping_src::@145eef247bfb46b6828c"
+			"id" : "ICES__home_josel_software_Robotica-2021-2022_Practica-5_Mapping_src::@145eef247bfb46b6828c"
 		},
 		{
 			"backtrace" : 0,

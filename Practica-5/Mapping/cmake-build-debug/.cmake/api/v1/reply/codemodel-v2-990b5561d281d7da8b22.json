@@ -60,15 +60,15 @@
 			[
 				{
 					"directoryIndex" : 1,
-					"id" : "ICES__home_josel_Escritorio_Robotica-2021-2022_Practica-5_Mapping_src::@145eef247bfb46b6828c",
-					"jsonFile" : "target-ICES__home_josel_Escritorio_Robotica-2021-2022_Practica-5_Mapping_src-Debug-85784de7f29f43d0fb58.json",
-					"name" : "ICES__home_josel_Escritorio_Robotica-2021-2022_Practica-5_Mapping_src",
+					"id" : "ICES__home_josel_software_Robotica-2021-2022_Practica-5_Mapping_src::@145eef247bfb46b6828c",
+					"jsonFile" : "target-ICES__home_josel_software_Robotica-2021-2022_Practica-5_Mapping_src-Debug-8295179fa33ed6f6b926.json",
+					"name" : "ICES__home_josel_software_Robotica-2021-2022_Practica-5_Mapping_src",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "gotoxy::@145eef247bfb46b6828c",
-					"jsonFile" : "target-gotoxy-Debug-999144a0874bb77edaa1.json",
+					"jsonFile" : "target-gotoxy-Debug-d3fb27c2c8caff90726f.json",
 					"name" : "gotoxy",
 					"projectIndex" : 0
 				},
@@ -85,8 +85,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug",
-		"source" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping"
+		"build" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug",
+		"source" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping"
 	},
 	"version" : 
 	{

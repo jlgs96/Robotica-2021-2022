@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug"
+			"value" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -727,7 +727,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping"
+			"value" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -2279,7 +2279,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping"
+			"value" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping"
 		},
 		{
 			"name" : "RC_COMPONENT_INSTALL_PATH",
@@ -2303,7 +2303,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping"
+			"value" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping"
 		},
 		{
 			"name" : "RoboComp_VERSION",
@@ -2367,7 +2367,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug"
+			"value" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug"
 		},
 		{
 			"name" : "gotoxy_IS_TOP_LEVEL",
@@ -2391,7 +2391,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/josel/Escritorio/Robotica-2021-2022/Practica-5/Mapping"
+			"value" : "/home/josel/software/Robotica-2021-2022/Practica-5/Mapping"
 		}
 	],
 	"kind" : "cache",
