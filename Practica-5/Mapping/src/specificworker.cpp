@@ -203,19 +203,6 @@ void SpecificWorker::update_map(const RoboCompLaser::TLaserData &ldata,const Rob
 SpecificWorker::State SpecificWorker::exploringRoom(const RoboCompLaser::TLaserData &ldata,const RoboCompFullPoseEstimation::FullPoseEuler &r_state)
 {
     calculate_door_points(ldata, r_state);
-/*
-    for (int index = 0; index <huecosPuerta.size() ; ++index){
-    float dbetween=(huecosPuerta[index-1]-huecosPuerta[index]).norm();
-    if(dbetween <= isDoor)
-    {
-        Door auxdoor;
-
-    }
-
-
-
-    }
-*/
    update_map(ldata, r_state);
    float percenteage_changed=0.0;
    percenteage_changed = Mapp.percentage_changed();

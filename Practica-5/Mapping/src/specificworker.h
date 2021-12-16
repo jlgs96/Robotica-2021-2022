@@ -59,17 +59,26 @@ public:
         QPointF robot;
         QPointF target;
     };
+    /////ESTRUCTURA PARA DEFINIR LA HABITACION/////
+    struct Room
+    {
+        int numRoom;
+        QPointF coordinates;
+        Room(){};
+        Room(int _numRoom, QPointF _coordinates): numRoom(_numRoom),coordinates(_coordinates) { };
+    };
 
     /////ESTRUCTURA PARA DEFINIR LA PUERTA/////
     struct Door
     {
+        int room1,room2;
+        std::vector<Room> rooms;
         Eigen::Vector2f p1;
         Eigen::Vector2f p2;
         std::vector<Eigen::Vector2f> midPointDoors;
         int h1, h2;
         bool operator== (Door door){return ((p1-door.p1).norm() < 800 and (p2-door.p2).norm()< 800) or ((p1-door.p2).norm()<800 and (p2-door.p1).norm()<800);}
         Door(Eigen::Vector2f c1,Eigen::Vector2f c2):p1(c1), p2(c2) { };
-
     };
 
     //////INICIALIZACION DE LAS ESTRUCTURAS///////////
