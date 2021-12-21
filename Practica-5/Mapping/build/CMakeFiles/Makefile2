@@ -92,8 +92,8 @@ src/clean: src/CMakeFiles/gotoxy_autogen.dir/clean
 # Target rules for target src/CMakeFiles/gotoxy.dir
 
 # All Build rule for target.
-src/CMakeFiles/gotoxy.dir/all: src/CMakeFiles/ICES__home_alumno_robocomp_components_g8-M1_Robotica-2021-2022_Practica-5_Mapping_src.dir/all
 src/CMakeFiles/gotoxy.dir/all: src/CMakeFiles/gotoxy_autogen.dir/all
+src/CMakeFiles/gotoxy.dir/all: src/CMakeFiles/ICES__home_alumno_robocomp_components_g8-M1_Robotica-2021-2022_Practica-5_Mapping_src.dir/all
 	$(MAKE) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/depend
 	$(MAKE) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24 "Built target gotoxy"

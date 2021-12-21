@@ -34,14 +34,5 @@ CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
 -- BU ice=>h/cpp: Adding rule to generate Laser.h and Laser.cpp from /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/src/Laser.ice
 -- Generating header file from mainUI.ui
 -- Configuring done
-CMake Error at src/CMakeLists.txt:47 (ADD_EXECUTABLE):
-  Cannot find source file:
-
-    dy
-
-  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
-  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
-
-
 -- Generating done
-CMake Generate step failed.  Build files cannot be regenerated correctly.
+-- Build files have been written to: /home/alumno/robocomp/components/g8-M1/Robotica-2021-2022/Practica-5/Mapping/cmake-build-debug

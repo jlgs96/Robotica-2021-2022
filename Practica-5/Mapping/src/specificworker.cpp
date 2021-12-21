@@ -428,7 +428,7 @@ RoboCompLaser::TData SpecificWorker::get_max_ldata_element(const RoboCompLaser::
 
 void SpecificWorker::calculate_door_points(const RoboCompLaser::TLaserData &ldata,const RoboCompFullPoseEstimation::FullPoseEuler &r_state)
 {
-    float RangeThreshold = 700;
+    float RangeThreshold = 800;
     float isDoor = 700;
     float derivate = 0.0;
     float x, y;
