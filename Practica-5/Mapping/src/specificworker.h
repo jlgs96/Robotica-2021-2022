@@ -120,6 +120,7 @@ public:
     ///////////VARIABLES VARIAS/////////////////////////
     float MAX_ADV_SPEED = 1000.0;
     AbstractGraphicViewer *viewer;
+    AbstractGraphicViewer *viewerGraph;
     const int ROBOT_LENGTH = 400;
     QGraphicsPolygonItem *robot_polygon;
     QGraphicsRectItem *laser_in_robot_polygon;
@@ -162,7 +163,8 @@ private:
     Dynamic_Window dw;
     std::vector<Room> rooms;
     void calculate_door_points(const RoboCompLaser::TLaserData &ldata,const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
-
+    void printGrafo();
+    void flip_text(QGraphicsTextItem *text);
     /////CONSIGUE EL ELEMENTO MAXIMO/////
     RoboCompLaser::TData get_max_ldata_element(const RoboCompLaser::TLaserData &ldata, int semiwidth);
 

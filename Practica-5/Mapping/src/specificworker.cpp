@@ -68,8 +68,8 @@ void SpecificWorker::initialize(int period)
     }
     //////INICIALIZACIÓN DEL MAPP//////
     QRect dimension( -5200, -2700, 10400, 5400);
-    viewer = new AbstractGraphicViewer(this, dimension);
-    //graph_viewer = new AbstractGraphicViewer(this , dimension);
+    viewer = new AbstractGraphicViewer(this->framerobot, dimension);
+    viewerGraph = new AbstractGraphicViewer(this->framegraph , dimension);
     Mapp.initialize(dimension,TILE,&viewer->scene);
     this->resize(900,450);
     robot_polygon= viewer->add_robot(ROBOT_LENGTH);
@@ -270,6 +270,7 @@ SpecificWorker::State SpecificWorker::lookDoor(const RoboCompLaser::TLaserData &
 
     Room room(rooms.size(), QPointF(midPointsDoorGlobal[0].x(), midPointsDoorGlobal[0].y()));
     rooms.push_back(room);
+    printGrafo();
     return State::CHANGEROOM;
 }
 
@@ -492,7 +493,56 @@ void SpecificWorker::paintDoor(const std::vector<Eigen::Vector2f> &peaks)
     }
 
 }
+void SpecificWorker::printGrafo()
+{
+    static std::vector<QGraphicsItem*> graph;
+    for(auto p: graph) viewerGraph->scene.removeItem(p);
+    graph.clear();
 
+
+    for(const auto &r : rooms)
+    {
+        QRectF rectangle(r.coordinates.x()-250, r.coordinates.y()-250, 500, 500);
+        graph.push_back(viewerGraph->scene.addEllipse(rectangle, QPen(QColor("Gray")), QBrush(QColor("Gray"))));
+        graph.back()->setZValue(220);
+
+        QGraphicsTextItem *item = viewerGraph->scene.addText(QString::number(r.numRoom), QFont("Times", 250));
+        item->setPos(r.coordinates.x()-125, r.coordinates.y()+125);
+        flip_text(item);
+        graph.push_back(item);
+        graph.back()->setZValue(300);
+    }
+
+    if(rooms.size() >= 2)
+    {
+        for(auto &&[k, room] : iter::sliding_window(rooms, 2) | iter::enumerate)
+        {
+            graph.push_back(viewerGraph->scene.addLine(QLineF(room[0].coordinates, room[1].coordinates), QPen(QColor("Black"),50)));
+        }
+        graph.push_back(viewerGraph->scene.addLine(QLineF(rooms[rooms.size()-1].coordinates, rooms[0].coordinates), QPen(QColor("Black"),50)));
+
+    }
+
+}
+void SpecificWorker::flip_text(QGraphicsTextItem *text)
+{
+    QTransform transform(text->transform());
+    qreal m11 = transform.m11();    // Horizontal scaling
+    qreal m12 = transform.m12();    // Vertical shearing
+    qreal m13 = transform.m13();    // Horizontal Projection
+    qreal m21 = transform.m21();    // Horizontal shearing
+    qreal m22 = transform.m22();    // vertical scaling
+    qreal m23 = transform.m23();    // Vertical Projection
+    qreal m31 = transform.m31();    // Horizontal Position (DX)
+    qreal m32 = transform.m32();    // Vertical Position (DY)
+    qreal m33 = transform.m33();    // Addtional Projection Factor
+    // Vertical flip
+    m22 = -m22;
+    // Write back to the matrix
+    transform.setMatrix(m11, m12, m13, m21, m22, m23, m31, m32, m33);
+    // Set the items transformation
+    text->setTransform(transform);
+}
 Eigen::Vector2f SpecificWorker::world_to_robot( RoboCompFullPoseEstimation::FullPoseEuler r_state, const Eigen::Vector2f &point_in_world)
 {
     float angle = r_state.rz;
