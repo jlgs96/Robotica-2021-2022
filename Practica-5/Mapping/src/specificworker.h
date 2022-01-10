@@ -128,7 +128,7 @@ public:
 
 
     /////VARIABLES MAPPING/////
-    const int MAX_LASER_DIST = 4000;
+    const int MAX_LASER_DIST = 3500;
     const int TILE = 100;
     std::vector<Eigen::Vector2f>midPointsDoorGlobal;
 
@@ -140,6 +140,8 @@ public:
     State exploringRoom(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
     State lookDoor(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
     State changeRoom(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
+    State marioKart(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
+
     void paintDoor(const std::vector<Eigen::Vector2f> &peaks);
     void moveRobot(const RoboCompLaser::TLaserData &ldata, const RoboCompFullPoseEstimation::FullPoseEuler &r_state, float d, Eigen::Vector2f v);
     ///////SLOTS DE CONEXION/////
@@ -158,7 +160,7 @@ private:
     /////GRID VARIABLE/////
     Grid Mapp;
     Dynamic_Window dw;
-
+    std::vector<Room> rooms;
     void calculate_door_points(const RoboCompLaser::TLaserData &ldata,const RoboCompFullPoseEstimation::FullPoseEuler &r_state);
 
     /////CONSIGUE EL ELEMENTO MAXIMO/////
